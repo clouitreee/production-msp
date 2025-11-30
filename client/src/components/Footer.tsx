@@ -34,9 +34,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Kontakt</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Mo-Fr, 8:00 - 17:00 Uhr</li>
-              <li>Köln & Neuss</li>
-              <li>support@tech-hilfe-pro.de</li>
+              <li>Tech Hilfe Pro</li>
+              <li>Tel.: +49 155 650 29989</li>
+              <li>E-Mail: <a href="mailto:info@techhilfepro.de" className="hover:text-primary">info@techhilfepro.de</a></li>
+              <li>Support: <a href="mailto:support@techhilfepro.de" className="hover:text-primary">support@techhilfepro.de</a></li>
             </ul>
           </div>
         </div>
