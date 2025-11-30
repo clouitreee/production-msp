@@ -60,8 +60,16 @@ export default function Hero() {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Privatkunden & Haushalte – <br />
-                <span className="text-primary min-h-[1.2em] block lg:inline">
-                  {text}<span className="animate-pulse">|</span>
+                {/* 
+                  Ghost element technique for stable height:
+                  1. Render the longest phrase invisibly to reserve space
+                  2. Position the typewriter text absolutely over it
+                */}
+                <span className="text-primary block relative">
+                  <span className="invisible" aria-hidden="true">Unterstützung für Ihr Zuhause</span>
+                  <span className="absolute top-0 left-0 w-full">
+                    {text}<span className="animate-pulse">|</span>
+                  </span>
                 </span>
               </h1>
               
