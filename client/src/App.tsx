@@ -7,6 +7,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Unternehmen from "./pages/Unternehmen";
 import Privatkunden from "./pages/Privatkunden";
+import Ressourcen from "./pages/Ressourcen";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 
 
 function Router() {
@@ -15,6 +18,9 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/privatkunden"} component={Privatkunden} />
       <Route path={"/unternehmen"} component={Unternehmen} />
+      <Route path={"/ressourcen"} component={Ressourcen} />
+      <Route path={"/impressum"} component={Impressum} />
+      <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

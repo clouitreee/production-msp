@@ -54,6 +54,9 @@ export default function StickyHeader() {
             <Link href="/unternehmen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Unternehmen
             </Link>
+            <Link href="/ressourcen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Ressourcen
+            </Link>
             <Link href="/privatkunden#faq" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               FAQ
             </Link>
@@ -88,6 +91,9 @@ export default function StickyHeader() {
                   </Link>
                   <Link href="/unternehmen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     Unternehmen
+                  </Link>
+                  <Link href="/ressourcen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                    Ressourcen
                   </Link>
                   <Link href="/privatkunden#faq" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     FAQ

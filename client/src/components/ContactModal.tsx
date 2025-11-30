@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { submitForm } from "@/lib/mockSubmit";
 
 interface ContactModalProps {
   children: React.ReactNode;
@@ -24,15 +25,23 @@ export default function ContactModal({ children }: ContactModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const result = await submitForm(data, "contact");
+      if (result.success) {
+        setIsSuccess(true);
+      }
+    } catch (error) {
+      console.error("Submission failed", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {

@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 export default function Footer() {
   return (
     <footer className="bg-white border-t py-12">
@@ -13,8 +15,8 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Rechtliches</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-primary">Impressum</a></li>
-              <li><a href="#" className="hover:text-primary">Datenschutz</a></li>
+              <li><Link href="/impressum" className="hover:text-primary">Impressum</Link></li>
+              <li><Link href="/datenschutz" className="hover:text-primary">Datenschutz</Link></li>
               <li><a href="#" className="hover:text-primary">AGB</a></li>
             </ul>
           </div>
