@@ -28,28 +28,28 @@ export default function ComparisonSection() {
               </thead>
               <tbody className="divide-y">
                 <tr className="hover:bg-muted/20 transition-colors">
+                  <td className="p-4 font-bold">Zuhause Mini</td>
+                  <td className="p-4">15 Min</td>
+                  <td className="p-4">10,00 €</td>
+                  <td className="p-4">100 €</td>
+                  <td className="p-4">≈ 8,33 €</td>
+                  <td className="p-4 font-bold text-green-600">20 €</td>
+                </tr>
+                <tr className="hover:bg-muted/20 transition-colors">
                   <td className="p-4 font-bold">Zuhause Basis</td>
                   <td className="p-4">30 Min</td>
-                  <td className="p-4">29 €</td>
-                  <td className="p-4">290 €</td>
-                  <td className="p-4">≈ 24,17 €</td>
-                  <td className="p-4 font-bold text-green-600">58 €</td>
+                  <td className="p-4">19,00 €</td>
+                  <td className="p-4">190 €</td>
+                  <td className="p-4">≈ 15,83 €</td>
+                  <td className="p-4 font-bold text-green-600">38 €</td>
                 </tr>
                 <tr className="hover:bg-muted/20 transition-colors bg-primary/5">
                   <td className="p-4 font-bold text-primary">Zuhause Komfort</td>
                   <td className="p-4">60 Min</td>
-                  <td className="p-4">49 €</td>
-                  <td className="p-4">490 €</td>
-                  <td className="p-4">≈ 40,83 €</td>
-                  <td className="p-4 font-bold text-green-600">98 €</td>
-                </tr>
-                <tr className="hover:bg-muted/20 transition-colors">
-                  <td className="p-4 font-bold">Zuhause Premium</td>
-                  <td className="p-4">120 Min</td>
-                  <td className="p-4">79 €</td>
-                  <td className="p-4">790 €</td>
-                  <td className="p-4">≈ 65,83 €</td>
-                  <td className="p-4 font-bold text-green-600">158 €</td>
+                  <td className="p-4">39,00 €</td>
+                  <td className="p-4">390 €</td>
+                  <td className="p-4">≈ 32,50 €</td>
+                  <td className="p-4 font-bold text-green-600">78 €</td>
                 </tr>
               </tbody>
             </table>
@@ -65,7 +65,7 @@ export default function ComparisonSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-5 gap-4">
             {/* Header Column (Hidden on mobile, shown as labels in cards) */}
             <div className="hidden md:flex flex-col gap-4 pt-14">
               <div className="h-12 flex items-center font-medium text-muted-foreground">Remote-Support</div>
@@ -92,6 +92,26 @@ export default function ComparisonSection() {
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start text-muted-foreground">
                 <X className="h-5 w-5" />
+              </div>
+            </div>
+
+            {/* Mini Column */}
+            <div className="neumorphic-card p-6 flex flex-col gap-4">
+              <div className="h-14 flex items-center justify-center font-bold text-lg border-b">Mini</div>
+              <div className="h-12 flex items-center justify-center md:justify-start font-medium text-muted-foreground">
+                <span className="md:hidden font-medium mr-2">Remote:</span> <X className="h-4 w-4" />
+              </div>
+              <div className="h-12 flex items-center justify-center md:justify-start font-medium text-primary">
+                <span className="md:hidden font-medium mr-2">Telefon:</span> 15 Min inkl.
+              </div>
+              <div className="h-12 flex items-center justify-center md:justify-start text-muted-foreground">
+                <X className="h-5 w-5" />
+              </div>
+              <div className="h-12 flex items-center justify-center md:justify-start text-muted-foreground">
+                <X className="h-5 w-5" />
+              </div>
+              <div className="h-12 flex items-center justify-center md:justify-start text-sm">
+                2 Monate gratis
               </div>
             </div>
 
@@ -154,7 +174,7 @@ export default function ComparisonSection() {
                     Wenn Sie nur einmal im Jahr Hilfe brauchen, reicht oft eine einzelne Fernwartung. Sobald Sie jedoch regelmäßig Fragen zu PC, WLAN, Streaming oder Smart Home haben, lohnt sich ein Jahresabo sehr schnell:
                   </p>
                   <p>
-                    Sie erhalten nicht nur jeden Monat ein festes Minutenkontingent, sondern auch einen Vor-Ort-Termin pro Jahr inklusive und je nach Paket bis zu 20 % Rabatt auf weitere Besuche. Durch die zwei kostenlosen Monate im Jahresabo sinkt Ihr effektiver Monatspreis spürbar – bei gleichbleibendem Service.
+                    Sie erhalten nicht nur jeden Monat ein festes Minutenkontingent, sondern auch einen Vor-Ort-Termin pro Jahr inklusive und je nach Paket bis zu 10 % Rabatt auf weitere Besuche. Durch die zwei kostenlosen Monate im Jahresabo sinkt Ihr effektiver Monatspreis spürbar – bei gleichbleibendem Service.
                   </p>
                   <p className="font-medium text-foreground pt-2">
                     Kurz gesagt: Wer seine Technik ernst nimmt und mindestens ein bis zwei Mal im Quartal Unterstützung braucht, fährt mit dem Jahresabo in der Regel deutlich günstiger als mit Einzelleistungen.

@@ -16,12 +16,12 @@ To enable backend functionality, you must configure the following environment va
 - `RESEND_FROM_EMAIL`: Verified sender email (e.g., `Tech Hilfe Pro <info@techhilfepro.de>`).
 
 ### Stripe (Payments)
+- `STRIPE_CHECKOUT_URL_MINI_MONTHLY`
+- `STRIPE_CHECKOUT_URL_MINI_YEARLY`
 - `STRIPE_CHECKOUT_URL_BASIS_MONTHLY`
 - `STRIPE_CHECKOUT_URL_BASIS_YEARLY`
 - `STRIPE_CHECKOUT_URL_KOMFORT_MONTHLY`
 - `STRIPE_CHECKOUT_URL_KOMFORT_YEARLY`
-- `STRIPE_CHECKOUT_URL_PREMIUM_MONTHLY`
-- `STRIPE_CHECKOUT_URL_PREMIUM_YEARLY`
 
 ### n8n (Automation)
 - `N8N_WEBHOOK_LEAD`: Webhook URL for processing new leads.

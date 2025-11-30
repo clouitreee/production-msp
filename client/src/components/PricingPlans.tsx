@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Check, Download, ShieldCheck, Clock, MapPin, Phone, CreditCard } from "lucide-react";
+import { Check, Download, ShieldCheck, Clock, MapPin, Phone, CreditCard, X } from "lucide-react";
 import { useState } from "react";
 
 export default function PricingPlans() {
@@ -38,157 +38,187 @@ export default function PricingPlans() {
               className="data-[state=checked]:bg-primary"
             />
             <span className={`text-sm font-medium ${isYearly ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Jährlich <span className="ml-1.5 inline-block px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold">-17%</span>
+              Jährlich – 2 Monate gratis
             </span>
           </div>
           
-          {isYearly && (
-            <p className="text-sm text-green-600 font-medium animate-in fade-in slide-in-from-top-2">
-              🎉 Sie sparen 2 Monate im Jahresabo!
-            </p>
-          )}
+          <p className="text-sm text-muted-foreground mb-2">
+            💡 Im Jahresabo zahlen Sie nur 10 Monate – und erhalten 12 Monate Service.
+          </p>
           
           <p className="text-xs text-muted-foreground mt-4">
-            Hinweis: Aktuell berechnen wir keine Umsatzsteuer (Kleinunternehmerregelung).
+            Hinweis: Aktuell berechnen wir keine Umsatzsteuer (Kleinunternehmerregelung). In Zukunft verstehen sich alle Preise zzgl. gesetzlicher MwSt.
           </p>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
-          {/* Basis Plan */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          {/* Mini Plan (New) */}
           <div className="neumorphic-card p-8 flex flex-col relative">
             <div className="mb-6">
-              <h3 className="text-xl font-bold mb-2">Zuhause Basis</h3>
-              <p className="text-sm text-muted-foreground h-10">Ideal für gelegentliche IT-Fragen und kleinere Probleme im Jahr.</p>
+              <h3 className="text-xl font-bold mb-2">Zuhause Mini</h3>
+              <p className="text-sm text-muted-foreground h-12">Für alle, die nur ab und zu eine Frage haben und einen verlässlichen Ansprechpartner am Telefon möchten.</p>
             </div>
             <div className="mb-6">
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-bold">{isYearly ? "24,17 €" : "29 €"}</span>
+                <span className="text-4xl font-bold">{isYearly ? "8,33 €" : "10,00 €"}</span>
                 <span className="text-muted-foreground">/ Monat</span>
               </div>
-              {isYearly && <p className="text-xs text-muted-foreground mt-1">290 € jährlich abgerechnet</p>}
+              {isYearly && <p className="text-xs text-muted-foreground mt-1">100 € jährlich abgerechnet</p>}
+            </div>
+            <ul className="space-y-3 mb-8 flex-1">
+              <li className="flex gap-3 text-sm">
+                <Phone className="h-5 w-5 text-primary shrink-0" />
+                <span>15 Min. Telefon- oder Video-Beratung pro Monat</span>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <Check className="h-5 w-5 text-green-500 shrink-0" />
+                <span>Ideal für kurze Fragen, Betrugs-Checks und Kaufberatung</span>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <Check className="h-5 w-5 text-green-500 shrink-0" />
+                <span>Reaktionszeit &lt; 24 h (Mo–Fr, 8–17 Uhr)</span>
+              </li>
+              <li className="flex gap-3 text-sm text-muted-foreground">
+                <X className="h-5 w-5 text-muted-foreground shrink-0" />
+                <span>Keine geplanten Fernwartungs-Sitzungen, kein Vor-Ort-Termin</span>
+              </li>
+              <li className="flex gap-3 text-sm text-muted-foreground">
+                <Clock className="h-5 w-5 text-muted-foreground shrink-0" />
+                <span>Abrechnung in 5-Minuten-Blöcken</span>
+              </li>
+              <li className="flex gap-3 text-sm text-muted-foreground">
+                <X className="h-5 w-5 text-muted-foreground shrink-0" />
+                <span>Nicht genutzte Minuten verfallen am Monatsende</span>
+              </li>
+            </ul>
+            <div className="mt-auto">
+              <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                Für technische Eingriffe per Fernwartung oder Vor-Ort-Einsätze gelten die Standardpreise für Einzelkunden. Auf Wunsch ist jederzeit ein Upgrade auf Zuhause Basis oder Komfort möglich.
+              </p>
+              <Button 
+                variant="outline" 
+                className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+                onClick={() => handleSubscribe('mini')}
+              >
+                Mini-Abo wählen
+              </Button>
+            </div>
+          </div>
+
+          {/* Basis Plan (Adjusted) */}
+          <div className="neumorphic-card p-8 flex flex-col relative">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Zuhause Basis</h3>
+              <p className="text-sm text-muted-foreground h-12">Für gelegentliche IT-Probleme im Jahr – mit eingeplantem Remote-Support und einem Vor-Ort-Termin.</p>
+            </div>
+            <div className="mb-6">
+              <div className="flex items-baseline gap-1">
+                <span className="text-4xl font-bold">{isYearly ? "15,83 €" : "19,00 €"}</span>
+                <span className="text-muted-foreground">/ Monat</span>
+              </div>
+              {isYearly && <p className="text-xs text-muted-foreground mt-1">190 € jährlich abgerechnet</p>}
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex gap-3 text-sm">
                 <Clock className="h-5 w-5 text-primary shrink-0" />
-                <span>30 Min. Support / Monat</span>
+                <span>30 Min. Remote-Support pro Monat (Telefon + Fernwartung)</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>Reaktionszeit &lt; 24h (Mo-Fr)</span>
+                <span>Reaktionszeit &lt; 24 h (Mo–Fr, 8–17 Uhr)</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>1 Vor-Ort-Termin / Jahr inkl.*</span>
+                <span>1 Vor-Ort-Termin pro Jahr inklusive*</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>5% Rabatt auf weitere Termine</span>
+                <span>5 % Rabatt auf weitere Vor-Ort-Termine</span>
+              </li>
+              <li className="flex gap-3 text-sm text-muted-foreground">
+                <Clock className="h-5 w-5 text-muted-foreground shrink-0" />
+                <span>Abrechnung Remote-Support in 5-Minuten-Blöcken</span>
+              </li>
+              <li className="flex gap-3 text-sm text-muted-foreground">
+                <X className="h-5 w-5 text-muted-foreground shrink-0" />
+                <span>Minuten nicht übertragbar – Planung pro Monat</span>
               </li>
             </ul>
-            <Button 
-              variant="outline" 
-              className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
-              onClick={() => handleSubscribe('basis')}
-            >
-              Basis wählen
-            </Button>
+            <div className="mt-auto">
+              <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                *Vor-Ort-Termin inklusive nach 90 Tagen Abo-Laufzeit. Weitere Vor-Ort-Einsätze werden nach Zeitaufwand abgerechnet – abzüglich des jeweiligen Rabatt-Satzes.
+              </p>
+              <Button 
+                variant="outline" 
+                className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+                onClick={() => handleSubscribe('basis')}
+              >
+                Basis wählen
+              </Button>
+            </div>
           </div>
 
-          {/* Komfort Plan (Highlighted) */}
+          {/* Komfort Plan (Adjusted & Highlighted) */}
           <div className="neumorphic-card p-8 flex flex-col relative border-primary shadow-xl shadow-primary/10 scale-105 z-10">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-lg">
               Beliebteste Wahl
             </div>
             <div className="mb-6">
               <h3 className="text-xl font-bold mb-2 text-primary">Zuhause Komfort</h3>
-              <p className="text-sm text-muted-foreground h-10">Für alle, die regelmäßig Unterstützung im Home-Office brauchen.</p>
+              <p className="text-sm text-muted-foreground h-12">Für Haushalte, die regelmäßig Unterstützung im digitalen Alltag benötigen – mit mehr Zeit und besserer Priorität.</p>
             </div>
             <div className="mb-6">
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-bold text-primary">{isYearly ? "40,83 €" : "49 €"}</span>
+                <span className="text-5xl font-bold text-primary">{isYearly ? "32,50 €" : "39,00 €"}</span>
                 <span className="text-muted-foreground">/ Monat</span>
               </div>
-              {isYearly && <p className="text-xs text-muted-foreground mt-1">490 € jährlich abgerechnet</p>}
+              {isYearly && <p className="text-xs text-muted-foreground mt-1">390 € jährlich abgerechnet</p>}
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex gap-3 text-sm font-medium">
                 <Clock className="h-5 w-5 text-primary shrink-0" />
-                <span>60 Min. Support / Monat</span>
+                <span>60 Min. Remote-Support pro Monat (Telefon + Fernwartung)</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>Bevorzugte Rückmeldung (&lt; 1 Tag)</span>
+                <span>Bevorzugte Rückmeldung – in der Regel am selben Werktag</span>
               </li>
               <li className="flex gap-3 text-sm font-medium">
                 <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>1 Vor-Ort-Termin / Jahr inkl.*</span>
+                <span>1 Vor-Ort-Termin pro Jahr inklusive*</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>10% Rabatt auf weitere Termine</span>
+                <span>10 % Rabatt auf weitere Vor-Ort-Termine</span>
               </li>
-              <li className="flex gap-3 text-sm">
-                <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>Minuten übertragbar (1 Monat)</span>
-              </li>
-            </ul>
-            <Button 
-              size="lg" 
-              className="w-full shadow-lg shadow-primary/20"
-              onClick={() => handleSubscribe('komfort')}
-            >
-              Komfort wählen
-            </Button>
-          </div>
-
-          {/* Premium Plan */}
-          <div className="neumorphic-card p-8 flex flex-col relative">
-            <div className="mb-6">
-              <h3 className="text-xl font-bold mb-2">Zuhause Premium</h3>
-              <p className="text-sm text-muted-foreground h-10">Maximale Ruhe für Vielnutzer und technikintensive Haushalte.</p>
-            </div>
-            <div className="mb-6">
-              <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-bold">{isYearly ? "65,83 €" : "79 €"}</span>
-                <span className="text-muted-foreground">/ Monat</span>
-              </div>
-              {isYearly && <p className="text-xs text-muted-foreground mt-1">790 € jährlich abgerechnet</p>}
-            </div>
-            <ul className="space-y-3 mb-8 flex-1">
               <li className="flex gap-3 text-sm">
                 <Clock className="h-5 w-5 text-primary shrink-0" />
-                <span>120 Min. Support / Monat</span>
+                <span>Abrechnung Remote-Support in 5-Minuten-Blöcken</span>
               </li>
               <li className="flex gap-3 text-sm">
                 <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>Höchste Priorität (Same Day)</span>
-              </li>
-              <li className="flex gap-3 text-sm">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>1 Vor-Ort-Termin / Jahr inkl.*</span>
-              </li>
-              <li className="flex gap-3 text-sm">
-                <Check className="h-5 w-5 text-green-500 shrink-0" />
-                <span>20% Rabatt auf weitere Termine</span>
-              </li>
-              <li className="flex gap-3 text-sm">
-                <ShieldCheck className="h-5 w-5 text-primary shrink-0" />
-                <span>Jährlicher Sicherheits-Check</span>
+                <span>Nicht genutzte Minuten einmalig in den Folgemonat übertragbar (max. 60 Min zusätzlich)</span>
               </li>
             </ul>
-            <Button 
-              variant="outline" 
-              className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
-              onClick={() => handleSubscribe('premium')}
-            >
-              Premium wählen
-            </Button>
+            <div className="mt-auto">
+              <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                *Vor-Ort-Termin inklusive nach 90 Tagen Abo-Laufzeit. Nicht genutzte Minuten können einmalig in den Folgemonat übernommen werden; ein dritter Monat kann nicht weiter aufbauen.
+              </p>
+              <Button 
+                size="lg" 
+                className="w-full shadow-lg shadow-primary/20"
+                onClick={() => handleSubscribe('komfort')}
+              >
+                Komfort wählen
+              </Button>
+            </div>
           </div>
         </div>
         
-        <p className="text-center text-xs text-muted-foreground mb-20 max-w-2xl mx-auto">
-          * Vor-Ort-Termin inklusive nach 90 Tagen Abo-Laufzeit. Abrechnung Remote-Support in 5-Minuten-Blöcken.
+        {/* Shared Footnote */}
+        <p className="text-center text-xs text-muted-foreground mb-20 max-w-4xl mx-auto leading-relaxed">
+          Abrechnung Remote-Support in 5-Minuten-Blöcken. Die im Abo enthaltenen Minuten sind für reguläre Support-Anfragen gedacht. Sehr umfangreiche Projekte (z. B. Neuaufbau von PCs, große Datenmigrationen, komplette Netzwerkinstallationen) werden nach individueller Vereinbarung separat angeboten. Die genauen Bedingungen finden Sie in unseren AGB.
         </p>
 
         {/* Ohne Abo Section */}
