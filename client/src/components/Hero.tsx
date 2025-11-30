@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
 
@@ -84,10 +85,10 @@ export default function Hero() {
                     Schnelle Hilfe bei PC-Problemen, WLAN, Smart Home und mehr. Fernwartung oder Vor-Ort-Service.
                   </p>
                   <Button className="w-full mt-4" asChild>
-                    <a href="/privatkunden">
+                    <Link href="/privatkunden">
                       Zu den Privatkunden-Services
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -105,11 +106,11 @@ export default function Hero() {
                   <p className="text-slate-300">
                     Managed IT, NIS2-Compliance, Backups und Sicherheit für KMU. Ihre externe IT-Abteilung.
                   </p>
-                  <Button variant="secondary" className="w-full mt-4" asChild>
-                    <a href="/unternehmen">
+                  <Button className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 text-white" asChild>
+                    <Link href="/unternehmen">
                       Zum Unternehmens-Bereich
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </div>

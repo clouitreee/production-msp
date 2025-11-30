@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Link } from "wouter";
 
 export default function StickyHeader() {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,27 +39,24 @@ export default function StickyHeader() {
       <div className="bg-white/80 backdrop-blur-md border-b shadow-sm">
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
-          <div 
-            className="font-bold text-lg cursor-pointer flex items-center gap-2"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
+          <Link href="/" className="font-bold text-lg cursor-pointer flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm">
               TH
             </div>
             <span className="hidden sm:inline">Tech Hilfe Pro</span>
-          </div>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/privatkunden" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/privatkunden" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Privatkunden
-            </a>
-            <a href="/unternehmen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link href="/unternehmen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               Unternehmen
-            </a>
-            <a href="/privatkunden#faq" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link href="/privatkunden#faq" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               FAQ
-            </a>
+            </Link>
             <ContactModal>
               <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                 Kontakt
@@ -85,15 +83,15 @@ export default function StickyHeader() {
               </SheetTrigger>
               <SheetContent side="top" className="w-full">
                 <div className="flex flex-col gap-6 pt-10 pb-6 items-center">
-                  <a href="/privatkunden" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  <Link href="/privatkunden" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     Privatkunden
-                  </a>
-                  <a href="/unternehmen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  </Link>
+                  <Link href="/unternehmen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     Unternehmen
-                  </a>
-                  <a href="/privatkunden#faq" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  </Link>
+                  <Link href="/privatkunden#faq" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     FAQ
-                  </a>
+                  </Link>
                   <ContactModal>
                     <Button className="w-full max-w-xs mt-4 shadow-lg shadow-primary/20">
                       Jetzt Hilfe anfragen
