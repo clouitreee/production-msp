@@ -2,7 +2,7 @@ import { Check, X, Info } from "lucide-react";
 
 export default function ComparisonSection() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section id="faq" className="py-24 bg-muted/30">
       <div className="container">
         
         {/* 1. Monthly vs Yearly Table */}

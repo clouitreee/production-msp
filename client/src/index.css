@@ -184,3 +184,13 @@
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10;
   }
 }
+
+@layer utilities {
+  @keyframes scroll-down {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(12px); opacity: 0; }
+  }
+  .animate-scroll-down {
+    animation: scroll-down 1.5s infinite;
+  }
+}

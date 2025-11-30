@@ -7,7 +7,7 @@ export default function PricingPlans() {
   const [isYearly, setIsYearly] = useState(true);
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="pricing" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/3 rounded-full blur-[120px] -z-10" />
 

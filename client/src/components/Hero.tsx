@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import ContactModal from "./ContactModal";
 
 const TYPEWRITER_PHRASES = [
   "Schnelle PC-Hilfe",
@@ -79,11 +80,13 @@ export default function Hero() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
-                Jetzt Hilfe anfragen
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-base h-12 bg-white/50 backdrop-blur-sm border-primary/20 hover:bg-white/80">
+              <ContactModal>
+                <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                  Jetzt Hilfe anfragen
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </ContactModal>
+              <Button variant="outline" size="lg" className="text-base h-12 bg-white/50 backdrop-blur-sm border-primary/20 hover:bg-white/80" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                 Unsere Abos entdecken
               </Button>
             </div>
@@ -131,6 +134,14 @@ export default function Hero() {
             {/* Decorative elements behind image */}
             <div className="absolute -z-10 top-10 right-10 w-full h-full border-2 border-primary/10 rounded-2xl translate-x-4 translate-y-4" />
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Mehr entdecken</span>
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center p-1">
+          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-scroll-down" />
         </div>
       </div>
     </section>
