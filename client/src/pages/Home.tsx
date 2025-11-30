@@ -1,7 +1,4 @@
 import Hero from "@/components/Hero";
-import ServiceGrid from "@/components/ServiceGrid";
-import PricingPlans from "@/components/PricingPlans";
-import ComparisonSection from "@/components/ComparisonSection";
 import Footer from "@/components/Footer";
 import StickyHeader from "@/components/StickyHeader";
 
@@ -11,9 +8,6 @@ export default function Home() {
       <StickyHeader />
       <main className="flex-grow">
         <Hero />
-        <ServiceGrid />
-        <PricingPlans />
-        <ComparisonSection />
       </main>
       <Footer />
     </div>

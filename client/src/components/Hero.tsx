@@ -83,9 +83,11 @@ export default function Hero() {
                   <p className="text-muted-foreground">
                     Schnelle Hilfe bei PC-Problemen, WLAN, Smart Home und mehr. Fernwartung oder Vor-Ort-Service.
                   </p>
-                  <Button className="w-full mt-4" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
-                    Zu den Privatkunden-Services
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button className="w-full mt-4" asChild>
+                    <a href="/privatkunden">
+                      Zu den Privatkunden-Services
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </div>
