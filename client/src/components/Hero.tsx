@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
@@ -115,6 +115,53 @@ export default function Hero() {
                 </div>
               </div>
             </div>
+
+            {/* Checklist Teaser Section */}
+            <div className="max-w-4xl mx-auto mt-12">
+              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+                <div className="grid md:grid-cols-2 gap-8 items-center text-left">
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                      <FileText className="h-3 w-3" />
+                      Kostenloses Material
+                    </div>
+                    <h3 className="text-2xl font-bold">Kostenlose IT-Sicherheits-Checkliste</h3>
+                    <p className="text-muted-foreground">
+                      Nicht sicher, wie gut Sie geschützt sind? Mit unserer IT-Sicherheits-Checkliste für Zuhause & KMU sehen Sie in wenigen Minuten, wo Sie stehen – ganz ohne Fachwissen.
+                    </p>
+                    <ul className="space-y-2">
+                      {[
+                        "Schneller Überblick über Ihre Risiken",
+                        "Checkliste für Privat & Geschäft",
+                        "Perfekte Grundlage für ein Beratungsgespräch"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm font-medium">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white dark:bg-slate-950 rounded-xl p-6 border shadow-sm text-center space-y-4">
+                    <div className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-[10px] font-bold uppercase tracking-wider rounded">
+                      Lead-Magnet
+                    </div>
+                    <h4 className="text-lg font-bold">Checkliste jetzt kostenlos sichern</h4>
+                    <Button className="w-full" size="lg" asChild>
+                      <Link href="/ressourcen">
+                        Zur Checkliste
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <p className="text-xs text-muted-foreground">
+                      Kein Newsletter-Zwang, nur die Checkliste.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
