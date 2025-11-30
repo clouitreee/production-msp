@@ -1,7 +1,7 @@
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 
 export default function Unternehmen() {
@@ -34,20 +34,20 @@ export default function Unternehmen() {
                 </div>
                 <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
-                  <span>Sichere Fernwartung mit selbst gehosteten Tools</span>
+                  <span>Sichere Fernwartung mit selbst gehosteten Tools (z. B. MeshCentral)</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
-                  <span>Unterstützung bei NIS2-Grundlagen</span>
+                  <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
-                  <span>Bis zu 50 % Förderung in NRW möglich</span>
+                  <span>Bis zu 50 % Förderung in NRW für IT-Sicherheitsmaßnahmen möglich</span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                <ContactModal>
+                <ContactModal defaultTopic="Unverbindliches Erstgespräch">
                   <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
                     Jetzt unverbindliches Erstgespräch anfragen
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -67,18 +67,18 @@ export default function Unternehmen() {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold mb-4">Unsere Leistungen für Unternehmen</h2>
               <p className="text-muted-foreground text-lg">
-                Wir unterstützen Sie dort, wo kleine und mittlere Unternehmen am meisten Zeit und Nerven verlieren – mit klaren, wiederholbaren Prozessen statt Ad-hoc-Feuerwehr.
+                Wir unterstützen Sie dort, wo kleine und mittlere Unternehmen am meisten Zeit und Nerven verlieren – mit klaren, wiederholbaren Prozessen statt Ad-hoc-Feuerwehr. Unsere Managed Services sorgen dafür, dass Ihre IT stabil läuft, Sicherheitsgrundlagen erfüllt sind und Sie im Notfall einen Ansprechpartner haben, der Ihre Umgebung kennt.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Users, title: "Remote-Support & Helpdesk", desc: "Schnelle Hilfe bei IT-Problemen per Fernwartung oder vor Ort." },
-                { icon: Server, title: "Monitoring & Updates", desc: "Proaktive Überwachung und Patch-Management für Ihre Systeme." },
-                { icon: ShieldCheck, title: "Backup & Wiederherstellung", desc: "Sichere Datensicherung und Notfallwiederherstellung." },
-                { icon: Users, title: "Benutzer & Zugriffsrechte", desc: "Verwaltung von Benutzerkonten und Zugriffsberechtigungen." },
-                { icon: ShieldCheck, title: "IT-Sicherheit & E-Mail-Schutz", desc: "Schutz vor Viren, Phishing und Cyberangriffen." },
-                { icon: FileText, title: "Beratung & Planung", desc: "Strategische IT-Beratung für Modernisierung und Cloud." }
+                { icon: LifeBuoy, title: "Remote-Support & Helpdesk", desc: "Schnelle Hilfe bei IT-Problemen per Fernwartung oder vor Ort." },
+                { icon: MonitorCheck, title: "Monitoring & Patch-Management", desc: "Proaktive Überwachung und Updates für Ihre Systeme." },
+                { icon: Server, title: "Backup & Wiederherstellung", desc: "Sichere Datensicherung und Notfallwiederherstellung." },
+                { icon: Users, title: "Benutzer- & Rechteverwaltung", desc: "Verwaltung von Benutzerkonten und Zugriffsberechtigungen." },
+                { icon: Lock, title: "IT-Sicherheit & E-Mail-Schutz", desc: "Schutz vor Viren, Phishing und Cyberangriffen." },
+                { icon: FileText, title: "Beratung & Planung", desc: "Strategische IT-Beratung für Modernisierung, Home-Office und Cloud." }
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
                   <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
@@ -103,11 +103,11 @@ export default function Unternehmen() {
                 </div>
                 <h2 className="text-3xl font-bold">NIS2 & IT-Sicherheit – pragmatisch umgesetzt</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Mit NIS2 steigen die Anforderungen an Cybersecurity – auch für viele mittelständische Betriebe und bestimmte Branchen. Wir helfen Ihnen, die technischen Grundlagen zu schaffen: regelmäßige Updates, überprüfte Backups, klare Zugriffsrechte und einfache Dokumentation. So senken Sie Ihr Risiko und sind besser auf Prüfungen vorbereitet, ohne dass der Alltag im Büro stillsteht.
+                  Mit NIS2 steigen die Anforderungen an Cybersecurity – auch für viele mittelständische Betriebe und bestimmte Branchen. Wir ersetzen keine Anwaltskanzlei und keine zertifizierte Prüfstelle, aber wir helfen Ihnen, die technischen Grundlagen zu schaffen: regelmäßige Updates, überprüfte Backups, klare Zugriffsrechte und einfache Dokumentation. So senken Sie Ihr Risiko und sind besser auf Prüfungen vorbereitet, ohne dass der Büroalltag stillsteht.
                 </p>
                 <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded-r-lg">
                   <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
-                    Wichtig: Wir ersetzen keine Anwaltskanzlei oder offiziellen Auditor. Wir setzen die technischen Grundlagen um.
+                    Hinweis: Wir bieten keine Rechtsberatung und keine formelle Zertifizierung an, sondern unterstützen Sie bei der praktischen Umsetzung technischer Maßnahmen.
                   </p>
                 </div>
               </div>
@@ -135,11 +135,11 @@ export default function Unternehmen() {
                 <Euro className="h-4 w-4" />
                 MID – Digitale Sicherheit
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Förderung in NRW – bis zu 50 % Zuschuss</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Förderung in NRW – bis zu 50 % Zuschuss nutzen</h2>
               <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                Über Programme wie ‚MID – Digitale Sicherheit‘ können kleine Unternehmen in NRW einen Zuschuss von bis zu 50 % für IT-Sicherheitsprojekte erhalten – zum Beispiel für Beratung, Implementierung von Backups, Sicherheitssoftware oder Schulungen. Wir unterstützen Sie bei der technischen Umsetzung und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben infrage kommt.
+                Über Förderprogramme in NRW (z. B. im Bereich ‚Digitale Sicherheit‘) können kleine Unternehmen einen Zuschuss von bis zu 50 % für IT-Sicherheitsprojekte erhalten – etwa für Beratung, die Implementierung von Backups, Sicherheitssoftware oder Schulungen. Wir unterstützen Sie bei der technischen Umsetzung und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben infrage kommt.
               </p>
-              <ContactModal>
+              <ContactModal defaultTopic="Förderung in NRW">
                 <Button size="lg" variant="secondary" className="text-primary font-bold shadow-lg">
                   Mehr zur Förderung erfahren
                 </Button>
@@ -160,103 +160,118 @@ export default function Unternehmen() {
 
             <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Essential */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all">
-                <h3 className="text-2xl font-bold mb-2">KMU Essential</h3>
-                <p className="text-muted-foreground text-sm mb-6 h-10">Der Einstieg in Managed Services – ideal für kleine Teams.</p>
-                <div className="text-3xl font-bold mb-1">ab 35 €</div>
-                <div className="text-sm text-muted-foreground mb-8">pro Benutzer / Monat (netto)</div>
-                <ul className="space-y-3 mb-8">
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all flex flex-col">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">KMU Essential</h3>
+                  <p className="text-muted-foreground text-sm h-12">Der solide IT-Grundschutz für kleine Betriebe – Updates, Monitoring und verlässlicher Ansprechpartner im Hintergrund.</p>
+                </div>
+                <div className="mb-8">
+                  <div className="text-3xl font-bold mb-1">ab 35 €</div>
+                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                </div>
+                <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Basis-Monitoring für PCs und Laptops",
-                    "Monatliche Updates (OS & Software)",
-                    "Einfaches Backup-Konzept",
-                    "Remote-Support: ca. 2 Std./Monat",
-                    "Dokumentation der wichtigsten Systeme"
+                    "Proaktives Monitoring von PCs und ggf. Servern (Verfügbarkeit, Basis-Checks)",
+                    "Regelmäßiges Patch-Management für Windows und wichtige Standardsoftware",
+                    "Überwachung von Backup-Jobs (Fehlermeldungen werden geprüft)",
+                    "Remote-Support nach Aufwand, mit kleinem monatlichem Kontingent",
+                    "Ticket-System & E-Mail-Support (Mo–Fr, 8–17 Uhr)",
+                    "Einfache Bestandsdokumentation (Geräte, Benutzer, Lizenzen)"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <ContactModal>
-                  <Button className="w-full" variant="outline">Anfragen</Button>
-                </ContactModal>
+                <div className="mt-auto">
+                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                    Kein Vor-Ort-Termin inklusive. Größere Projekte (z. B. Neuaufbau von Servern, große Migrationen) werden separat geplant und angeboten.
+                  </p>
+                  <ContactModal defaultTopic="KMU Essential">
+                    <Button className="w-full" variant="outline">Essential anfragen</Button>
+                  </ContactModal>
+                </div>
               </div>
 
               {/* Standard */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-primary shadow-lg relative transform lg:-translate-y-4">
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-primary shadow-lg relative transform lg:-translate-y-4 flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
                   Empfohlen
                 </div>
-                <h3 className="text-2xl font-bold mb-2">KMU Standard</h3>
-                <p className="text-muted-foreground text-sm mb-6 h-10">Für wachsende Unternehmen, die mehr Sicherheit brauchen.</p>
-                <div className="text-3xl font-bold mb-1">ab 55 €</div>
-                <div className="text-sm text-muted-foreground mb-8">pro Benutzer / Monat (netto)</div>
-                <ul className="space-y-3 mb-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">KMU Standard</h3>
+                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen, die regelmäßig Unterstützung im Alltag benötigen – mit inklusivem Remote-Support und jährlichem Vor-Ort-Check.</p>
+                </div>
+                <div className="mb-8">
+                  <div className="text-3xl font-bold mb-1">ab 55 €</div>
+                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                </div>
+                <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Erweitertes Monitoring (PCs, Server)",
-                    "Regelmäßiges Patch-Management",
-                    "Backup-Überwachung + Tests",
-                    "Remote-Support: ca. 4 Std./Monat",
-                    "NIS2-Grundlagen & Dokumentation"
+                    "Alle Leistungen aus KMU Essential",
+                    "Regelmäßiger Remote-Support inklusive (für typische Alltagsprobleme)",
+                    "Klare Reaktionszeiten – in der Regel Antwort innerhalb von 8 Geschäfts­stunden",
+                    "1 Vor-Ort-Termin pro Jahr inklusive* (z. B. IT-Check, Netzwerk-Review, Schulung)",
+                    "Basis-Empfehlungen zu IT-Sicherheit (Passwort-Policy, MFA, E-Mail-Schutz)",
+                    "Jährlicher Kurzbericht zum Zustand der IT (Updates, Backups, Risiken)"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <ContactModal>
-                  <Button className="w-full">Jetzt anfragen</Button>
-                </ContactModal>
+                <div className="mt-auto">
+                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                    *Vor-Ort-Termin inklusive nach 3 Monaten Vertragslaufzeit. Weitere Vor-Ort-Einsätze werden nach Stundensatz und ggf. Anfahrt abgerechnet.
+                  </p>
+                  <ContactModal defaultTopic="KMU Standard">
+                    <Button className="w-full" size="lg">Standard anfragen</Button>
+                  </ContactModal>
+                </div>
               </div>
 
               {/* Premium */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all">
-                <h3 className="text-2xl font-bold mb-2">KMU Premium</h3>
-                <p className="text-muted-foreground text-sm mb-6 h-10">Für Unternehmen, bei denen IT geschäftskritisch ist.</p>
-                <div className="text-3xl font-bold mb-1">ab 85 €</div>
-                <div className="text-sm text-muted-foreground mb-8">pro Benutzer / Monat (netto)</div>
-                <ul className="space-y-3 mb-8">
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all flex flex-col">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">KMU Premium</h3>
+                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen, bei denen IT wirklich geschäftskritisch ist – mit mehr Supportzeit, Sicherheitsfokus und regelmäßigen Reviews.</p>
+                </div>
+                <div className="mb-8">
+                  <div className="text-3xl font-bold mb-1">ab 79 €</div>
+                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                </div>
+                <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Umfassendes Monitoring (Full Stack)",
-                    "Pro-aktives Patch-Management",
-                    "Erweiterte Backup-Strategien (3-2-1)",
-                    "Remote-Support: ca. 8 Std./Monat",
-                    "Regelmäßige NIS2-Reviews"
+                    "Alle Leistungen aus KMU Standard",
+                    "Erweitertes Remote-Support-Kontingent pro Benutzer",
+                    "Bevorzugte Behandlung im Ticket-System (höhere Priorität)",
+                    "2 Vor-Ort-Termine pro Jahr inklusive* (z. B. Sicherheits-Review + Netzwerk-Optimierung)",
+                    "Regelmäßige Sicherheits-Checks (Updates, Antivirus/EDR-Status, Backup-Testwiederherstellungen)",
+                    "Einfache NIS2-Dokumentation der technischen Maßnahmen"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <ContactModal>
-                  <Button className="w-full" variant="outline">Anfragen</Button>
-                </ContactModal>
+                <div className="mt-auto">
+                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
+                    *Vor-Ort-Termine inklusive nach 3 Monaten Vertragslaufzeit. Projekte außerhalb des Pakets (z. B. neue Standorte, größere Cloud-Migrationen) werden individuell geplant und separat angeboten.
+                  </p>
+                  <ContactModal defaultTopic="KMU Premium">
+                    <Button className="w-full" variant="outline">Premium anfragen</Button>
+                  </ContactModal>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* FAQ Block */}
-        <section className="py-24 bg-white dark:bg-background">
-          <div className="container max-w-3xl">
-            <h2 className="text-3xl font-bold mb-12 text-center">Häufige Fragen für Unternehmen</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Brauche ich eine eigene IT-Abteilung?", a: "Nicht unbedingt. Mit unseren Managed Services erhalten Sie die Leistungen einer professionellen IT-Abteilung zu einem Bruchteil der Kosten – skalierbar und flexibel." },
-                { q: "Wie läuft die Zusammenarbeit mit Tech Hilfe Pro ab?", a: "Wir starten mit einer Bestandsaufnahme Ihrer IT. Danach richten wir Monitoring und Fernwartung ein. Ab dann kümmern wir uns proaktiv um Ihre Systeme und sind bei Problemen sofort erreichbar." },
-                { q: "Was ist NIS2 und betrifft es mein Unternehmen?", a: "NIS2 ist eine EU-Richtlinie für Cybersicherheit. Sie betrifft viele Unternehmen in kritischen Sektoren, aber auch Zulieferer. Wir helfen Ihnen zu prüfen, ob Sie betroffen sind und setzen die nötigen technischen Maßnahmen um." },
-                { q: "Gibt es Förderung für IT-Sicherheit in NRW?", a: "Ja, das Programm 'MID – Digitale Sicherheit' fördert Maßnahmen mit bis zu 50 %. Wir unterstützen Sie bei der Antragstellung und Umsetzung förderfähiger Projekte." }
-              ].map((item, i) => (
-                <div key={i} className="border-b pb-6">
-                  <h3 className="text-lg font-bold mb-2">{item.q}</h3>
-                  <p className="text-muted-foreground">{item.a}</p>
-                </div>
-              ))}
-            </div>
+            {/* Shared Footnote */}
+            <p className="text-center text-xs text-muted-foreground mt-12 max-w-4xl mx-auto leading-relaxed">
+              Alle Preise verstehen sich als Richtwerte „ab“-Preise pro Benutzer und Monat (netto). Der genaue Betrag hängt von Anzahl der Arbeitsplätze, Standorten und gewünschten Leistungen ab. Der Support erfolgt regulär während unserer Geschäftszeiten (Mo–Fr, 8–17 Uhr). Größere Projekte, einmalige Migrationsarbeiten und Speziallösungen werden separat kalkuliert. Wir bieten keine Rechtsberatung und keine formale NIS2-Zertifizierung an, sondern unterstützen Sie bei der praktischen Umsetzung technischer Maßnahmen.
+            </p>
           </div>
         </section>
       </main>

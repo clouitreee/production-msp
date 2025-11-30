@@ -66,6 +66,8 @@ export async function submitLead(req: Request, res: Response) {
     // 3. Send Email Notification (if Resend is configured)
     if (resend) {
       try {
+        const topic = meta?.topic ? `<p><strong>Topic:</strong> ${meta.topic}</p>` : '';
+        
         await resend.emails.send({
           from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
           to: ['info@techhilfepro.de'], // Replace with actual admin email
@@ -79,6 +81,7 @@ export async function submitLead(req: Request, res: Response) {
             <p><strong>Company:</strong> ${company_name || 'N/A'}</p>
             <p><strong>Message:</strong> ${message || 'N/A'}</p>
             <p><strong>Plan:</strong> ${plan || 'N/A'}</p>
+            ${topic}
           `
         });
       } catch (emailError) {

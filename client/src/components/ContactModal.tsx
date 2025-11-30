@@ -12,14 +12,16 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 interface ContactModalProps {
   children: React.ReactNode;
+  defaultTopic?: string;
 }
 
-export default function ContactModal({ children }: ContactModalProps) {
+export default function ContactModal({ children, defaultTopic }: ContactModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -43,7 +45,8 @@ export default function ContactModal({ children }: ContactModalProps) {
       is_business: false,
       meta: {
         customer_status: data.customer_status || 'new',
-        privacy_accepted: true
+        privacy_accepted: true,
+        topic: data.topic
       }
     };
 
@@ -107,6 +110,24 @@ export default function ContactModal({ children }: ContactModalProps) {
             
             <form onSubmit={handleSubmit} className="space-y-6 mt-2">
               <div className="space-y-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="topic">Ich interessiere mich für:</Label>
+                  <Select name="topic" defaultValue={defaultTopic || "Unverbindliches Erstgespräch"}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Thema auswählen" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Unverbindliches Erstgespräch">Unverbindliches Erstgespräch</SelectItem>
+                      <SelectItem value="KMU Essential">KMU Essential</SelectItem>
+                      <SelectItem value="KMU Standard">KMU Standard</SelectItem>
+                      <SelectItem value="KMU Premium">KMU Premium</SelectItem>
+                      <SelectItem value="NIS2 / IT-Sicherheit">NIS2 / IT-Sicherheit</SelectItem>
+                      <SelectItem value="Förderung in NRW">Förderung in NRW</SelectItem>
+                      <SelectItem value="Sonstiges">Sonstiges</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
                 <div className="grid gap-2">
                   <Label htmlFor="name">Name *</Label>
                   <Input id="name" name="name" required placeholder="Ihr Vor- und Nachname" />
