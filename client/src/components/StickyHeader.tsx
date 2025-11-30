@@ -50,13 +50,13 @@ export default function StickyHeader() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection("services")} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Services
+            <button onClick={() => window.location.href = "/#services"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Privatkunden
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              Preise
-            </button>
-            <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <a href="/unternehmen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+              Unternehmen
+            </a>
+            <button onClick={() => window.location.href = "/#faq"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               FAQ
             </button>
             <ContactModal>
@@ -85,15 +85,15 @@ export default function StickyHeader() {
               </SheetTrigger>
               <SheetContent side="top" className="w-full">
                 <div className="flex flex-col gap-6 pt-10 pb-6 items-center">
-                  <button onClick={() => scrollToSection("services")} className="text-lg font-medium">
-                    Services
-                  </button>
-                  <button onClick={() => scrollToSection("pricing")} className="text-lg font-medium">
-                    Preise
-                  </button>
-                  <button onClick={() => scrollToSection("faq")} className="text-lg font-medium">
+                  <a href="/#services" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                    Privatkunden
+                  </a>
+                  <a href="/unternehmen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                    Unternehmen
+                  </a>
+                  <a href="/#faq" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
                     FAQ
-                  </button>
+                  </a>
                   <ContactModal>
                     <Button className="w-full max-w-xs mt-4 shadow-lg shadow-primary/20">
                       Jetzt Hilfe anfragen
