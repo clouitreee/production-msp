@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import FundingCalculator from "@/components/FundingCalculator";
 
 export default function Unternehmen() {
   return (
@@ -95,7 +96,7 @@ export default function Unternehmen() {
         {/* B) NIS2 & IT-Sicherheit */}
         <section className="py-24 bg-slate-50 dark:bg-slate-950">
           <div className="container">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
               <div className="flex-1 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
                   <ShieldCheck className="h-3 w-3" />
@@ -122,6 +123,11 @@ export default function Unternehmen() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Funding Calculator */}
+            <div className="max-w-5xl mx-auto">
+              <FundingCalculator />
             </div>
           </div>
         </section>
