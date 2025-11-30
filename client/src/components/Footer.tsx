@@ -41,8 +41,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Tech Hilfe Pro. Alle Rechte vorbehalten.
+        <div className="border-t pt-8 text-center text-sm text-muted-foreground space-y-2">
+          <p>© {new Date().getFullYear()} Tech Hilfe Pro. Alle Rechte vorbehalten.</p>
+          <p className="text-xs opacity-80">Gemacht mit ❤️‍🔥 und ☕ von deinem Tech Hilfe Pro Team.</p>
         </div>
       </div>
     </footer>
