@@ -14,7 +14,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { submitForm } from "@/lib/mockSubmit";
 
 interface ContactModalProps {
   children: React.ReactNode;
@@ -24,21 +23,47 @@ export default function ContactModal({ children }: ContactModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-      const result = await submitForm(data, "contact");
-      if (result.success) {
-        setIsSuccess(true);
+    // Map form data to API schema
+    const payload = {
+      type: 'b2c_contact',
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      is_business: false,
+      meta: {
+        customer_status: data.customer_status || 'new',
+        privacy_accepted: true
       }
-    } catch (error) {
-      console.error("Submission failed", error);
+    };
+
+    try {
+      const response = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      setIsSuccess(true);
+    } catch (err) {
+      console.error("Submission failed", err);
+      setError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.");
     } finally {
       setIsSubmitting(false);
     }
@@ -48,6 +73,7 @@ export default function ContactModal({ children }: ContactModalProps) {
     setIsOpen(false);
     setTimeout(() => {
       setIsSuccess(false);
+      setError(null);
     }, 300);
   };
 
@@ -83,23 +109,24 @@ export default function ContactModal({ children }: ContactModalProps) {
               <div className="space-y-4">
                 <div className="grid gap-2">
                   <Label htmlFor="name">Name *</Label>
-                  <Input id="name" required placeholder="Ihr Vor- und Nachname" />
+                  <Input id="name" name="name" required placeholder="Ihr Vor- und Nachname" />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="email">E-Mail *</Label>
-                  <Input id="email" type="email" required placeholder="ihre.email@beispiel.de" />
+                  <Input id="email" name="email" type="email" required placeholder="ihre.email@beispiel.de" />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="phone">Telefonnummer (optional)</Label>
-                  <Input id="phone" type="tel" placeholder="Für Rückrufe (optional)" />
+                  <Input id="phone" name="phone" type="tel" placeholder="Für Rückrufe (optional)" />
                 </div>
                 
                 <div className="grid gap-2">
                   <Label htmlFor="message">Kurzbeschreibung des Problems *</Label>
                   <Textarea 
                     id="message" 
+                    name="message"
                     required 
                     placeholder="Worum geht es? (z.B. Drucker druckt nicht, WLAN langsam...)" 
                     className="min-h-[100px]"
@@ -108,7 +135,7 @@ export default function ContactModal({ children }: ContactModalProps) {
 
                 <div className="space-y-3 pt-2">
                   <Label>Sind Sie bereits Kunde?</Label>
-                  <RadioGroup defaultValue="new" className="flex flex-col space-y-1">
+                  <RadioGroup defaultValue="new" name="customer_status" className="flex flex-col space-y-1">
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="existing" id="existing" />
                       <Label htmlFor="existing" className="font-normal cursor-pointer">Ich bin bereits Abo-Kunde</Label>
@@ -128,6 +155,12 @@ export default function ContactModal({ children }: ContactModalProps) {
                   </Label>
                 </div>
               </div>
+
+              {error && (
+                <div className="text-sm text-red-500 text-center bg-red-50 p-2 rounded">
+                  {error}
+                </div>
+              )}
 
               <div className="flex flex-col gap-3 pt-2">
                 <div className="text-xs text-center text-muted-foreground bg-muted/50 py-2 rounded-md">

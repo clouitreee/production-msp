@@ -8,26 +8,50 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FileText, CheckCircle2, Loader2, Download } from "lucide-react";
 import { useState } from "react";
-import { submitForm } from "@/lib/mockSubmit";
 
 export default function Ressourcen() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-      const result = await submitForm(data, "checklist");
-      if (result.success) {
-        setIsSuccess(true);
+    // Map form data to API schema
+    const payload = {
+      type: 'checklist_download',
+      name: `${data.firstName} ${data.lastName || ''}`.trim(),
+      email: data.email,
+      is_business: data.type === 'business',
+      meta: {
+        source: data.source,
+        privacy_accepted: true,
+        checklist_version: '2025_v1'
       }
-    } catch (error) {
-      console.error("Submission failed", error);
+    };
+
+    try {
+      const response = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      setIsSuccess(true);
+    } catch (err) {
+      console.error("Submission failed", err);
+      setError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.");
     } finally {
       setIsSubmitting(false);
     }
@@ -158,6 +182,12 @@ export default function Ressourcen() {
                         </Label>
                       </div>
                     </div>
+
+                    {error && (
+                      <div className="text-sm text-red-500 text-center bg-red-50 p-2 rounded">
+                        {error}
+                      </div>
+                    )}
 
                     <Button type="submit" className="w-full shadow-lg shadow-primary/20" size="lg" disabled={isSubmitting}>
                       {isSubmitting ? (

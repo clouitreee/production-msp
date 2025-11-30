@@ -1,10 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Check, Download, ShieldCheck, Clock, MapPin, Phone } from "lucide-react";
+import { Check, Download, ShieldCheck, Clock, MapPin, Phone, CreditCard } from "lucide-react";
 import { useState } from "react";
 
 export default function PricingPlans() {
   const [isYearly, setIsYearly] = useState(true);
+
+  const handleSubscribe = (plan: string) => {
+    // In a real implementation, this would redirect to Stripe Checkout
+    // For now, we'll just log the intent or show a placeholder alert
+    const interval = isYearly ? 'yearly' : 'monthly';
+    const checkoutUrlKey = `STRIPE_CHECKOUT_URL_${plan.toUpperCase()}_${interval.toUpperCase()}`;
+    
+    // We can't access process.env directly in client-side code unless exposed via Vite
+    // But for this phase, we'll simulate the redirection
+    console.log(`Redirecting to Stripe for ${plan} (${interval})...`);
+    alert(`Weiterleitung zu Stripe Checkout für ${plan} (${interval})...\n(Dies ist eine Demo-Funktion)`);
+  };
 
   return (
     <section id="pricing" className="py-24 relative overflow-hidden">
@@ -74,7 +86,11 @@ export default function PricingPlans() {
                 <span>5% Rabatt auf weitere Termine</span>
               </li>
             </ul>
-            <Button variant="outline" className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary">
+            <Button 
+              variant="outline" 
+              className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+              onClick={() => handleSubscribe('basis')}
+            >
               Basis wählen
             </Button>
           </div>
@@ -117,7 +133,11 @@ export default function PricingPlans() {
                 <span>Minuten übertragbar (1 Monat)</span>
               </li>
             </ul>
-            <Button size="lg" className="w-full shadow-lg shadow-primary/20">
+            <Button 
+              size="lg" 
+              className="w-full shadow-lg shadow-primary/20"
+              onClick={() => handleSubscribe('komfort')}
+            >
               Komfort wählen
             </Button>
           </div>
@@ -157,7 +177,11 @@ export default function PricingPlans() {
                 <span>Jährlicher Sicherheits-Check</span>
               </li>
             </ul>
-            <Button variant="outline" className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary">
+            <Button 
+              variant="outline" 
+              className="w-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+              onClick={() => handleSubscribe('premium')}
+            >
               Premium wählen
             </Button>
           </div>
