@@ -198,43 +198,62 @@ export default function PricingPlans() {
         </div>
 
         {/* RustDesk Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="neumorphic-card p-8 md:p-12 bg-gradient-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 border-blue-100 dark:border-blue-900">
-            <div className="flex flex-col md:flex-row gap-10 items-center">
-              <div className="flex-1 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
-                  <ShieldCheck className="h-3 w-3" />
-                  Sichere Fernwartung
-                </div>
-                <h3 className="text-2xl font-bold">Hilfe aus der Ferne mit RustDesk</h3>
-                <p className="text-muted-foreground">
-                  Viele Probleme lassen sich lösen, ohne dass ein Techniker zu Ihnen nach Hause kommen muss. Mit unserer Fernwartungslösung auf Basis von RustDesk können wir uns direkt auf Ihr Gerät schalten – natürlich nur mit Ihrer ausdrücklichen Zustimmung.
-                </p>
-                <ul className="grid sm:grid-cols-2 gap-3">
+        <div className="max-w-5xl mx-auto mt-24">
+          <div className="neumorphic-card p-8 md:p-10 bg-muted/30 border-l-4 border-l-primary/50">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="text-2xl font-bold">Fernwartung mit RustDesk</h3>
+            </div>
+
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Für schnelle Remote-Hilfe verwenden wir <strong>RustDesk</strong> – eine sichere, Open-Source-Alternative zu TeamViewer.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-10 mb-8">
+              {/* Left Column: How it works */}
+              <div>
+                <h4 className="font-bold mb-4 text-lg">So funktioniert’s:</h4>
+                <ol className="space-y-3 list-decimal list-inside text-muted-foreground marker:text-primary marker:font-bold">
+                  <li className="pl-2">Laden Sie RustDesk einmalig herunter (kostenlos)</li>
+                  <li className="pl-2">Starten Sie die Software während unseres Support-Termins</li>
+                  <li className="pl-2">Teilen Sie uns die angezeigte ID mit</li>
+                  <li className="pl-2">Wir verbinden uns sicher mit Ihrem Gerät</li>
+                </ol>
+              </div>
+
+              {/* Right Column: Security & Download */}
+              <div>
+                <h4 className="font-bold mb-4 text-lg">Ihre Sicherheit steht an erster Stelle:</h4>
+                <ul className="space-y-2 mb-8">
                   {[
-                    "Verschlüsselte Verbindung",
-                    "Sie behalten die Kontrolle",
-                    "Keine Installation nötig",
-                    "Open Source Software"
+                    "Zugriff nur nach Ihrer aktiven Freigabe",
+                    "Ende-zu-Ende-Verschlüsselung für die Verbindung",
+                    "Open-Source-Software, geprüft von einer großen Community",
+                    "Keine Registrierung oder Konto erforderlich",
+                    "Sie behalten jederzeit die volle Kontrolle"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm font-medium">
-                      <Check className="h-4 w-4 text-green-500" />
-                      {item}
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20" asChild>
-                  <a href="https://rustdesk.com/" target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4" />
-                    RustDesk herunterladen
+
+                <Button className="w-full sm:w-auto shadow-lg shadow-primary/20" size="lg" asChild>
+                  <a href="https://rustdesk.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <Download className="h-4 w-4" />
+                    RustDesk kostenlos herunterladen
+                    <span className="sr-only">(öffnet in neuem Tab)</span>
                   </a>
                 </Button>
               </div>
-              <div className="w-full md:w-1/3 flex justify-center">
-                <div className="relative w-48 h-48 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-blue-100 p-6 rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <img src="https://rustdesk.com/logo.svg" alt="RustDesk Logo" className="w-full h-full object-contain" />
-                </div>
-              </div>
+            </div>
+
+            {/* Footer Note */}
+            <div className="pt-6 border-t border-border/50 text-xs text-muted-foreground/80 italic">
+              *RustDesk ist Open-Source-Software unter der AGPL-3.0-Lizenz und wird als Alternative zu TeamViewer und AnyDesk entwickelt. Wir verwenden RustDesk ausschließlich nach Ihrer ausdrücklichen Zustimmung während eines vereinbarten Support-Termins.
             </div>
           </div>
         </div>
