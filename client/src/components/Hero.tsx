@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText, Monitor, ShieldCheck, Euro } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
@@ -65,6 +65,21 @@ export default function Hero() {
                 <span className="text-primary">Zuhause & Unternehmen</span>
               </h1>
               
+              <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
+                  <Monitor className="h-4 w-4 text-secondary" />
+                  <span>Schnelle PC-Hilfe & Remote-Support</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
+                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  <span>Managed IT & NIS2-Compliance für KMU</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
+                  <Euro className="h-4 w-4 text-green-600" />
+                  <span>Transparente Preise ohne versteckte Kosten</span>
+                </div>
+              </div>
+              
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Tech Hilfe Pro ist Ihr zuverlässiger Ansprechpartner für alle Technikfragen. Ob schnelle PC-Hilfe für Privatkunden oder professionelle Managed Services für KMU – wir sind für Sie da.
               </p>
@@ -72,7 +87,7 @@ export default function Hero() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* B2C Card */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-all text-left">
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg border border-slate-100 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-left">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <CheckCircle2 className="w-24 h-24 text-secondary" />
                 </div>
@@ -84,7 +99,7 @@ export default function Hero() {
                   <p className="text-muted-foreground">
                     Schnelle Hilfe bei PC-Problemen, WLAN, Smart Home und mehr. Fernwartung oder Vor-Ort-Service.
                   </p>
-                  <Button className="w-full mt-4" asChild>
+                  <Button className="w-full mt-4 group-hover:bg-secondary group-hover:text-white transition-colors" asChild>
                     <Link href="/privatkunden">
                       Zu den Privatkunden-Services
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -94,7 +109,7 @@ export default function Hero() {
               </div>
 
               {/* B2B Card */}
-              <div className="group relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 shadow-lg hover:shadow-xl transition-all text-left">
+              <div className="group relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-left">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <CheckCircle2 className="w-24 h-24 text-primary" />
                 </div>
@@ -106,7 +121,7 @@ export default function Hero() {
                   <p className="text-slate-300">
                     Managed IT, NIS2-Compliance, Backups und Sicherheit für KMU. Ihre externe IT-Abteilung.
                   </p>
-                  <Button className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 text-white" asChild>
+                  <Button className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 text-white group-hover:bg-emerald-400 transition-colors" asChild>
                     <Link href="/unternehmen">
                       Zum Unternehmens-Bereich
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -116,8 +131,32 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Intro Section */}
+            <div className="max-w-4xl mx-auto text-left">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold">Was macht Tech Hilfe Pro anders?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Wir kombinieren schnelle, verständliche PC-Hilfe für Zuhause mit professioneller, dokumentierter IT-Betreuung für kleine Unternehmen. Alles aus einer Hand, lokal in Köln & Neuss – mit Fokus auf Sicherheit, Transparenz und Fördermöglichkeiten.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    "Klar definierte Leistungen statt Kleingedrucktem",
+                    "Sichere Fernwartung mit RustDesk & MeshCentral",
+                    "Unterstützung bei Förderung wie MID – Digitale Sicherheit"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 bg-white dark:bg-slate-900 p-3 rounded-lg border shadow-sm">
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                      <span className="font-medium text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Checklist Teaser Section */}
-            <div className="max-w-4xl mx-auto mt-12">
+            <div id="checklist-teaser" className="max-w-4xl mx-auto mt-12">
               <div className="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
                 <div className="grid md:grid-cols-2 gap-8 items-center text-left">
                   <div className="space-y-4">
@@ -167,7 +206,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]" onClick={() => document.getElementById('checklist-teaser')?.scrollIntoView({ behavior: 'smooth' })}>
         <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Mehr entdecken</span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center p-1">
           <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-scroll-down" />
