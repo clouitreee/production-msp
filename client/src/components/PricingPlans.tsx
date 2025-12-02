@@ -217,12 +217,12 @@ export default function PricingPlans() {
           </div>
 
           {/* Komfort Plan (Adjusted & Highlighted) */}
-          <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg shadow-primary/10 scale-105 z-10 bg-card">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-md">
+          <div className="msp-card p-8 flex flex-col relative border-accent shadow-lg shadow-accent/10 scale-105 z-10 bg-card">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-medium shadow-md">
               Beliebteste Wahl
             </div>
             <div className="mb-6">
-              <h3 className="text-xl font-bold mb-2 text-primary">
+              <h3 className="text-xl font-bold mb-2 text-accent">
                 Zuhause Komfort
               </h3>
               <p className="text-sm text-muted-foreground h-12">
@@ -291,6 +291,16 @@ export default function PricingPlans() {
               </Button>
             </div>
           </div>
+        </div>
+
+        {/* Value Proposition */}
+        <div className="text-center mb-12 max-w-2xl mx-auto bg-secondary/30 rounded-2xl p-6 border border-secondary">
+          <p className="font-medium text-foreground">
+            Alle Abos (Basis & Komfort) enthalten:
+          </p>
+          <p className="text-muted-foreground mt-2">
+            Remote-Support, Telefonsupport, und nach 90 Tagen Laufzeit 1x Vor-Ort-Termin pro Jahr.
+          </p>
         </div>
 
         {/* Shared Footnote */}

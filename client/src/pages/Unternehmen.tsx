@@ -23,6 +23,7 @@ import TypewriterText from "@/components/TypewriterText";
 import KMUComplianceIllustration from "@/components/illustrations/KMUComplianceIllustration";
 import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsIllustration";
 import ServiceGrid from "@/components/ServiceGrid";
+import B2BServiceModels from "@/components/B2BServiceModels";
 
 const B2B_SERVICES = [
   {
@@ -168,6 +169,9 @@ export default function Unternehmen() {
           items={B2B_SERVICES}
           className="bg-background"
         />
+
+        {/* Service Models */}
+        <B2BServiceModels />
 
         {/* B) NIS2 & IT-Sicherheit */}
         <section className="py-24 bg-slate-50 dark:bg-slate-950">
