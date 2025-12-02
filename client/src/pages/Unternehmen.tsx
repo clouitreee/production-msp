@@ -83,16 +83,16 @@ export default function Unternehmen() {
                 Für Unternehmen & KMU – <br />
                 <span className="text-primary block mt-2">
                   <TypewriterText
-                    phrases={[
+                    items={[
                       "Managed IT, die einfach funktioniert",
                       "NIS2-bereite IT für Ihr KMU",
                       "Digitale Vertrauensbasis statt Feuerlösch-IT",
                       "Souveräne Cloud aus Europa",
                       "Managed Security für den Mittelstand",
                     ]}
-                    typingSpeed={100}
-                    deletingSpeed={50}
-                    pauseDuration={2000}
+                    speed={100}
+                    
+                    pause={2000}
                   />
                 </span>
               </h1>

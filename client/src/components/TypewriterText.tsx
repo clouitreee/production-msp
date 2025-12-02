@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
 interface TypewriterTextProps {
-  phrases: string[];
-  typingSpeed?: number;
-  deletingSpeed?: number;
-  pauseDuration?: number;
+  items: string[];
+  speed?: number;
+  pause?: number;
+  loop?: boolean;
   className?: string;
 }
 
 export default function TypewriterText({
-  phrases,
-  typingSpeed = 100,
-  deletingSpeed = 50,
-  pauseDuration = 2000,
+  items,
+  speed = 100,
+  pause = 2000,
+  loop = true,
   className = "",
 }: TypewriterTextProps) {
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -20,42 +20,37 @@ export default function TypewriterText({
   const [isDeleting, setIsDeleting] = useState(false);
 
   // Find the longest phrase to reserve space
-  const longestPhrase = phrases.reduce(
+  const longestPhrase = items.reduce(
     (a, b) => (a.length > b.length ? a : b),
     ""
   );
 
   useEffect(() => {
-    const currentPhrase = phrases[phraseIndex];
-    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const currentPhrase = items[phraseIndex];
+    const typingSpeed = isDeleting ? speed / 2 : speed;
 
     const timer = setTimeout(() => {
       if (!isDeleting && text === currentPhrase) {
-        setTimeout(() => setIsDeleting(true), pauseDuration);
+        if (!loop && phraseIndex === items.length - 1) return;
+        setTimeout(() => setIsDeleting(true), pause);
         return;
       }
 
       if (isDeleting && text === "") {
         setIsDeleting(false);
-        setPhraseIndex(prev => (prev + 1) % phrases.length);
+        setPhraseIndex((prev) => (prev + 1) % items.length);
         return;
       }
 
-      setText(prev =>
-        isDeleting ? prev.slice(0, -1) : currentPhrase.slice(0, prev.length + 1)
+      setText((prev) =>
+        isDeleting
+          ? prev.slice(0, -1)
+          : currentPhrase.slice(0, prev.length + 1)
       );
-    }, speed);
+    }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [
-    text,
-    isDeleting,
-    phraseIndex,
-    phrases,
-    typingSpeed,
-    deletingSpeed,
-    pauseDuration,
-  ]);
+  }, [text, isDeleting, phraseIndex, items, speed, pause, loop]);
 
   return (
     <span className={`block relative ${className}`}>
@@ -65,7 +60,7 @@ export default function TypewriterText({
       </span>
       <span className="absolute top-0 left-0 w-full">
         {text}
-        <span className="animate-pulse">|</span>
+        <span className="animate-pulse text-primary">|</span>
       </span>
     </span>
   );
