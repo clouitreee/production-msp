@@ -135,6 +135,20 @@ export default function ContactModal({
                       <SelectValue placeholder="Thema auswählen" />
                     </SelectTrigger>
                     <SelectContent>
+                      {defaultTopic &&
+                        ![
+                          "Unverbindliches Erstgespräch",
+                          "KMU Essential",
+                          "KMU Standard",
+                          "KMU Premium",
+                          "NIS2 / IT-Sicherheit",
+                          "Förderung in NRW",
+                          "Sonstiges",
+                        ].includes(defaultTopic) && (
+                          <SelectItem value={defaultTopic}>
+                            {defaultTopic}
+                          </SelectItem>
+                        )}
                       <SelectItem value="Unverbindliches Erstgespräch">
                         Unverbindliches Erstgespräch
                       </SelectItem>
