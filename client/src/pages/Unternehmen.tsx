@@ -1,11 +1,19 @@
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy, Check, X, Clock, Phone } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import FundingCalculator from "@/components/FundingCalculator";
 
 export default function Unternehmen() {
+  const handleContact = (plan: string) => {
+    // This function is used by the buttons inside the cards
+    // Since the buttons are wrapped in ContactModal in the original code, 
+    // we'll need to adjust the structure to match the new design while keeping functionality.
+    // However, the ContactModal component expects children to be the trigger.
+    // So we will wrap the buttons in ContactModal directly in the JSX.
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-foreground">
       <StickyHeader />
@@ -29,32 +37,32 @@ export default function Unternehmen() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <span>Managed IT-Services für PCs, Laptops, Server & Netzwerk</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <span>Sichere Fernwartung mit selbst gehosteten Tools (z. B. MeshCentral)</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-4 py-2 rounded-full shadow-sm border">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   <span>Bis zu 50 % Förderung in NRW für IT-Sicherheitsmaßnahmen möglich</span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                 <ContactModal defaultTopic="Unverbindliches Erstgespräch">
-                  <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                  <Button size="lg" className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
                     Jetzt unverbindliches Erstgespräch anfragen
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </ContactModal>
-                <Button variant="outline" size="lg" className="text-base h-12" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button variant="outline" size="lg" className="text-base h-12 btn-outline" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                   Leistungen & Pakete ansehen
                 </Button>
               </div>
@@ -63,10 +71,10 @@ export default function Unternehmen() {
         </section>
 
         {/* A) Unsere Leistungen */}
-        <section className="py-24 bg-white dark:bg-background">
+        <section className="py-24 bg-background">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4">Unsere Leistungen für Unternehmen</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Unsere Leistungen für Unternehmen</h2>
               <p className="text-muted-foreground text-lg">
                 Wir unterstützen Sie dort, wo kleine und mittlere Unternehmen am meisten Zeit und Nerven verlieren – mit klaren, wiederholbaren Prozessen statt Ad-hoc-Feuerwehr. Unsere Managed Services sorgen dafür, dass Ihre IT stabil läuft, Sicherheitsgrundlagen erfüllt sind und Sie im Notfall einen Ansprechpartner haben, der Ihre Umgebung kennt.
               </p>
@@ -81,11 +89,11 @@ export default function Unternehmen() {
                 { icon: Lock, title: "IT-Sicherheit & E-Mail-Schutz", desc: "Schutz vor Viren, Phishing und Cyberangriffen." },
                 { icon: FileText, title: "Beratung & Planung", desc: "Strategische IT-Beratung für Modernisierung, Home-Office und Cloud." }
               ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all">
+                <div key={i} className="msp-card p-6 flex flex-col msp-card-hover">
                   <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
@@ -102,7 +110,7 @@ export default function Unternehmen() {
                   <ShieldCheck className="h-3 w-3" />
                   NIS2 Compliance
                 </div>
-                <h2 className="text-3xl font-bold">NIS2 & IT-Sicherheit – pragmatisch umgesetzt</h2>
+                <h2 className="text-3xl font-bold text-foreground">NIS2 & IT-Sicherheit – pragmatisch umgesetzt</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Mit NIS2 steigen die Anforderungen an Cybersecurity – auch für viele mittelständische Betriebe und bestimmte Branchen. Wir ersetzen keine Anwaltskanzlei und keine zertifizierte Prüfstelle, aber wir helfen Ihnen, die technischen Grundlagen zu schaffen: regelmäßige Updates, überprüfte Backups, klare Zugriffsrechte und einfache Dokumentation. So senken Sie Ihr Risiko und sind besser auf Prüfungen vorbereitet, ohne dass der Büroalltag stillsteht.
                 </p>
@@ -113,7 +121,7 @@ export default function Unternehmen() {
                 </div>
               </div>
               <div className="flex-1 flex justify-center">
-                <div className="relative w-full max-w-md aspect-square bg-white dark:bg-slate-900 rounded-2xl shadow-xl border p-8 flex items-center justify-center">
+                <div className="relative w-full max-w-md aspect-square bg-card rounded-2xl shadow-xl border border-border p-8 flex items-center justify-center">
                   <ShieldCheck className="w-32 h-32 text-primary/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center space-y-2">
@@ -146,7 +154,7 @@ export default function Unternehmen() {
                 Über Förderprogramme in NRW (z. B. im Bereich ‚Digitale Sicherheit‘) können kleine Unternehmen einen Zuschuss von bis zu 50 % für IT-Sicherheitsprojekte erhalten – etwa für Beratung, die Implementierung von Backups, Sicherheitssoftware oder Schulungen. Wir unterstützen Sie bei der technischen Umsetzung und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben infrage kommt.
               </p>
               <ContactModal defaultTopic="Förderung in NRW">
-                <Button size="lg" variant="secondary" className="text-primary font-bold shadow-lg">
+                <Button size="lg" variant="secondary" className="text-primary font-bold shadow-lg hover:bg-white/90 transition-colors">
                   Mehr zur Förderung erfahren
                 </Button>
               </ContactModal>
@@ -158,7 +166,7 @@ export default function Unternehmen() {
         <section id="pricing" className="py-24 bg-slate-50 dark:bg-slate-950">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4">Unsere KMU-Pakete</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Unsere KMU-Pakete</h2>
               <p className="text-muted-foreground text-lg">
                 Transparente Preise pro Benutzer. Skalierbar und fair.
               </p>
@@ -166,13 +174,13 @@ export default function Unternehmen() {
 
             <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {/* Essential */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div className="msp-card p-8 flex flex-col relative msp-card-hover">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">KMU Essential</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">KMU Essential</h3>
                   <p className="text-muted-foreground text-sm h-12">Der solide IT-Grundschutz für kleine Betriebe – Updates, Monitoring und verlässlicher Ansprechpartner im Hintergrund.</p>
                 </div>
                 <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1">ab 35 €</div>
+                  <div className="text-3xl font-bold mb-1 text-foreground">ab 35 €</div>
                   <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -184,8 +192,8 @@ export default function Unternehmen() {
                     "Ticket-System & E-Mail-Support (Mo–Fr, 8–17 Uhr)",
                     "Einfache Bestandsdokumentation (Geräte, Benutzer, Lizenzen)"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -195,22 +203,22 @@ export default function Unternehmen() {
                     Kein Vor-Ort-Termin inklusive. Größere Projekte (z. B. Neuaufbau von Servern, große Migrationen) werden separat geplant und angeboten.
                   </p>
                   <ContactModal defaultTopic="KMU Essential">
-                    <Button className="w-full" variant="outline">Essential anfragen</Button>
+                    <Button className="w-full btn-outline" variant="outline">Essential anfragen</Button>
                   </ContactModal>
                 </div>
               </div>
 
               {/* Standard */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border-2 border-primary shadow-lg relative transform lg:-translate-y-4 flex flex-col">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
+              <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg shadow-primary/10 scale-105 z-10 bg-card">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
                   Empfohlen
                 </div>
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">KMU Standard</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-primary">KMU Standard</h3>
                   <p className="text-muted-foreground text-sm h-12">Für Unternehmen, die regelmäßig Unterstützung im Alltag benötigen – mit inklusivem Remote-Support und jährlichem Vor-Ort-Check.</p>
                 </div>
                 <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1">ab 55 €</div>
+                  <div className="text-3xl font-bold mb-1 text-primary">ab 55 €</div>
                   <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
@@ -222,8 +230,8 @@ export default function Unternehmen() {
                     "Basis-Empfehlungen zu IT-Sicherheit (Passwort-Policy, MFA, E-Mail-Schutz)",
                     "Jährlicher Kurzbericht zum Zustand der IT (Updates, Backups, Risiken)"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -233,51 +241,46 @@ export default function Unternehmen() {
                     *Vor-Ort-Termin inklusive nach 3 Monaten Vertragslaufzeit. Weitere Vor-Ort-Einsätze werden nach Stundensatz und ggf. Anfahrt abgerechnet.
                   </p>
                   <ContactModal defaultTopic="KMU Standard">
-                    <Button className="w-full" size="lg">Standard anfragen</Button>
+                    <Button className="w-full btn-primary shadow-lg shadow-primary/20" size="lg">Standard anfragen</Button>
                   </ContactModal>
                 </div>
               </div>
 
               {/* Premium */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div className="msp-card p-8 flex flex-col relative msp-card-hover">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">KMU Premium</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">KMU Premium</h3>
                   <p className="text-muted-foreground text-sm h-12">Für Unternehmen, bei denen IT wirklich geschäftskritisch ist – mit mehr Supportzeit, Sicherheitsfokus und regelmäßigen Reviews.</p>
                 </div>
                 <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1">ab 79 €</div>
+                  <div className="text-3xl font-bold mb-1 text-foreground">ab 79 €</div>
                   <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
                     "Alle Leistungen aus KMU Standard",
-                    "Erweitertes Remote-Support-Kontingent pro Benutzer",
-                    "Bevorzugte Behandlung im Ticket-System (höhere Priorität)",
-                    "2 Vor-Ort-Termine pro Jahr inklusive* (z. B. Sicherheits-Review + Netzwerk-Optimierung)",
-                    "Regelmäßige Sicherheits-Checks (Updates, Antivirus/EDR-Status, Backup-Testwiederherstellungen)",
-                    "Einfache NIS2-Dokumentation der technischen Maßnahmen"
+                    "Erweiterter Remote-Support (schnellere Reaktionszeit < 4h)",
+                    "Priorisierte Bearbeitung bei kritischen Störungen",
+                    "2 Vor-Ort-Termine pro Jahr inklusive* (Strategie, Wartung, Notfall)",
+                    "Erweitertes Security-Paket (Managed EDR statt nur Antivirus)",
+                    "Vierteljährliches Review-Gespräch zur IT-Strategie"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
                   <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
-                    *Vor-Ort-Termine inklusive nach 3 Monaten Vertragslaufzeit. Projekte außerhalb des Pakets (z. B. neue Standorte, größere Cloud-Migrationen) werden individuell geplant und separat angeboten.
+                    *Vor-Ort-Termine inklusive nach 3 Monaten Vertragslaufzeit.
                   </p>
                   <ContactModal defaultTopic="KMU Premium">
-                    <Button className="w-full" variant="outline">Premium anfragen</Button>
+                    <Button className="w-full btn-outline" variant="outline">Premium anfragen</Button>
                   </ContactModal>
                 </div>
               </div>
             </div>
-
-            {/* Shared Footnote */}
-            <p className="text-center text-xs text-muted-foreground mt-12 max-w-4xl mx-auto leading-relaxed">
-              Alle Preise verstehen sich als Richtwerte „ab“-Preise pro Benutzer und Monat (netto). Der genaue Betrag hängt von Anzahl der Arbeitsplätze, Standorten und gewünschten Leistungen ab. Der Support erfolgt regulär während unserer Geschäftszeiten (Mo–Fr, 8–17 Uhr). Größere Projekte, einmalige Migrationsarbeiten und Speziallösungen werden separat kalkuliert. Wir bieten keine Rechtsberatung und keine formale NIS2-Zertifizierung an, sondern unterstützen Sie bei der praktischen Umsetzung technischer Maßnahmen.
-            </p>
           </div>
         </section>
       </main>

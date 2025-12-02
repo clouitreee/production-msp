@@ -137,7 +137,7 @@ export default function Ressourcen() {
                 </div>
 
                 {/* Right Column: Form */}
-                <div className="neumorphic-card p-8 lg:p-10 relative overflow-hidden">
+                <div className="msp-card p-8 lg:p-10 relative overflow-hidden">
                   {isSuccess ? (
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm z-10 p-8 text-center animate-in fade-in duration-500">
                       <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6 shadow-lg">

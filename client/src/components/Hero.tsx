@@ -11,10 +11,10 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
-      {/* Background decorative blobs */}
+      {/* Background decorative elements - Simplified for professional look */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[100px]" />
+        <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[120px]" />
       </div>
 
       <div className="container">
@@ -30,22 +30,22 @@ export default function Hero() {
                 Jetzt verfügbar in Köln & Neuss
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground leading-tight">
                 Ihr IT-Partner für <br />
                 <span className="text-primary">Zuhause & Unternehmen</span>
               </h1>
               
               <div className="flex flex-wrap justify-center gap-3">
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
-                  <Monitor className="h-4 w-4 text-secondary" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border text-sm font-medium text-foreground">
+                  <Monitor className="h-4 w-4 text-primary" />
                   <span>Schnelle PC-Hilfe & Remote-Support</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border text-sm font-medium text-foreground">
                   <ShieldCheck className="h-4 w-4 text-primary" />
                   <span>Managed IT & NIS2-Compliance für KMU</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-sm border text-sm font-medium">
-                  <Euro className="h-4 w-4 text-green-600" />
+                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border text-sm font-medium text-foreground">
+                  <Euro className="h-4 w-4 text-emerald-600" />
                   <span>Transparente Preise ohne versteckte Kosten</span>
                 </div>
               </div>
@@ -57,19 +57,18 @@ export default function Hero() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* B2C Card */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg border border-slate-100 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-left">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <CheckCircle2 className="w-24 h-24 text-secondary" />
-                </div>
-                <div className="relative z-10 space-y-4">
-                  <div className="h-12 w-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+              <div className="msp-card p-8 text-left hover:bg-primary/5 transition-all duration-300 group relative overflow-hidden">
+                <div className="space-y-6 relative z-10">
+                  <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     <CheckCircle2 className="h-6 w-6" />
                   </div>
-                  <h2 className="text-2xl font-bold">Für Privatkunden</h2>
-                  <p className="text-muted-foreground">
-                    Schnelle Hilfe bei PC-Problemen, WLAN, Smart Home und mehr. Fernwartung oder Vor-Ort-Service.
-                  </p>
-                  <Button className="w-full mt-4 group-hover:bg-secondary group-hover:text-white transition-colors" asChild>
+                  <div className="space-y-2">
+                    <h2 className="text-2xl font-bold text-foreground">Für Privatkunden</h2>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                      Schnelle Hilfe bei PC-Problemen, WLAN, Smart Home und mehr. Fernwartung oder Vor-Ort-Service.
+                    </p>
+                  </div>
+                  <Button className="w-full btn-outline group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all" asChild>
                     <Link href="/privatkunden">
                       Zu den Privatkunden-Services
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -79,19 +78,18 @@ export default function Hero() {
               </div>
 
               {/* B2B Card */}
-              <div className="group relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-left">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <CheckCircle2 className="w-24 h-24 text-primary" />
-                </div>
-                <div className="relative z-10 space-y-4">
-                  <div className="h-12 w-12 bg-white/10 rounded-xl flex items-center justify-center text-white">
-                    <CheckCircle2 className="h-6 w-6" />
+              <div className="msp-card p-8 text-left hover:bg-primary/5 transition-all duration-300 group relative overflow-hidden">
+                <div className="space-y-6 relative z-10">
+                  <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <ShieldCheck className="h-6 w-6" />
                   </div>
-                  <h2 className="text-2xl font-bold">Für Unternehmen</h2>
-                  <p className="text-slate-300">
-                    Managed IT, NIS2-Compliance, Backups und Sicherheit für KMU. Ihre externe IT-Abteilung.
-                  </p>
-                  <Button className="w-full mt-4 bg-emerald-500 hover:bg-emerald-600 text-white group-hover:bg-emerald-400 transition-colors" asChild>
+                  <div className="space-y-2">
+                    <h2 className="text-2xl font-bold text-foreground">Für Unternehmen</h2>
+                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                      Managed IT, NIS2-Compliance, Backups und Sicherheit für KMU. Ihre externe IT-Abteilung.
+                    </p>
+                  </div>
+                  <Button className="w-full btn-outline group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all" asChild>
                     <Link href="/unternehmen">
                       Zum Unternehmens-Bereich
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -102,23 +100,23 @@ export default function Hero() {
             </div>
 
             {/* Intro Section */}
-            <div className="max-w-4xl mx-auto text-left">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold">Was macht Tech Hilfe Pro anders?</h3>
+            <div className="max-w-4xl mx-auto text-left pt-8">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Was macht Tech Hilfe Pro anders?</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Wir kombinieren schnelle, verständliche PC-Hilfe für Zuhause mit professioneller, dokumentierter IT-Betreuung für kleine Unternehmen. Alles aus einer Hand, lokal in Köln & Neuss – mit Fokus auf Sicherheit, Transparenz und Fördermöglichkeiten.
                   </p>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
                     "Klar definierte Leistungen statt Kleingedrucktem",
                     "Sichere Fernwartung mit RustDesk & MeshCentral",
                     "Unterstützung bei Förderung wie MID – Digitale Sicherheit"
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white dark:bg-slate-900 p-3 rounded-lg border shadow-sm">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                      <span className="font-medium text-sm">{item}</span>
+                    <div key={i} className="flex items-center gap-3 bg-card p-4 rounded-lg border border-border shadow-sm">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
+                      <span className="font-medium text-sm text-foreground">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -126,38 +124,40 @@ export default function Hero() {
             </div>
 
             {/* Checklist Teaser Section */}
-            <div id="checklist-teaser" className="max-w-4xl mx-auto mt-12">
-              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
+            <div id="checklist-teaser" className="max-w-4xl mx-auto mt-16">
+              <div className="msp-card p-8 bg-secondary/30 border-secondary/50">
                 <div className="grid md:grid-cols-2 gap-8 items-center text-left">
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
                       <FileText className="h-3 w-3" />
                       Kostenloses Material
                     </div>
-                    <h3 className="text-2xl font-bold">Kostenlose IT-Sicherheits-Checkliste</h3>
-                    <p className="text-muted-foreground">
-                      Nicht sicher, wie gut Sie geschützt sind? Mit unserer IT-Sicherheits-Checkliste für Zuhause & KMU sehen Sie in wenigen Minuten, wo Sie stehen – ganz ohne Fachwissen.
-                    </p>
-                    <ul className="space-y-2">
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-bold text-foreground">Kostenlose IT-Sicherheits-Checkliste</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Nicht sicher, wie gut Sie geschützt sind? Mit unserer IT-Sicherheits-Checkliste für Zuhause & KMU sehen Sie in wenigen Minuten, wo Sie stehen – ganz ohne Fachwissen.
+                      </p>
+                    </div>
+                    <ul className="space-y-3">
                       {[
                         "Schneller Überblick über Ihre Risiken",
                         "Checkliste für Privat & Geschäft",
                         "Perfekte Grundlage für ein Beratungsgespräch"
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm font-medium">
-                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        <li key={i} className="flex items-center gap-3 text-sm font-medium text-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                           {item}
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  <div className="bg-white dark:bg-slate-950 rounded-xl p-6 border shadow-sm text-center space-y-4">
-                    <div className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-[10px] font-bold uppercase tracking-wider rounded">
-                      Lead-Magnet
+                  <div className="bg-card rounded-xl p-6 border border-border shadow-sm text-center space-y-6">
+                    <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-[10px] font-bold uppercase tracking-wider rounded-full">
+                      Empfohlen
                     </div>
-                    <h4 className="text-lg font-bold">Checkliste jetzt kostenlos sichern</h4>
-                    <Button className="w-full" size="lg" asChild>
+                    <h4 className="text-lg font-bold text-foreground">Checkliste jetzt kostenlos sichern</h4>
+                    <Button className="w-full btn-primary" size="lg" asChild>
                       <Link href="/ressourcen">
                         Zur Checkliste
                         <ArrowRight className="ml-2 h-4 w-4" />
