@@ -22,7 +22,7 @@ export default function ServiceGrid({
   className,
 }: ServiceGridProps) {
   return (
-    <section id={id} className={`py-20 bg-muted/30 ${className || ""}`}>
+    <section id={id} className={`py-20 bg-background ${className || ""}`}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-4">{title}</h2>
@@ -35,7 +35,7 @@ export default function ServiceGrid({
               key={index}
               className="msp-card msp-card-hover p-6 flex flex-col h-full group"
             >
-              <div className="mb-4 p-3 rounded-xl bg-primary/10 w-fit text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="mb-4 p-3 rounded-xl bg-secondary w-fit text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <service.icon className="h-6 w-6" />
               </div>
               <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">

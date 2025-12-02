@@ -43,95 +43,97 @@
 }
 
 :root {
-  /* Brand Colors: Trustworthy Blue/Teal & Professional Grey */
-  /* Primary: Deep Teal/Blue - Trust, Security, Professionalism */
-  --primary: oklch(0.45 0.12 230);
-  --primary-foreground: oklch(0.98 0.01 250);
+  /* 
+    Design System Tokens 
+    Goal: Coherent, calm, modern. No generic template look.
+  */
 
-  /* Secondary: Soft Blue-Grey - Calm, Technical */
-  --secondary: oklch(0.92 0.03 230);
-  --secondary-foreground: oklch(0.3 0.05 230);
+  /* Colors */
+  --background: #F4F6F8;       /* Page background */
+  --foreground: #0F172A;       /* Text Main */
 
-  /* Backgrounds: Clean, minimal, high contrast */
-  --background: oklch(0.99 0.005 240);
-  --foreground: oklch(0.2 0.02 240);
+  --card: #FFFFFF;             /* Surface */
+  --card-foreground: #0F172A;
 
-  /* Cards: Pure white with refined borders */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.02 240);
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.02 240);
+  --primary: #0F766E;          /* Main Brand: Trust, Tech */
+  --primary-foreground: #FFFFFF;
 
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.5 0.02 240);
+  --secondary: #E0F2F1;        /* Primary Soft */
+  --secondary-foreground: #0F766E;
 
-  --accent: oklch(0.96 0.01 240);
-  --accent-foreground: oklch(0.2 0.02 240);
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280; /* Text Muted */
 
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
+  --accent: #FB923C;           /* Highlights & Key Accents */
+  --accent-foreground: #0F172A;
 
-  --border: oklch(0.9 0.01 240);
-  --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.45 0.12 230); /* Ring matches primary */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
 
-  --radius: 0.75rem; /* Slightly tighter, more professional radius */
+  --border: #E5E7EB;           /* Border Soft */
+  --input: #E5E7EB;
+  --ring: #0F766E;
 
-  --chart-1: oklch(0.45 0.12 230); /* Primary Blue */
-  --chart-2: oklch(0.6 0.15 160); /* Teal */
-  --chart-3: oklch(0.3 0.05 260); /* Navy */
-  --chart-4: oklch(0.7 0.15 80);
-  --chart-5: oklch(0.6 0.15 300);
+  --radius: 1rem; /* Base radius, used for rounded-xl usually */
 
-  --sidebar: oklch(0.98 0.01 240);
-  --sidebar-foreground: oklch(0.2 0.02 240);
-  --sidebar-primary: oklch(0.45 0.12 230);
-  --sidebar-primary-foreground: oklch(0.98 0.01 250);
-  --sidebar-accent: oklch(0.96 0.01 240);
-  --sidebar-accent-foreground: oklch(0.2 0.02 240);
-  --sidebar-border: oklch(0.9 0.01 240);
-  --sidebar-ring: oklch(0.45 0.12 230);
+  /* Charts (kept from previous, adjusted to match palette) */
+  --chart-1: #0F766E;
+  --chart-2: #FB923C;
+  --chart-3: #0F172A;
+  --chart-4: #6B7280;
+  --chart-5: #E0F2F1;
+
+  --sidebar: #F4F6F8;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #0F766E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E0F2F1;
+  --sidebar-accent-foreground: #0F766E;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #0F766E;
 }
 
 .dark {
-  /* Dark Mode: Deep Navy/Slate - Modern, Tech-focused */
-  --background: oklch(0.15 0.03 240);
-  --foreground: oklch(0.98 0.01 240);
+  /* Dark Mode Mapping (Optional, but good to have) */
+  --background: #0F172A;
+  --foreground: #F4F6F8;
 
-  --card: oklch(0.2 0.03 240);
-  --card-foreground: oklch(0.98 0.01 240);
+  --card: #1E293B;
+  --card-foreground: #F4F6F8;
 
-  --popover: oklch(0.2 0.03 240);
-  --popover-foreground: oklch(0.98 0.01 240);
+  --popover: #1E293B;
+  --popover-foreground: #F4F6F8;
 
-  --primary: oklch(0.55 0.12 230); /* Lighter Blue for dark mode visibility */
-  --primary-foreground: oklch(0.98 0.01 250);
+  --primary: #14B8A6; /* Lighter Teal for dark mode */
+  --primary-foreground: #0F172A;
 
-  --secondary: oklch(0.25 0.04 230);
-  --secondary-foreground: oklch(0.9 0.05 230);
+  --secondary: #134E4A;
+  --secondary-foreground: #CCFBF1;
 
-  --muted: oklch(0.25 0.03 240);
-  --muted-foreground: oklch(0.7 0.02 240);
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
 
-  --accent: oklch(0.25 0.03 240);
-  --accent-foreground: oklch(0.98 0.01 240);
+  --accent: #F97316;
+  --accent-foreground: #0F172A;
 
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
+  --destructive: #7F1D1D;
+  --destructive-foreground: #FEE2E2;
 
-  --border: oklch(0.3 0.03 240);
-  --input: oklch(0.3 0.03 240);
-  --ring: oklch(0.55 0.12 230);
+  --border: #334155;
+  --input: #334155;
+  --ring: #14B8A6;
 
-  --sidebar: oklch(0.2 0.03 240);
-  --sidebar-foreground: oklch(0.98 0.01 240);
-  --sidebar-primary: oklch(0.55 0.12 230);
-  --sidebar-primary-foreground: oklch(0.98 0.01 250);
-  --sidebar-accent: oklch(0.25 0.03 240);
-  --sidebar-accent-foreground: oklch(0.98 0.01 240);
-  --sidebar-border: oklch(0.3 0.03 240);
-  --sidebar-ring: oklch(0.55 0.12 230);
+  --sidebar: #0F172A;
+  --sidebar-foreground: #F4F6F8;
+  --sidebar-primary: #14B8A6;
+  --sidebar-primary-foreground: #0F172A;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F4F6F8;
+  --sidebar-border: #334155;
+  --sidebar-ring: #14B8A6;
 }
 
 @layer base {
@@ -141,25 +143,26 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight text-foreground;
+  
+  /* Typography Scale */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
   }
+  
   h1 {
     @apply text-4xl lg:text-5xl leading-tight;
   }
+  
   h2 {
-    @apply text-3xl lg:text-4xl leading-tight;
+    @apply text-3xl leading-snug;
   }
+  
   h3 {
-    @apply text-2xl lg:text-3xl;
+    @apply text-xl lg:text-2xl leading-snug;
   }
+  
   p {
-    @apply leading-relaxed text-muted-foreground;
+    @apply text-base leading-relaxed text-muted-foreground;
   }
 }
 
@@ -194,7 +197,7 @@
 
   /* Professional Card Utility */
   .msp-card {
-    @apply bg-card rounded-xl border border-border shadow-sm transition-all duration-300 ease-out;
+    @apply bg-card rounded-3xl border border-border shadow-sm transition-all duration-300 ease-out;
   }
 
   .msp-card-hover {
@@ -203,15 +206,20 @@
 
   /* Button Standardization */
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_0_2px_rgba(251,146,60,0.3)] shadow-sm rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
   }
 
   .btn-outline {
-    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
+  }
+  
+  /* Pills */
+  .pill {
+    @apply rounded-2xl px-3 py-1 text-sm font-medium;
   }
 }
 

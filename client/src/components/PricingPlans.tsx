@@ -35,7 +35,7 @@ export default function PricingPlans() {
       className="py-24 relative overflow-hidden bg-background"
     >
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/3 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-secondary/30 rounded-full blur-[120px] -z-10" />
 
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -110,13 +110,13 @@ export default function PricingPlans() {
                 <span>15 Min. Telefon- oder Video-Beratung pro Monat</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>
                   Ideal für kurze Fragen, Betrugs-Checks und Kaufberatung
                 </span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>Reaktionszeit &lt; 24 h (Mo–Fr, 8–17 Uhr)</span>
               </li>
               <li className="flex gap-3 text-sm text-muted-foreground">
@@ -181,7 +181,7 @@ export default function PricingPlans() {
                 </span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>Reaktionszeit &lt; 24 h (Mo–Fr, 8–17 Uhr)</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
@@ -189,7 +189,7 @@ export default function PricingPlans() {
                 <span>1 Vor-Ort-Termin pro Jahr inklusive*</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>5 % Rabatt auf weitere Vor-Ort-Termine</span>
               </li>
               <li className="flex gap-3 text-sm text-muted-foreground">
@@ -251,7 +251,7 @@ export default function PricingPlans() {
                 </span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>
                   Bevorzugte Rückmeldung – in der Regel am selben Werktag
                 </span>
@@ -261,7 +261,7 @@ export default function PricingPlans() {
                 <span>1 Vor-Ort-Termin pro Jahr inklusive*</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>10 % Rabatt auf weitere Vor-Ort-Termine</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
@@ -269,7 +269,7 @@ export default function PricingPlans() {
                 <span>Abrechnung Remote-Support in 5-Minuten-Blöcken</span>
               </li>
               <li className="flex gap-3 text-sm text-foreground">
-                <Check className="h-5 w-5 text-emerald-600 shrink-0" />
+                <Check className="h-5 w-5 text-primary shrink-0" />
                 <span>
                   Nicht genutzte Minuten einmalig in den Folgemonat übertragbar
                   (max. 60 Min zusätzlich)

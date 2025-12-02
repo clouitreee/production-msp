@@ -16,7 +16,7 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
       {/* Background decorative elements - Simplified for professional look */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] rounded-full bg-secondary/30 blur-[120px]" />
         <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[120px]" />
       </div>
 
@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Gateway Content */}
           <div className="col-span-full text-center space-y-12">
             <div className="space-y-6 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
@@ -48,7 +48,7 @@ export default function Hero() {
                   <span>Managed IT & NIS2-Compliance für KMU</span>
                 </div>
                 <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border text-sm font-medium text-foreground">
-                  <Euro className="h-4 w-4 text-emerald-600" />
+                  <Euro className="h-4 w-4 text-primary" />
                   <span>Transparente Preise ohne versteckte Kosten</span>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function Hero() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* B2C Card */}
-              <div className="msp-card p-8 text-left hover:bg-primary/5 transition-all duration-300 group relative overflow-hidden">
+              <div className="msp-card p-8 text-left hover:bg-secondary/30 transition-all duration-300 group relative overflow-hidden">
                 <div className="space-y-6 relative z-10">
                   <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     <CheckCircle2 className="h-6 w-6" />
@@ -89,7 +89,7 @@ export default function Hero() {
               </div>
 
               {/* B2B Card */}
-              <div className="msp-card p-8 text-left hover:bg-primary/5 transition-all duration-300 group relative overflow-hidden">
+              <div className="msp-card p-8 text-left hover:bg-secondary/30 transition-all duration-300 group relative overflow-hidden">
                 <div className="space-y-6 relative z-10">
                   <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     <ShieldCheck className="h-6 w-6" />
@@ -141,7 +141,7 @@ export default function Hero() {
                       key={i}
                       className="flex items-center gap-3 bg-card p-4 rounded-lg border border-border shadow-sm"
                     >
-                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                       <span className="font-medium text-sm text-foreground">
                         {item}
                       </span>
@@ -153,10 +153,10 @@ export default function Hero() {
 
             {/* Checklist Teaser Section */}
             <div id="checklist-teaser" className="max-w-4xl mx-auto mt-16">
-              <div className="msp-card p-8 bg-secondary/30 border-secondary/50">
+              <div className="msp-card p-8 bg-secondary/30 border-secondary">
                 <div className="grid md:grid-cols-2 gap-8 items-center text-left">
                   <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-wider">
                       <FileText className="h-3 w-3" />
                       Kostenloses Material
                     </div>
@@ -180,7 +180,7 @@ export default function Hero() {
                           key={i}
                           className="flex items-center gap-3 text-sm font-medium text-foreground"
                         >
-                          <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                          <CheckCircle2 className="h-4 w-4 text-primary" />
                           {item}
                         </li>
                       ))}
@@ -188,7 +188,7 @@ export default function Hero() {
                   </div>
 
                   <div className="bg-card rounded-xl p-6 border border-border shadow-sm text-center space-y-6">
-                    <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-[10px] font-bold uppercase tracking-wider rounded-full">
+                    <div className="inline-block px-3 py-1 bg-accent/20 text-orange-700 text-[10px] font-bold uppercase tracking-wider rounded-full">
                       Empfohlen
                     </div>
                     <h4 className="text-lg font-bold text-foreground">

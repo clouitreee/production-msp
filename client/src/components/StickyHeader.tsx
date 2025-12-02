@@ -36,14 +36,14 @@ export default function StickyHeader() {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="bg-white/80 backdrop-blur-md border-b shadow-sm">
+      <div className="bg-background/80 backdrop-blur-md border-b shadow-sm">
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
             className="font-bold text-lg cursor-pointer flex items-center gap-2"
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm">
               TH
             </div>
             <span className="hidden sm:inline">Tech Hilfe Pro</span>
