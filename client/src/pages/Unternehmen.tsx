@@ -22,6 +22,7 @@ import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsI
 import ServiceGrid from "@/components/ServiceGrid";
 import QuoteSection from "@/components/QuoteSection";
 import TeamSection from "@/components/TeamSection";
+import ItHealthSection from "@/components/it-health/ItHealthSection";
 
 const B2B_SERVICES = [
   {
@@ -392,6 +393,9 @@ export default function Unternehmen() {
             </div>
           </div>
         </section>
+
+        {/* E) IT Health Score */}
+        <ItHealthSection />
       </main>
       <Footer />
     </div>

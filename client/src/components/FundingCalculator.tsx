@@ -62,12 +62,11 @@ export default function FundingCalculator() {
             <Calculator className="h-5 w-5" />
           </div>
           <h3 className="text-xl font-bold">
-            MID – Digitale Sicherheit: Wie viel Förderung ist für Sie drin?
+            Fördermittel-Check NRW: Wie viel Zuschuss ist für Sie drin?
           </h3>
         </div>
         <p className="text-sm text-muted-foreground ml-13">
-          Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte in
-          NRW.
+         Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte (Schwerpunkt MID-Gutscheine).
         </p>
       </div>
 
