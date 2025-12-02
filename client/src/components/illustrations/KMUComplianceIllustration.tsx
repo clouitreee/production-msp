@@ -1,60 +1,98 @@
+import { cn } from "@/lib/utils";
+
 export default function KMUComplianceIllustration({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 400 300"
+      viewBox="0 0 800 600"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cn("w-full h-auto", className)}
     >
-      {/* Background Elements */}
-      <rect x="50" y="50" width="300" height="200" rx="8" className="fill-secondary/10" />
-      <circle cx="350" cy="50" r="40" className="fill-primary/5" />
+      <defs>
+        <linearGradient id="bg-grad-b2b" x1="0" y1="0" x2="0" y2="600">
+          <stop offset="0%" stopColor="#F8FAFC" />
+          <stop offset="100%" stopColor="#E2E8F0" />
+        </linearGradient>
+        <linearGradient id="screen-grad-b2b" x1="0" y1="0" x2="0" y2="100">
+          <stop offset="0%" stopColor="#1E293B" />
+          <stop offset="100%" stopColor="#0F172A" />
+        </linearGradient>
+        <filter id="soft-shadow-b2b" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="8" />
+          <feOffset dx="0" dy="8" result="offsetblur" />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.2" />
+          </feComponentTransfer>
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
 
-      {/* Server Rack */}
-      <g transform="translate(80, 100)">
-        <rect x="0" y="0" width="60" height="120" rx="2" className="fill-slate-800" />
-        {/* Lights */}
-        <circle cx="10" cy="20" r="2" className="fill-green-500 animate-pulse" />
-        <circle cx="10" cy="30" r="2" className="fill-green-500 animate-pulse" style={{ animationDelay: "0.3s" }} />
-        <circle cx="10" cy="40" r="2" className="fill-green-500 animate-pulse" style={{ animationDelay: "0.7s" }} />
-        {/* Lines */}
-        <rect x="20" y="20" width="30" height="2" className="fill-slate-600" />
-        <rect x="20" y="30" width="30" height="2" className="fill-slate-600" />
-        <rect x="20" y="40" width="30" height="2" className="fill-slate-600" />
-      </g>
+      {/* Background Scene */}
+      <rect width="800" height="600" fill="url(#bg-grad-b2b)" />
+      
+      {/* Floor Surface */}
+      <path d="M50 500 L750 500 L800 600 L0 600 Z" fill="#CBD5E1" opacity="0.3" />
 
       {/* Desk */}
-      <path d="M160 220 L360 220 L340 180 L180 180 Z" className="fill-white text-border" stroke="currentColor" strokeWidth="1" />
-      <rect x="160" y="220" width="10" height="40" className="fill-muted" />
-      <rect x="350" y="220" width="10" height="40" className="fill-muted" />
-
-      {/* Simplified Figures */}
-      <g transform="translate(200, 140)">
-        {/* Person 1 */}
-        <circle cx="20" cy="20" r="15" className="fill-primary" />
-        <path d="M5 50 Q20 35 35 50" stroke="currentColor" strokeWidth="20" className="text-primary" strokeLinecap="round" />
-      </g>
-      <g transform="translate(280, 150)">
-        {/* Person 2 */}
-        <circle cx="20" cy="20" r="15" className="fill-accent" />
-        <path d="M5 50 Q20 35 35 50" stroke="currentColor" strokeWidth="20" className="text-accent" strokeLinecap="round" />
+      <g filter="url(#soft-shadow-b2b)">
+        <path d="M150 450 L650 450 L680 480 L120 480 Z" fill="#E2E8F0" />
+        <path d="M120 480 L680 480 L680 500 L120 500 Z" fill="#94A3B8" />
+        {/* Legs */}
+        <rect x="140" y="500" width="20" height="80" fill="#64748B" />
+        <rect x="640" y="500" width="20" height="80" fill="#64748B" />
       </g>
 
-      {/* NIS2 Document (Floating) */}
-      <g className="animate-bounce" style={{ animationDuration: "4s" }} transform="translate(240, 80)">
-        <rect x="0" y="0" width="50" height="70" rx="2" className="fill-white drop-shadow-md text-border" stroke="currentColor" strokeWidth="1" />
-        <rect x="10" y="10" width="30" height="4" rx="1" className="fill-muted" />
-        <rect x="10" y="20" width="30" height="4" rx="1" className="fill-muted" />
-        <rect x="10" y="30" width="20" height="4" rx="1" className="fill-muted" />
+      {/* Monitor / Dashboard */}
+      <g transform="translate(250, 250)" filter="url(#soft-shadow-b2b)">
+        {/* Stand */}
+        <rect x="130" y="150" width="40" height="50" fill="#475569" />
+        <path d="M100 200 L200 200 L210 210 L90 210 Z" fill="#334155" />
+        {/* Screen */}
+        <rect x="0" y="0" width="300" height="180" rx="8" fill="#0F172A" />
+        <rect x="10" y="10" width="280" height="160" rx="4" fill="url(#screen-grad-b2b)" />
+        
+        {/* Dashboard Content */}
+        {/* Header */}
+        <rect x="20" y="20" width="260" height="20" rx="2" fill="#334155" />
+        {/* Charts */}
+        <rect x="20" y="50" width="120" height="60" rx="2" fill="#1E293B" />
+        <path d="M30 100 L50 80 L70 90 L100 60" stroke="#10B981" strokeWidth="2" />
+        
+        <rect x="160" y="50" width="120" height="60" rx="2" fill="#1E293B" />
+        <circle cx="220" cy="80" r="20" stroke="#3B82F6" strokeWidth="4" strokeDasharray="30 100" />
+        
+        {/* Status Bar */}
+        <rect x="20" y="120" width="260" height="40" rx="2" fill="#1E293B" />
+        <circle cx="40" cy="140" r="6" fill="#10B981" />
+        <rect x="60" y="135" width="100" height="10" rx="2" fill="#334155" />
+      </g>
+
+      {/* NIS2 Document */}
+      <g transform="translate(550, 300) rotate(10)" filter="url(#soft-shadow-b2b)" className="animate-[float_8s_ease-in-out_infinite]">
+        <rect x="0" y="0" width="100" height="140" rx="4" fill="white" />
+        <rect x="10" y="10" width="80" height="10" rx="2" fill="#E2E8F0" />
+        <rect x="10" y="30" width="80" height="4" rx="2" fill="#F1F5F9" />
+        <rect x="10" y="40" width="60" height="4" rx="2" fill="#F1F5F9" />
         
         {/* EU Stars Circle */}
-        <circle cx="35" cy="55" r="10" className="fill-blue-100" />
-        <path d="M35 50 L36 52 H38 L36 54 L37 56 L35 55 L33 56 L34 54 L32 52 H34 Z" className="fill-blue-600" />
+        <circle cx="50" cy="80" r="20" stroke="#2563EB" strokeWidth="2" strokeDasharray="4 4" />
+        <path d="M45 80 L50 85 L60 75" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </g>
 
-      {/* Cloud Symbol */}
-      <g transform="translate(320, 80)">
-        <path d="M10 20 Q5 20 5 15 Q5 10 10 10 Q10 5 15 5 Q20 5 20 10 Q25 10 25 15 Q25 20 20 20 Z" className="fill-white text-primary" stroke="currentColor" strokeWidth="1.5" />
+      {/* Padlock */}
+      <g transform="translate(150, 350) rotate(-5)" filter="url(#soft-shadow-b2b)" className="animate-[float_6s_ease-in-out_infinite_reverse]">
+        <rect x="0" y="20" width="60" height="50" rx="4" fill="#F59E0B" />
+        <path d="M10 20 V10 C10 -10 50 -10 50 10 V20" stroke="#94A3B8" strokeWidth="6" fill="none" />
+        <circle cx="30" cy="45" r="6" fill="white" opacity="0.5" />
+      </g>
+
+      {/* Cloud Backup */}
+      <g transform="translate(650, 150)" className="animate-[float_10s_ease-in-out_infinite]">
+        <path d="M20 40 C10 40 0 30 0 20 C0 10 10 0 20 0 C25 0 30 5 35 10 C40 5 50 5 55 10 C65 5 75 15 75 25 C75 35 65 45 55 45 H20" fill="white" filter="url(#soft-shadow-b2b)" />
+        <path d="M37 25 V15 M37 15 L32 20 M37 15 L42 20" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       </g>
     </svg>
   );

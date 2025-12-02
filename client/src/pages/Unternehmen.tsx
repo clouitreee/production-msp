@@ -153,10 +153,9 @@ export default function Unternehmen() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-lg">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10" />
-                  <KMUComplianceIllustration className="w-full h-auto drop-shadow-xl" />
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-secondary/50 p-2 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
+                  <KMUComplianceIllustration className="w-full h-auto rounded-2xl overflow-hidden" />
                 </div>
               </div>
             </div>
