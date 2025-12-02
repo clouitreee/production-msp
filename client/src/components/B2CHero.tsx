@@ -109,11 +109,11 @@ export default function B2CHero() {
           
           {/* Hero Image */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
-            <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/10 border-4 border-white">
+            <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/10 border-0">
               <img 
-                src="/hero-b2c.png" 
-                alt="Modernes Home Office" 
-                className="w-full h-full object-cover"
+                src="/images/b2c-hero-illustration.png" 
+                alt="IT-Unterstützung für private Haushalte in NRW" 
+                className="w-full h-full object-contain bg-slate-50 dark:bg-slate-900"
               />
               
               {/* Floating Badge */}
