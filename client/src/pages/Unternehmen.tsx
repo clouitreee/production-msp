@@ -25,6 +25,7 @@ import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsI
 import ServiceGrid from "@/components/ServiceGrid";
 import B2BServiceModels from "@/components/B2BServiceModels";
 import QuoteSection from "@/components/QuoteSection";
+import TeamSection from "@/components/TeamSection";
 
 const B2B_SERVICES = [
   {
@@ -174,6 +175,9 @@ export default function Unternehmen() {
 
         {/* Service Models */}
         <B2BServiceModels />
+
+        {/* Team Section */}
+        <TeamSection />
 
         {/* B) NIS2 & IT-Sicherheit */}
         <section className="py-24 bg-slate-50 dark:bg-slate-950">
