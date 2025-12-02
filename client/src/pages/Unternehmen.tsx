@@ -20,6 +20,8 @@ import {
 import ContactModal from "@/components/ContactModal";
 import FundingCalculator from "@/components/FundingCalculator";
 import TypewriterText from "@/components/TypewriterText";
+import KMUComplianceIllustration from "@/components/illustrations/KMUComplianceIllustration";
+import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsIllustration";
 import ServiceGrid from "@/components/ServiceGrid";
 
 const B2B_SERVICES = [
@@ -71,91 +73,89 @@ export default function Unternehmen() {
       <StickyHeader />
       <main className="flex-grow">
         {/* B2B Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-32 bg-slate-50 dark:bg-slate-950">
+        <section className="relative overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-32 bg-background">
           <div className="container">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <ShieldCheck className="h-4 w-4" />
-                Managed IT-Services für KMU
-              </div>
-
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-                Für Unternehmen & KMU – <br />
-                <span className="text-primary block mt-2">
-                  <TypewriterText
-                    items={[
-                      "Managed IT, die einfach funktioniert",
-                      "NIS2-bereite IT für Ihr KMU",
-                      "Digitale Vertrauensbasis statt Feuerlösch-IT",
-                      "Souveräne Cloud aus Europa",
-                      "Managed Security für den Mittelstand",
-                    ]}
-                    speed={100}
-                    
-                    pause={2000}
-                  />
-                </span>
-              </h1>
-
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen in
-                Köln, Neuss und ganz NRW die Rolle einer ausgelagerten
-                IT-Abteilung. Wir kümmern uns um Updates, Backups,
-                Zugriffsrechte und sichere Fernwartung – damit Sie sich auf Ihr
-                Kerngeschäft konzentrieren können.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>
-                    Managed IT-Services für PCs, Laptops, Server & Netzwerk
-                  </span>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8 text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
+                  <ShieldCheck className="h-4 w-4" />
+                  Managed IT-Services für KMU
                 </div>
-                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>
-                    Sichere Fernwartung mit selbst gehosteten Tools (z. B.
-                    MeshCentral)
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>
-                    Unterstützung bei NIS2-Grundlagen und Dokumentation
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>
-                    Bis zu 50 % Förderung in NRW für IT-Sicherheitsmaßnahmen
-                    möglich
-                  </span>
-                </div>
-              </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                <ContactModal defaultTopic="Unverbindliches Erstgespräch">
+                <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+                  Für Unternehmen & KMU – <br />
+                  <span className="text-primary block mt-2 h-24 sm:h-auto">
+                    <TypewriterText
+                      items={[
+                        "Managed IT, die einfach funktioniert",
+                        "NIS2-bereite IT für Ihr KMU",
+                        "Digitale Vertrauensbasis statt Feuerlösch-IT",
+                        "Souveräne Cloud aus Europa",
+                        "Managed Security für den Mittelstand",
+                      ]}
+                      speed={50}
+                      pause={2000}
+                    />
+                  </span>
+                </h1>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen in
+                  Köln, Neuss und ganz NRW die Rolle einer ausgelagerten
+                  IT-Abteilung. Wir kümmern uns um Updates, Backups,
+                  Zugriffsrechte und sichere Fernwartung – damit Sie sich auf Ihr
+                  Kerngeschäft konzentrieren können.
+                </p>
+
+                <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <span>Managed IT-Services für PCs, Laptops, Server & Netzwerk</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <span>Sichere Fernwartung mit selbst gehosteten Tools</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <span>Bis zu 50 % Förderung in NRW möglich</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <ContactModal defaultTopic="Unverbindliches Erstgespräch">
+                    <Button
+                      size="lg"
+                      className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                    >
+                      Jetzt Erstgespräch anfragen
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </ContactModal>
                   <Button
+                    variant="outline"
                     size="lg"
-                    className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                    className="text-base h-12 btn-outline"
+                    onClick={() =>
+                      document
+                        .getElementById("pricing")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
                   >
-                    Jetzt unverbindliches Erstgespräch anfragen
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    Leistungen ansehen
                   </Button>
-                </ContactModal>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-base h-12 btn-outline"
-                  onClick={() =>
-                    document
-                      .getElementById("pricing")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  Leistungen & Pakete ansehen
-                </Button>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-lg">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10" />
+                  <KMUComplianceIllustration className="w-full h-auto drop-shadow-xl" />
+                </div>
               </div>
             </div>
           </div>
@@ -200,18 +200,9 @@ export default function Unternehmen() {
                 </div>
               </div>
               <div className="flex-1 flex justify-center">
-                <div className="relative w-full max-w-md aspect-square bg-card rounded-2xl shadow-xl border border-border p-8 flex items-center justify-center">
-                  <ShieldCheck className="w-32 h-32 text-primary/20" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <div className="text-4xl font-bold text-primary">
-                        NIS2
-                      </div>
-                      <div className="text-sm font-medium text-muted-foreground">
-                        Ready
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative w-full max-w-md">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10" />
+                  <NIS2DocumentsIllustration className="w-full h-auto drop-shadow-xl" />
                 </div>
               </div>
             </div>

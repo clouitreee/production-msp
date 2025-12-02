@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { useEffect, useState } from "react";
 import ContactModal from "./ContactModal";
+import TypewriterText from "./TypewriterText";
+import HomeSupportIllustration from "./illustrations/HomeSupportIllustration";
 
 const TYPEWRITER_PHRASES = [
   "Schnelle PC-Hilfe",
@@ -12,34 +13,6 @@ const TYPEWRITER_PHRASES = [
 ];
 
 export default function B2CHero() {
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentPhrase = TYPEWRITER_PHRASES[phraseIndex];
-    const typeSpeed = isDeleting ? 50 : 100;
-
-    const timer = setTimeout(() => {
-      if (!isDeleting && text === currentPhrase) {
-        setTimeout(() => setIsDeleting(true), 2000);
-        return;
-      }
-
-      if (isDeleting && text === "") {
-        setIsDeleting(false);
-        setPhraseIndex(prev => (prev + 1) % TYPEWRITER_PHRASES.length);
-        return;
-      }
-
-      setText(prev =>
-        isDeleting ? prev.slice(0, -1) : currentPhrase.slice(0, prev.length + 1)
-      );
-    }, typeSpeed);
-
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, phraseIndex]);
-
   return (
     <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
       {/* Background decorative blobs */}
@@ -52,10 +25,10 @@ export default function B2CHero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Jetzt verfügbar in Köln & Neuss
             </div>
@@ -63,19 +36,13 @@ export default function B2CHero() {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Privatkunden & Haushalte – <br />
-                {/* 
-                  Ghost element technique for stable height:
-                  1. Render the longest phrase invisibly to reserve space
-                  2. Position the typewriter text absolutely over it
-                */}
-                <span className="text-primary block relative">
-                  <span className="invisible" aria-hidden="true">
-                    Unterstützung für Ihr Zuhause
-                  </span>
-                  <span className="absolute top-0 left-0 w-full">
-                    {text}
-                    <span className="animate-pulse">|</span>
-                  </span>
+                <span className="text-primary block mt-2 h-16 sm:h-auto">
+                  <TypewriterText
+                    items={TYPEWRITER_PHRASES}
+                    speed={50}
+                    pause={2000}
+                    loop={true}
+                  />
                 </span>
               </h1>
 
@@ -90,7 +57,7 @@ export default function B2CHero() {
               <ContactModal>
                 <Button
                   size="lg"
-                  className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                  className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
                 >
                   Jetzt Hilfe anfragen
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -99,7 +66,7 @@ export default function B2CHero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-base h-12 bg-white/50 backdrop-blur-sm border-primary/20 hover:bg-white/80"
+                className="text-base h-12 btn-outline"
                 onClick={() =>
                   document
                     .getElementById("pricing")
@@ -112,51 +79,26 @@ export default function B2CHero() {
 
             <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-secondary" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Fernwartung</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-secondary" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Vor-Ort-Service</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-secondary" />
+                <CheckCircle2 className="h-4 w-4 text-primary" />
                 <span>Keine versteckten Kosten</span>
               </div>
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div className="relative lg:h-[600px] flex items-center justify-center">
-            <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/10 border-0">
-              <img
-                src="/images/b2c-hero-illustration.png"
-                alt="IT-Unterstützung für private Haushalte in NRW"
-                className="w-full h-full object-contain bg-slate-50 dark:bg-slate-900"
-                loading="lazy"
-              />
-
-              {/* Floating Badge */}
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 max-w-[200px]">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <CheckCircle2 className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Status</p>
-                    <p className="font-bold text-sm text-green-600">
-                      Online & Bereit
-                    </p>
-                  </div>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  Unsere Experten sind nur einen Klick entfernt.
-                </p>
-              </div>
+          {/* Hero Illustration */}
+          <div className="relative flex items-center justify-center">
+            <div className="relative w-full max-w-lg">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10" />
+              <HomeSupportIllustration className="w-full h-auto drop-shadow-xl" />
             </div>
-
-            {/* Decorative elements behind image */}
-            <div className="absolute -z-10 top-10 right-10 w-full h-full border-2 border-primary/10 rounded-2xl translate-x-4 translate-y-4" />
           </div>
         </div>
       </div>
