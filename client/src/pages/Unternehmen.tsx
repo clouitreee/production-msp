@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy, Check, X, Clock, Phone } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import FundingCalculator from "@/components/FundingCalculator";
+import TypewriterText from "@/components/TypewriterText";
 
 export default function Unternehmen() {
   const handleContact = (plan: string) => {
@@ -29,7 +30,20 @@ export default function Unternehmen() {
               
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Unternehmen & KMU – <br />
-                <span className="text-primary">Managed IT, die einfach funktioniert</span>
+                <span className="text-primary block mt-2">
+                  <TypewriterText 
+                    phrases={[
+                      "Managed IT, die einfach funktioniert",
+                      "NIS2-bereite IT für Ihr KMU",
+                      "Digitale Vertrauensbasis statt Feuerlösch-IT",
+                      "Souveräne Cloud aus Europa",
+                      "Managed Security für den Mittelstand"
+                    ]}
+                    typingSpeed={100}
+                    deletingSpeed={50}
+                    pauseDuration={2000}
+                  />
+                </span>
               </h1>
               
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -189,33 +203,32 @@ export default function Unternehmen() {
                     "Regelmäßiges Patch-Management für Windows und wichtige Standardsoftware",
                     "Überwachung von Backup-Jobs (Fehlermeldungen werden geprüft)",
                     "Remote-Support nach Aufwand, mit kleinem monatlichem Kontingent",
-                    "Ticket-System & E-Mail-Support (Mo–Fr, 8–17 Uhr)",
-                    "Einfache Bestandsdokumentation (Geräte, Benutzer, Lizenzen)"
+                    "Jährliches IT-Strategiegespräch (remote)",
+                    "Zugang zum Ticket-System für alle Mitarbeiter"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <li key={i} className="flex gap-3 text-sm text-foreground">
+                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
-                    Kein Vor-Ort-Termin inklusive. Größere Projekte (z. B. Neuaufbau von Servern, große Migrationen) werden separat geplant und angeboten.
-                  </p>
-                  <ContactModal defaultTopic="KMU Essential">
-                    <Button className="w-full btn-outline" variant="outline">Essential anfragen</Button>
+                  <ContactModal defaultTopic="Anfrage KMU Essential">
+                    <Button className="w-full btn-outline">
+                      Essential anfragen
+                    </Button>
                   </ContactModal>
                 </div>
               </div>
 
               {/* Standard */}
               <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg shadow-primary/10 scale-105 z-10 bg-card">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-md">
                   Empfohlen
                 </div>
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-primary">KMU Standard</h3>
-                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen, die regelmäßig Unterstützung im Alltag benötigen – mit inklusivem Remote-Support und jährlichem Vor-Ort-Check.</p>
+                  <p className="text-muted-foreground text-sm h-12">Die „Sorglos-Basis“ für die meisten KMU – inkl. Antivirus, erweitertem Support und schnellerer Reaktion.</p>
                 </div>
                 <div className="mb-8">
                   <div className="text-3xl font-bold mb-1 text-primary">ab 55 €</div>
@@ -223,25 +236,24 @@ export default function Unternehmen() {
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Alle Leistungen aus KMU Essential",
-                    "Regelmäßiger Remote-Support inklusive (für typische Alltagsprobleme)",
-                    "Klare Reaktionszeiten – in der Regel Antwort innerhalb von 8 Geschäfts­stunden",
-                    "1 Vor-Ort-Termin pro Jahr inklusive* (z. B. IT-Check, Netzwerk-Review, Schulung)",
-                    "Basis-Empfehlungen zu IT-Sicherheit (Passwort-Policy, MFA, E-Mail-Schutz)",
-                    "Jährlicher Kurzbericht zum Zustand der IT (Updates, Backups, Risiken)"
+                    "Alle Leistungen aus Essential",
+                    "Managed Antivirus / EDR-Schutz inklusive",
+                    "Erweitertes Monitoring (Performance, Speicherplatz, Dienste)",
+                    "Bevorzugte Reaktionszeit (SLA: Reaktion < 4h während Geschäftszeiten)",
+                    "Monatliches Reporting zum Sicherheitsstatus",
+                    "Inklusive 30 Min. Remote-Support pro User/Monat (gepoolt auf Unternehmensebene)"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <li key={i} className="flex gap-3 text-sm text-foreground">
+                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
-                    *Vor-Ort-Termin inklusive nach 3 Monaten Vertragslaufzeit. Weitere Vor-Ort-Einsätze werden nach Stundensatz und ggf. Anfahrt abgerechnet.
-                  </p>
-                  <ContactModal defaultTopic="KMU Standard">
-                    <Button className="w-full btn-primary shadow-lg shadow-primary/20" size="lg">Standard anfragen</Button>
+                  <ContactModal defaultTopic="Anfrage KMU Standard">
+                    <Button size="lg" className="w-full btn-primary shadow-lg shadow-primary/20">
+                      Standard anfragen
+                    </Button>
                   </ContactModal>
                 </div>
               </div>
@@ -250,7 +262,7 @@ export default function Unternehmen() {
               <div className="msp-card p-8 flex flex-col relative msp-card-hover">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2 text-foreground">KMU Premium</h3>
-                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen, bei denen IT wirklich geschäftskritisch ist – mit mehr Supportzeit, Sicherheitsfokus und regelmäßigen Reviews.</p>
+                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen mit hohen Sicherheitsanforderungen oder Compliance-Pflichten (z. B. NIS2-Vorbereitung).</p>
                 </div>
                 <div className="mb-8">
                   <div className="text-3xl font-bold mb-1 text-foreground">ab 79 €</div>
@@ -258,29 +270,34 @@ export default function Unternehmen() {
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {[
-                    "Alle Leistungen aus KMU Standard",
-                    "Erweiterter Remote-Support (schnellere Reaktionszeit < 4h)",
-                    "Priorisierte Bearbeitung bei kritischen Störungen",
-                    "2 Vor-Ort-Termine pro Jahr inklusive* (Strategie, Wartung, Notfall)",
-                    "Erweitertes Security-Paket (Managed EDR statt nur Antivirus)",
-                    "Vierteljährliches Review-Gespräch zur IT-Strategie"
+                    "Alle Leistungen aus Standard",
+                    "Erweiterter E-Mail-Schutz (Spam/Phishing-Filter)",
+                    "Microsoft 365 Backup (Exchange, OneDrive, SharePoint)",
+                    "Jährlicher Sicherheits-Check / Schwachstellen-Scan",
+                    "Unterstützung bei IT-Dokumentation & Notfallplänen",
+                    "Inklusive 60 Min. Remote-Support pro User/Monat (gepoolt)"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <li key={i} className="flex gap-3 text-sm text-foreground">
+                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  <p className="text-[10px] text-muted-foreground mb-4 leading-tight">
-                    *Vor-Ort-Termine inklusive nach 3 Monaten Vertragslaufzeit.
-                  </p>
-                  <ContactModal defaultTopic="KMU Premium">
-                    <Button className="w-full btn-outline" variant="outline">Premium anfragen</Button>
+                  <ContactModal defaultTopic="Anfrage KMU Premium">
+                    <Button className="w-full btn-outline">
+                      Premium anfragen
+                    </Button>
                   </ContactModal>
                 </div>
               </div>
             </div>
+            
+            <p className="text-center text-xs text-muted-foreground mt-12 max-w-3xl mx-auto">
+              *Preise zzgl. gesetzlicher MwSt. Mindestvertragslaufzeit 12 Monate. Onboarding-Pauschale je nach Unternehmensgröße einmalig.
+              <br />
+              Server-Wartung wird separat berechnet (pauschal pro Server).
+            </p>
           </div>
         </section>
       </main>
