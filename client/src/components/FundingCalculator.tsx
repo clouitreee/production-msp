@@ -55,8 +55,8 @@ export default function FundingCalculator() {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border shadow-lg overflow-hidden">
-      <div className="bg-primary/5 p-6 border-b border-primary/10">
+    <div className="bg-card rounded-3xl border border-border/50 shadow-xl overflow-hidden">
+      <div className="bg-primary/5 p-8 border-b border-primary/10">
         <div className="flex items-center gap-3 mb-2">
           <div className="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
             <Calculator className="h-5 w-5" />
@@ -71,7 +71,7 @@ export default function FundingCalculator() {
         </p>
       </div>
 
-      <div className="p-6 md:p-8 grid lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="p-8 lg:p-10 grid lg:grid-cols-2 gap-12">
         {/* Inputs */}
         <div className="space-y-8">
           <div className="space-y-4">
@@ -129,9 +129,9 @@ export default function FundingCalculator() {
           </div>
 
           {!isEligible && (
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 flex gap-3 items-start">
-              <Info className="h-5 w-5 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
-              <p className="text-sm text-yellow-800 dark:text-yellow-200">
+            <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 flex gap-3 items-start">
+              <Info className="h-5 w-5 text-yellow-600 shrink-0 mt-0.5" />
+              <p className="text-sm text-yellow-700 dark:text-yellow-400">
                 Die förderfähigen Ausgaben müssen mindestens 4.000 € betragen,
                 damit ein MID-Antrag möglich ist.
               </p>
@@ -140,7 +140,7 @@ export default function FundingCalculator() {
         </div>
 
         {/* Results */}
-        <div className="bg-slate-50 dark:bg-slate-950 rounded-xl p-6 flex flex-col justify-between border border-slate-100 dark:border-slate-800">
+        <div className="bg-muted/30 rounded-3xl p-8 flex flex-col justify-between border border-border/50">
           <div>
             <h4 className="text-lg font-bold mb-6 border-b pb-2">
               Ihr Ergebnis
@@ -179,7 +179,7 @@ export default function FundingCalculator() {
               hängt vom offiziellen Bewilligungsverfahren ab.
             </p>
 
-            <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div className="pt-4 border-t border-border/50">
               <p className="text-sm font-medium mb-3">
                 Sie möchten prüfen, ob Ihr IT-Sicherheitsprojekt förderfähig
                 ist?

@@ -8,13 +8,10 @@ import {
   Users,
   ArrowRight,
   FileText,
-  Euro,
   MonitorCheck,
   Lock,
   LifeBuoy,
   Check,
-  X,
-  Clock,
   Phone,
 } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
@@ -23,7 +20,6 @@ import TypewriterText from "@/components/TypewriterText";
 import KMUComplianceIllustration from "@/components/illustrations/KMUComplianceIllustration";
 import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsIllustration";
 import ServiceGrid from "@/components/ServiceGrid";
-import B2BServiceModels from "@/components/B2BServiceModels";
 import QuoteSection from "@/components/QuoteSection";
 import TeamSection from "@/components/TeamSection";
 
@@ -63,14 +59,6 @@ const B2B_SERVICES = [
 ];
 
 export default function Unternehmen() {
-  const handleContact = (plan: string) => {
-    // This function is used by the buttons inside the cards
-    // Since the buttons are wrapped in ContactModal in the original code,
-    // we'll need to adjust the structure to match the new design while keeping functionality.
-    // However, the ContactModal component expects children to be the trigger.
-    // So we will wrap the buttons in ContactModal directly in the JSX.
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-foreground">
       <StickyHeader />
@@ -173,9 +161,6 @@ export default function Unternehmen() {
           className="bg-background"
         />
 
-        {/* Service Models */}
-        <B2BServiceModels />
-
         {/* Team Section */}
         <TeamSection />
 
@@ -224,42 +209,8 @@ export default function Unternehmen() {
           </div>
         </section>
 
-        {/* C) Förderung NRW */}
-        <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium backdrop-blur-sm">
-                <Euro className="h-4 w-4" />
-                MID – Digitale Sicherheit
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">
-                Förderung in NRW – bis zu 50 % Zuschuss nutzen
-              </h2>
-              <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                Über Förderprogramme in NRW (z. B. im Bereich ‚Digitale
-                Sicherheit‘) können kleine Unternehmen einen Zuschuss von bis zu
-                50 % für IT-Sicherheitsprojekte erhalten – etwa für Beratung,
-                die Implementierung von Backups, Sicherheitssoftware oder
-                Schulungen. Wir unterstützen Sie bei der technischen Umsetzung
-                und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben
-                infrage kommt.
-              </p>
-              <ContactModal defaultTopic="Förderung in NRW">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="text-primary font-bold shadow-lg hover:bg-white/90 transition-colors"
-                >
-                  Mehr zur Förderung erfahren
-                </Button>
-              </ContactModal>
-            </div>
-          </div>
-        </section>
-
         {/* D) B2B Pricing */}
-        <section id="pricing" className="py-24 bg-slate-50 dark:bg-slate-950">
+        <section id="pricing" className="py-24 bg-background">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold mb-4 text-foreground">
