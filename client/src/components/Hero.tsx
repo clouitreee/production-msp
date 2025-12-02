@@ -175,13 +175,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]" onClick={() => document.getElementById('checklist-teaser')?.scrollIntoView({ behavior: 'smooth' })}>
-        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Mehr entdecken</span>
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center p-1">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-scroll-down" />
-        </div>
-      </div>
+
     </section>
   );
 }
