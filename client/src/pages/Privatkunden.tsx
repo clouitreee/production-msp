@@ -2,6 +2,7 @@ import B2CHero from "@/components/B2CHero";
 import QuoteSection from "@/components/QuoteSection";
 import ServicesSection from "@/components/ServicesSection";
 import PricingPlans from "@/components/PricingPlans";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
@@ -15,6 +16,7 @@ export default function Privatkunden() {
         <QuoteSection />
         <ServicesSection />
         <PricingPlans />
+        <TestimonialsSection />
         <ComparisonSection />
       </main>
       <Footer />
