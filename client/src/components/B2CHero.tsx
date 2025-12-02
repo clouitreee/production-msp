@@ -114,6 +114,7 @@ export default function B2CHero() {
                 src="/images/b2c-hero-illustration.png" 
                 alt="IT-Unterstützung für private Haushalte in NRW" 
                 className="w-full h-full object-contain bg-slate-50 dark:bg-slate-900"
+                loading="lazy"
               />
               
               {/* Floating Badge */}
