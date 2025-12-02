@@ -121,7 +121,7 @@ export default function ServiceGrid() {
           {SERVICES.map((service, index) => (
             <div 
               key={index} 
-              className="neumorphic-card neumorphic-card-hover p-6 flex flex-col h-full group"
+              className="msp-card msp-card-hover p-6 flex flex-col h-full group"
             >
               <div className="mb-4 p-3 rounded-xl bg-primary/10 w-fit text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <service.icon className="h-6 w-6" />
