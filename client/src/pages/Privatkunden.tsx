@@ -1,4 +1,5 @@
 import B2CHero from "@/components/B2CHero";
+import QuoteSection from "@/components/QuoteSection";
 import ServicesSection from "@/components/ServicesSection";
 import PricingPlans from "@/components/PricingPlans";
 import ComparisonSection from "@/components/ComparisonSection";
@@ -11,6 +12,7 @@ export default function Privatkunden() {
       <StickyHeader />
       <main className="flex-grow">
         <B2CHero />
+        <QuoteSection />
         <ServicesSection />
         <PricingPlans />
         <ComparisonSection />

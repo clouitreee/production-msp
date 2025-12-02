@@ -24,6 +24,7 @@ import KMUComplianceIllustration from "@/components/illustrations/KMUComplianceI
 import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsIllustration";
 import ServiceGrid from "@/components/ServiceGrid";
 import B2BServiceModels from "@/components/B2BServiceModels";
+import QuoteSection from "@/components/QuoteSection";
 
 const B2B_SERVICES = [
   {
@@ -161,6 +162,8 @@ export default function Unternehmen() {
             </div>
           </div>
         </section>
+
+        <QuoteSection />
 
         {/* A) Unsere Leistungen */}
         <ServiceGrid

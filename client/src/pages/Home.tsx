@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import QuoteSection from "@/components/QuoteSection";
 import Footer from "@/components/Footer";
 import StickyHeader from "@/components/StickyHeader";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <StickyHeader />
       <main className="flex-grow">
         <Hero />
+        <QuoteSection />
       </main>
       <Footer />
     </div>
