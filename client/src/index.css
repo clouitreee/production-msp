@@ -45,9 +45,9 @@
 :root {
   /* Brand Colors: Trustworthy Blue/Teal & Professional Grey */
   /* Primary: Deep Teal/Blue - Trust, Security, Professionalism */
-  --primary: oklch(0.45 0.12 230); 
+  --primary: oklch(0.45 0.12 230);
   --primary-foreground: oklch(0.98 0.01 250);
-  
+
   /* Secondary: Soft Blue-Grey - Calm, Technical */
   --secondary: oklch(0.92 0.03 230);
   --secondary-foreground: oklch(0.3 0.05 230);
@@ -55,35 +55,35 @@
   /* Backgrounds: Clean, minimal, high contrast */
   --background: oklch(0.99 0.005 240);
   --foreground: oklch(0.2 0.02 240);
-  
+
   /* Cards: Pure white with refined borders */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0.02 240);
-  
+
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.02 240);
-  
+
   --muted: oklch(0.96 0.01 240);
   --muted-foreground: oklch(0.5 0.02 240);
-  
+
   --accent: oklch(0.96 0.01 240);
   --accent-foreground: oklch(0.2 0.02 240);
-  
+
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  
+
   --border: oklch(0.9 0.01 240);
   --input: oklch(0.9 0.01 240);
   --ring: oklch(0.45 0.12 230); /* Ring matches primary */
-  
+
   --radius: 0.75rem; /* Slightly tighter, more professional radius */
-  
+
   --chart-1: oklch(0.45 0.12 230); /* Primary Blue */
   --chart-2: oklch(0.6 0.15 160); /* Teal */
   --chart-3: oklch(0.3 0.05 260); /* Navy */
   --chart-4: oklch(0.7 0.15 80);
   --chart-5: oklch(0.6 0.15 300);
-  
+
   --sidebar: oklch(0.98 0.01 240);
   --sidebar-foreground: oklch(0.2 0.02 240);
   --sidebar-primary: oklch(0.45 0.12 230);
@@ -98,32 +98,32 @@
   /* Dark Mode: Deep Navy/Slate - Modern, Tech-focused */
   --background: oklch(0.15 0.03 240);
   --foreground: oklch(0.98 0.01 240);
-  
+
   --card: oklch(0.2 0.03 240);
   --card-foreground: oklch(0.98 0.01 240);
-  
+
   --popover: oklch(0.2 0.03 240);
   --popover-foreground: oklch(0.98 0.01 240);
-  
+
   --primary: oklch(0.55 0.12 230); /* Lighter Blue for dark mode visibility */
   --primary-foreground: oklch(0.98 0.01 250);
-  
+
   --secondary: oklch(0.25 0.04 230);
   --secondary-foreground: oklch(0.9 0.05 230);
-  
+
   --muted: oklch(0.25 0.03 240);
   --muted-foreground: oklch(0.7 0.02 240);
-  
+
   --accent: oklch(0.25 0.03 240);
   --accent-foreground: oklch(0.98 0.01 240);
-  
+
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  
+
   --border: oklch(0.3 0.03 240);
   --input: oklch(0.3 0.03 240);
   --ring: oklch(0.55 0.12 230);
-  
+
   --sidebar: oklch(0.2 0.03 240);
   --sidebar-foreground: oklch(0.98 0.01 240);
   --sidebar-primary: oklch(0.55 0.12 230);
@@ -141,7 +141,12 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight text-foreground;
   }
   h1 {
@@ -186,34 +191,40 @@
       max-width: 1280px;
     }
   }
-  
-	  /* Professional Card Utility */
-	  .msp-card {
-	    @apply bg-card rounded-xl border border-border shadow-sm transition-all duration-300 ease-out;
-	  }
-	  
-	  .msp-card-hover {
-	    @apply hover:-translate-y-1 hover:shadow-md hover:border-primary/20;
-	  }
-	  
-	  /* Button Standardization */
-	  .btn-primary {
-	    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
-	  }
-	  
-	  .btn-secondary {
-	    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
-	  }
-	  
-	  .btn-outline {
-	    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
-	  }
+
+  /* Professional Card Utility */
+  .msp-card {
+    @apply bg-card rounded-xl border border-border shadow-sm transition-all duration-300 ease-out;
+  }
+
+  .msp-card-hover {
+    @apply hover:-translate-y-1 hover:shadow-md hover:border-primary/20;
+  }
+
+  /* Button Standardization */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg font-medium transition-all duration-200 ease-out active:scale-[0.98];
+  }
 }
 
 @layer utilities {
   @keyframes scroll-down {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(12px); opacity: 0; }
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(12px);
+      opacity: 0;
+    }
   }
   .animate-scroll-down {
     animation: scroll-down 1.5s infinite;

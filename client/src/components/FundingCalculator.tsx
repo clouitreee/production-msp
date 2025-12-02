@@ -3,7 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Calculator, Euro, Info } from "lucide-react";
 import ContactModal from "./ContactModal";
 
@@ -28,20 +34,24 @@ export default function FundingCalculator() {
     }
 
     setIsEligible(true);
-    
+
     // Simplified logic: 50% subsidy for all eligible sizes for now
     const subsidyRate = 0.5;
     const rawSubsidy = projectVolume * subsidyRate;
-    
+
     // Cap at 15,000 EUR
     const cappedSubsidy = Math.min(rawSubsidy, 15000);
-    
+
     setSubsidy(cappedSubsidy);
     setOwnShare(projectVolume - cappedSubsidy);
   };
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+    return new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+    }).format(value);
   };
 
   return (
@@ -51,10 +61,13 @@ export default function FundingCalculator() {
           <div className="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
             <Calculator className="h-5 w-5" />
           </div>
-          <h3 className="text-xl font-bold">MID – Digitale Sicherheit: Wie viel Förderung ist für Sie drin?</h3>
+          <h3 className="text-xl font-bold">
+            MID – Digitale Sicherheit: Wie viel Förderung ist für Sie drin?
+          </h3>
         </div>
         <p className="text-sm text-muted-foreground ml-13">
-          Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte in NRW.
+          Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte in
+          NRW.
         </p>
       </div>
 
@@ -63,13 +76,15 @@ export default function FundingCalculator() {
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex justify-between items-center">
-              <Label htmlFor="volume" className="text-base font-medium">Projektvolumen (netto)</Label>
+              <Label htmlFor="volume" className="text-base font-medium">
+                Projektvolumen (netto)
+              </Label>
               <div className="relative w-32">
-                <Input 
-                  id="volume" 
-                  type="number" 
-                  value={projectVolume} 
-                  onChange={(e) => setProjectVolume(Number(e.target.value))}
+                <Input
+                  id="volume"
+                  type="number"
+                  value={projectVolume}
+                  onChange={e => setProjectVolume(Number(e.target.value))}
                   className="text-right pr-8 font-mono"
                   min={0}
                   max={40000}
@@ -77,12 +92,12 @@ export default function FundingCalculator() {
                 <Euro className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               </div>
             </div>
-            <Slider 
-              value={[projectVolume]} 
-              onValueChange={(vals) => setProjectVolume(vals[0])} 
-              max={40000} 
-              min={0} 
-              step={500} 
+            <Slider
+              value={[projectVolume]}
+              onValueChange={vals => setProjectVolume(vals[0])}
+              max={40000}
+              min={0}
+              step={500}
               className="py-2"
             />
             <div className="flex justify-between text-xs text-muted-foreground">
@@ -92,15 +107,23 @@ export default function FundingCalculator() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="size" className="text-base font-medium">Unternehmensgröße</Label>
+            <Label htmlFor="size" className="text-base font-medium">
+              Unternehmensgröße
+            </Label>
             <Select value={companySize} onValueChange={setCompanySize}>
               <SelectTrigger id="size">
                 <SelectValue placeholder="Bitte wählen" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="micro">Kleinstunternehmen (bis 9 Mitarbeitende)</SelectItem>
-                <SelectItem value="small">Kleines Unternehmen (10–49 Mitarbeitende)</SelectItem>
-                <SelectItem value="medium">Mittleres Unternehmen (50–249 Mitarbeitende)</SelectItem>
+                <SelectItem value="micro">
+                  Kleinstunternehmen (bis 9 Mitarbeitende)
+                </SelectItem>
+                <SelectItem value="small">
+                  Kleines Unternehmen (10–49 Mitarbeitende)
+                </SelectItem>
+                <SelectItem value="medium">
+                  Mittleres Unternehmen (50–249 Mitarbeitende)
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -109,7 +132,8 @@ export default function FundingCalculator() {
             <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 flex gap-3 items-start">
               <Info className="h-5 w-5 text-yellow-600 dark:text-yellow-500 shrink-0 mt-0.5" />
               <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                Die förderfähigen Ausgaben müssen mindestens 4.000 € betragen, damit ein MID-Antrag möglich ist.
+                Die förderfähigen Ausgaben müssen mindestens 4.000 € betragen,
+                damit ein MID-Antrag möglich ist.
               </p>
             </div>
           )}
@@ -118,11 +142,15 @@ export default function FundingCalculator() {
         {/* Results */}
         <div className="bg-slate-50 dark:bg-slate-950 rounded-xl p-6 flex flex-col justify-between border border-slate-100 dark:border-slate-800">
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b pb-2">Ihr Ergebnis</h4>
-            
+            <h4 className="text-lg font-bold mb-6 border-b pb-2">
+              Ihr Ergebnis
+            </h4>
+
             <div className="space-y-6">
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Voraussichtliche Förderung</div>
+                <div className="text-sm text-muted-foreground mb-1">
+                  Voraussichtliche Förderung
+                </div>
                 <div className="text-3xl lg:text-4xl font-bold text-primary">
                   {formatCurrency(subsidy)}
                 </div>
@@ -132,9 +160,11 @@ export default function FundingCalculator() {
                   </span>
                 )}
               </div>
-              
+
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Ihr Eigenanteil</div>
+                <div className="text-sm text-muted-foreground mb-1">
+                  Ihr Eigenanteil
+                </div>
                 <div className="text-2xl lg:text-3xl font-bold text-foreground">
                   {formatCurrency(ownShare)}
                 </div>
@@ -144,11 +174,16 @@ export default function FundingCalculator() {
 
           <div className="mt-8 space-y-4">
             <p className="text-[10px] text-muted-foreground leading-tight">
-              Hinweis: Dies ist eine vereinfachte Beispielrechnung auf Basis der aktuellen MID-Richtlinien in NRW. Die tatsächliche Förderhöhe hängt vom offiziellen Bewilligungsverfahren ab.
+              Hinweis: Dies ist eine vereinfachte Beispielrechnung auf Basis der
+              aktuellen MID-Richtlinien in NRW. Die tatsächliche Förderhöhe
+              hängt vom offiziellen Bewilligungsverfahren ab.
             </p>
-            
+
             <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-              <p className="text-sm font-medium mb-3">Sie möchten prüfen, ob Ihr IT-Sicherheitsprojekt förderfähig ist?</p>
+              <p className="text-sm font-medium mb-3">
+                Sie möchten prüfen, ob Ihr IT-Sicherheitsprojekt förderfähig
+                ist?
+              </p>
               <ContactModal defaultTopic="MID – Digitale Sicherheit / Förderanfrage">
                 <Button className="w-full shadow-md">
                   Kostenlose Förderberatung anfragen

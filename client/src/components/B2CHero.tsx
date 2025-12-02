@@ -8,33 +8,35 @@ const TYPEWRITER_PHRASES = [
   "Unterstützung für Ihr Zuhause",
   "Sichere Fernwartung",
   "Smart Home Einrichtung",
-  "WLAN Optimierung"
+  "WLAN Optimierung",
 ];
 
 export default function B2CHero() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   useEffect(() => {
     const currentPhrase = TYPEWRITER_PHRASES[phraseIndex];
     const typeSpeed = isDeleting ? 50 : 100;
-    
+
     const timer = setTimeout(() => {
       if (!isDeleting && text === currentPhrase) {
         setTimeout(() => setIsDeleting(true), 2000);
         return;
       }
-      
+
       if (isDeleting && text === "") {
         setIsDeleting(false);
-        setPhraseIndex((prev) => (prev + 1) % TYPEWRITER_PHRASES.length);
+        setPhraseIndex(prev => (prev + 1) % TYPEWRITER_PHRASES.length);
         return;
       }
-      
-      setText(prev => isDeleting ? prev.slice(0, -1) : currentPhrase.slice(0, prev.length + 1));
+
+      setText(prev =>
+        isDeleting ? prev.slice(0, -1) : currentPhrase.slice(0, prev.length + 1)
+      );
     }, typeSpeed);
-    
+
     return () => clearTimeout(timer);
   }, [text, isDeleting, phraseIndex]);
 
@@ -57,7 +59,7 @@ export default function B2CHero() {
               </span>
               Jetzt verfügbar in Köln & Neuss
             </div>
-            
+
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Privatkunden & Haushalte – <br />
@@ -67,30 +69,47 @@ export default function B2CHero() {
                   2. Position the typewriter text absolutely over it
                 */}
                 <span className="text-primary block relative">
-                  <span className="invisible" aria-hidden="true">Unterstützung für Ihr Zuhause</span>
+                  <span className="invisible" aria-hidden="true">
+                    Unterstützung für Ihr Zuhause
+                  </span>
                   <span className="absolute top-0 left-0 w-full">
-                    {text}<span className="animate-pulse">|</span>
+                    {text}
+                    <span className="animate-pulse">|</span>
                   </span>
                 </span>
               </h1>
-              
+
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Ob Computer, Smartphone, Smart-TV oder Smart Home: Tech Hilfe Pro unterstützt Sie bei allen Technikfragen – telefonisch, per Fernwartung und bei Bedarf vor Ort.
+                Ob Computer, Smartphone, Smart-TV oder Smart Home: Tech Hilfe
+                Pro unterstützt Sie bei allen Technikfragen – telefonisch, per
+                Fernwartung und bei Bedarf vor Ort.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <ContactModal>
-                <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                <Button
+                  size="lg"
+                  className="text-base px-8 h-12 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                >
                   Jetzt Hilfe anfragen
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </ContactModal>
-              <Button variant="outline" size="lg" className="text-base h-12 bg-white/50 backdrop-blur-sm border-primary/20 hover:bg-white/80" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-base h-12 bg-white/50 backdrop-blur-sm border-primary/20 hover:bg-white/80"
+                onClick={() =>
+                  document
+                    .getElementById("pricing")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Unsere Abos entdecken
               </Button>
             </div>
-            
+
             <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-secondary" />
@@ -106,17 +125,17 @@ export default function B2CHero() {
               </div>
             </div>
           </div>
-          
+
           {/* Hero Image */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
             <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/10 border-0">
-              <img 
-                src="/images/b2c-hero-illustration.png" 
-                alt="IT-Unterstützung für private Haushalte in NRW" 
+              <img
+                src="/images/b2c-hero-illustration.png"
+                alt="IT-Unterstützung für private Haushalte in NRW"
                 className="w-full h-full object-contain bg-slate-50 dark:bg-slate-900"
                 loading="lazy"
               />
-              
+
               {/* Floating Badge */}
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 max-w-[200px]">
                 <div className="flex items-center gap-3 mb-2">
@@ -125,13 +144,17 @@ export default function B2CHero() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Status</p>
-                    <p className="font-bold text-sm text-green-600">Online & Bereit</p>
+                    <p className="font-bold text-sm text-green-600">
+                      Online & Bereit
+                    </p>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground">Unsere Experten sind nur einen Klick entfernt.</p>
+                <p className="text-xs text-muted-foreground">
+                  Unsere Experten sind nur einen Klick entfernt.
+                </p>
               </div>
             </div>
-            
+
             {/* Decorative elements behind image */}
             <div className="absolute -z-10 top-10 right-10 w-full h-full border-2 border-primary/10 rounded-2xl translate-x-4 translate-y-4" />
           </div>
@@ -139,8 +162,15 @@ export default function B2CHero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Mehr entdecken</span>
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer animate-bounce duration-[2000ms]"
+        onClick={() =>
+          window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+        }
+      >
+        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
+          Mehr entdecken
+        </span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center p-1">
           <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-scroll-down" />
         </div>

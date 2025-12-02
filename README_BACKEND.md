@@ -7,15 +7,18 @@ This project uses a lightweight Express server (`server/index.ts`) to handle API
 To enable backend functionality, you must configure the following environment variables in your deployment platform or `.env` file (for local development).
 
 ### Supabase (Database)
+
 - `VITE_SUPABASE_URL`: Your Supabase project URL.
 - `VITE_SUPABASE_ANON_KEY`: Your Supabase anonymous key (public).
 - `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key (keep secret! used for server-side operations).
 
 ### Resend (Email)
+
 - `RESEND_API_KEY`: API key from Resend.com.
 - `RESEND_FROM_EMAIL`: Verified sender email (e.g., `Tech Hilfe Pro <info@techhilfepro.de>`).
 
 ### Stripe (Payments)
+
 - `STRIPE_CHECKOUT_URL_MINI_MONTHLY`
 - `STRIPE_CHECKOUT_URL_MINI_YEARLY`
 - `STRIPE_CHECKOUT_URL_BASIS_MONTHLY`
@@ -24,6 +27,7 @@ To enable backend functionality, you must configure the following environment va
 - `STRIPE_CHECKOUT_URL_KOMFORT_YEARLY`
 
 ### n8n (Automation)
+
 - `N8N_WEBHOOK_LEAD`: Webhook URL for processing new leads.
 
 ## API Endpoints
@@ -33,6 +37,7 @@ To enable backend functionality, you must configure the following environment va
 Handles form submissions for contact forms, checklist downloads, and subscription interests.
 
 **Payload:**
+
 ```json
 {
   "type": "b2c_contact" | "checklist_download" | "b2b_contact",
@@ -50,6 +55,7 @@ Handles form submissions for contact forms, checklist downloads, and subscriptio
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,

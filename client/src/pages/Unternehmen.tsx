@@ -1,15 +1,66 @@
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ShieldCheck, Server, Users, ArrowRight, FileText, Euro, MonitorCheck, Lock, LifeBuoy, Check, X, Clock, Phone } from "lucide-react";
+import {
+  CheckCircle2,
+  ShieldCheck,
+  Server,
+  Users,
+  ArrowRight,
+  FileText,
+  Euro,
+  MonitorCheck,
+  Lock,
+  LifeBuoy,
+  Check,
+  X,
+  Clock,
+  Phone,
+} from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import FundingCalculator from "@/components/FundingCalculator";
 import TypewriterText from "@/components/TypewriterText";
+import ServiceGrid from "@/components/ServiceGrid";
+
+const B2B_SERVICES = [
+  {
+    icon: LifeBuoy,
+    title: "Remote-Support & Helpdesk",
+    description:
+      "Schnelle Hilfe bei IT-Problemen per Fernwartung oder vor Ort.",
+  },
+  {
+    icon: MonitorCheck,
+    title: "Monitoring & Patch-Management",
+    description: "Proaktive Überwachung und Updates für Ihre Systeme.",
+  },
+  {
+    icon: Server,
+    title: "Backup & Wiederherstellung",
+    description: "Sichere Datensicherung und Notfallwiederherstellung.",
+  },
+  {
+    icon: Users,
+    title: "Benutzer- & Rechteverwaltung",
+    description: "Verwaltung von Benutzerkonten und Zugriffsberechtigungen.",
+  },
+  {
+    icon: Lock,
+    title: "IT-Sicherheit & E-Mail-Schutz",
+    description: "Schutz vor Viren, Phishing und Cyberangriffen.",
+  },
+  {
+    icon: FileText,
+    title: "Beratung & Planung",
+    description:
+      "Strategische IT-Beratung für Modernisierung, Home-Office und Cloud.",
+  },
+];
 
 export default function Unternehmen() {
   const handleContact = (plan: string) => {
     // This function is used by the buttons inside the cards
-    // Since the buttons are wrapped in ContactModal in the original code, 
+    // Since the buttons are wrapped in ContactModal in the original code,
     // we'll need to adjust the structure to match the new design while keeping functionality.
     // However, the ContactModal component expects children to be the trigger.
     // So we will wrap the buttons in ContactModal directly in the JSX.
@@ -27,17 +78,17 @@ export default function Unternehmen() {
                 <ShieldCheck className="h-4 w-4" />
                 Managed IT-Services für KMU
               </div>
-              
+
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Unternehmen & KMU – <br />
                 <span className="text-primary block mt-2">
-                  <TypewriterText 
+                  <TypewriterText
                     phrases={[
                       "Managed IT, die einfach funktioniert",
                       "NIS2-bereite IT für Ihr KMU",
                       "Digitale Vertrauensbasis statt Feuerlösch-IT",
                       "Souveräne Cloud aus Europa",
-                      "Managed Security für den Mittelstand"
+                      "Managed Security für den Mittelstand",
                     ]}
                     typingSpeed={100}
                     deletingSpeed={50}
@@ -45,38 +96,64 @@ export default function Unternehmen() {
                   />
                 </span>
               </h1>
-              
+
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen in Köln, Neuss und ganz NRW die Rolle einer ausgelagerten IT-Abteilung. Wir kümmern uns um Updates, Backups, Zugriffsrechte und sichere Fernwartung – damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
+                Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen in
+                Köln, Neuss und ganz NRW die Rolle einer ausgelagerten
+                IT-Abteilung. Wir kümmern uns um Updates, Backups,
+                Zugriffsrechte und sichere Fernwartung – damit Sie sich auf Ihr
+                Kerngeschäft konzentrieren können.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>Managed IT-Services für PCs, Laptops, Server & Netzwerk</span>
+                  <span>
+                    Managed IT-Services für PCs, Laptops, Server & Netzwerk
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>Sichere Fernwartung mit selbst gehosteten Tools (z. B. MeshCentral)</span>
+                  <span>
+                    Sichere Fernwartung mit selbst gehosteten Tools (z. B.
+                    MeshCentral)
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
+                  <span>
+                    Unterstützung bei NIS2-Grundlagen und Dokumentation
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                  <span>Bis zu 50 % Förderung in NRW für IT-Sicherheitsmaßnahmen möglich</span>
+                  <span>
+                    Bis zu 50 % Förderung in NRW für IT-Sicherheitsmaßnahmen
+                    möglich
+                  </span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                 <ContactModal defaultTopic="Unverbindliches Erstgespräch">
-                  <Button size="lg" className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
+                  <Button
+                    size="lg"
+                    className="text-base px-8 h-12 btn-primary shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
+                  >
                     Jetzt unverbindliches Erstgespräch anfragen
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </ContactModal>
-                <Button variant="outline" size="lg" className="text-base h-12 btn-outline" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-base h-12 btn-outline"
+                  onClick={() =>
+                    document
+                      .getElementById("pricing")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
                   Leistungen & Pakete ansehen
                 </Button>
               </div>
@@ -85,35 +162,12 @@ export default function Unternehmen() {
         </section>
 
         {/* A) Unsere Leistungen */}
-        <section className="py-24 bg-background">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Unsere Leistungen für Unternehmen</h2>
-              <p className="text-muted-foreground text-lg">
-                Wir unterstützen Sie dort, wo kleine und mittlere Unternehmen am meisten Zeit und Nerven verlieren – mit klaren, wiederholbaren Prozessen statt Ad-hoc-Feuerwehr. Unsere Managed Services sorgen dafür, dass Ihre IT stabil läuft, Sicherheitsgrundlagen erfüllt sind und Sie im Notfall einen Ansprechpartner haben, der Ihre Umgebung kennt.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { icon: LifeBuoy, title: "Remote-Support & Helpdesk", desc: "Schnelle Hilfe bei IT-Problemen per Fernwartung oder vor Ort." },
-                { icon: MonitorCheck, title: "Monitoring & Patch-Management", desc: "Proaktive Überwachung und Updates für Ihre Systeme." },
-                { icon: Server, title: "Backup & Wiederherstellung", desc: "Sichere Datensicherung und Notfallwiederherstellung." },
-                { icon: Users, title: "Benutzer- & Rechteverwaltung", desc: "Verwaltung von Benutzerkonten und Zugriffsberechtigungen." },
-                { icon: Lock, title: "IT-Sicherheit & E-Mail-Schutz", desc: "Schutz vor Viren, Phishing und Cyberangriffen." },
-                { icon: FileText, title: "Beratung & Planung", desc: "Strategische IT-Beratung für Modernisierung, Home-Office und Cloud." }
-              ].map((item, i) => (
-                <div key={i} className="msp-card p-6 flex flex-col msp-card-hover">
-                  <div className="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceGrid
+          title="Unsere Leistungen für Unternehmen"
+          description="Wir unterstützen Sie dort, wo kleine und mittlere Unternehmen am meisten Zeit und Nerven verlieren – mit klaren, wiederholbaren Prozessen statt Ad-hoc-Feuerwehr. Unsere Managed Services sorgen dafür, dass Ihre IT stabil läuft, Sicherheitsgrundlagen erfüllt sind und Sie im Notfall einen Ansprechpartner haben, der Ihre Umgebung kennt."
+          items={B2B_SERVICES}
+          className="bg-background"
+        />
 
         {/* B) NIS2 & IT-Sicherheit */}
         <section className="py-24 bg-slate-50 dark:bg-slate-950">
@@ -124,13 +178,24 @@ export default function Unternehmen() {
                   <ShieldCheck className="h-3 w-3" />
                   NIS2 Compliance
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">NIS2 & IT-Sicherheit – pragmatisch umgesetzt</h2>
+                <h2 className="text-3xl font-bold text-foreground">
+                  NIS2 & IT-Sicherheit – pragmatisch umgesetzt
+                </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Mit NIS2 steigen die Anforderungen an Cybersecurity – auch für viele mittelständische Betriebe und bestimmte Branchen. Wir ersetzen keine Anwaltskanzlei und keine zertifizierte Prüfstelle, aber wir helfen Ihnen, die technischen Grundlagen zu schaffen: regelmäßige Updates, überprüfte Backups, klare Zugriffsrechte und einfache Dokumentation. So senken Sie Ihr Risiko und sind besser auf Prüfungen vorbereitet, ohne dass der Büroalltag stillsteht.
+                  Mit NIS2 steigen die Anforderungen an Cybersecurity – auch für
+                  viele mittelständische Betriebe und bestimmte Branchen. Wir
+                  ersetzen keine Anwaltskanzlei und keine zertifizierte
+                  Prüfstelle, aber wir helfen Ihnen, die technischen Grundlagen
+                  zu schaffen: regelmäßige Updates, überprüfte Backups, klare
+                  Zugriffsrechte und einfache Dokumentation. So senken Sie Ihr
+                  Risiko und sind besser auf Prüfungen vorbereitet, ohne dass
+                  der Büroalltag stillsteht.
                 </p>
                 <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded-r-lg">
                   <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
-                    Hinweis: Wir bieten keine Rechtsberatung und keine formelle Zertifizierung an, sondern unterstützen Sie bei der praktischen Umsetzung technischer Maßnahmen.
+                    Hinweis: Wir bieten keine Rechtsberatung und keine formelle
+                    Zertifizierung an, sondern unterstützen Sie bei der
+                    praktischen Umsetzung technischer Maßnahmen.
                   </p>
                 </div>
               </div>
@@ -139,8 +204,12 @@ export default function Unternehmen() {
                   <ShieldCheck className="w-32 h-32 text-primary/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <div className="text-4xl font-bold text-primary">NIS2</div>
-                      <div className="text-sm font-medium text-muted-foreground">Ready</div>
+                      <div className="text-4xl font-bold text-primary">
+                        NIS2
+                      </div>
+                      <div className="text-sm font-medium text-muted-foreground">
+                        Ready
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -163,12 +232,24 @@ export default function Unternehmen() {
                 <Euro className="h-4 w-4" />
                 MID – Digitale Sicherheit
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold">Förderung in NRW – bis zu 50 % Zuschuss nutzen</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                Förderung in NRW – bis zu 50 % Zuschuss nutzen
+              </h2>
               <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                Über Förderprogramme in NRW (z. B. im Bereich ‚Digitale Sicherheit‘) können kleine Unternehmen einen Zuschuss von bis zu 50 % für IT-Sicherheitsprojekte erhalten – etwa für Beratung, die Implementierung von Backups, Sicherheitssoftware oder Schulungen. Wir unterstützen Sie bei der technischen Umsetzung und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben infrage kommt.
+                Über Förderprogramme in NRW (z. B. im Bereich ‚Digitale
+                Sicherheit‘) können kleine Unternehmen einen Zuschuss von bis zu
+                50 % für IT-Sicherheitsprojekte erhalten – etwa für Beratung,
+                die Implementierung von Backups, Sicherheitssoftware oder
+                Schulungen. Wir unterstützen Sie bei der technischen Umsetzung
+                und können gemeinsam prüfen, ob eine Förderung für Ihr Vorhaben
+                infrage kommt.
               </p>
               <ContactModal defaultTopic="Förderung in NRW">
-                <Button size="lg" variant="secondary" className="text-primary font-bold shadow-lg hover:bg-white/90 transition-colors">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="text-primary font-bold shadow-lg hover:bg-white/90 transition-colors"
+                >
                   Mehr zur Förderung erfahren
                 </Button>
               </ContactModal>
@@ -180,7 +261,9 @@ export default function Unternehmen() {
         <section id="pricing" className="py-24 bg-slate-50 dark:bg-slate-950">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Unsere KMU-Pakete</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">
+                Unsere KMU-Pakete
+              </h2>
               <p className="text-muted-foreground text-lg">
                 Transparente Preise pro Benutzer. Skalierbar und fair.
               </p>
@@ -190,114 +273,171 @@ export default function Unternehmen() {
               {/* Essential */}
               <div className="msp-card p-8 flex flex-col relative msp-card-hover">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-foreground">KMU Essential</h3>
-                  <p className="text-muted-foreground text-sm h-12">Der solide IT-Grundschutz für kleine Betriebe – Updates, Monitoring und verlässlicher Ansprechpartner im Hintergrund.</p>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">
+                    KMU Essential
+                  </h3>
+                  <p className="text-muted-foreground text-sm h-12">
+                    Der solide IT-Grundschutz für kleine Betriebe – Updates,
+                    Monitoring und verlässlicher Ansprechpartner im Hintergrund.
+                  </p>
                 </div>
-                <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1 text-foreground">ab 35 €</div>
-                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-foreground">
+                      35 €
+                    </span>
+                    <span className="text-muted-foreground">
+                      / Nutzer / Monat
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    zzgl. MwSt.
+                  </p>
                 </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {[
-                    "Proaktives Monitoring von PCs und ggf. Servern (Verfügbarkeit, Basis-Checks)",
-                    "Regelmäßiges Patch-Management für Windows und wichtige Standardsoftware",
-                    "Überwachung von Backup-Jobs (Fehlermeldungen werden geprüft)",
-                    "Remote-Support nach Aufwand, mit kleinem monatlichem Kontingent",
-                    "Jährliches IT-Strategiegespräch (remote)",
-                    "Zugang zum Ticket-System für alle Mitarbeiter"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-foreground">
-                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Monitoring & Patch-Management (Windows/Mac)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Managed Antivirus / EDR-Basis</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Fernwartungs-Zugriff (bei Bedarf)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Reaktionszeit &lt; 8 Std. (Mo-Fr)</span>
+                  </li>
                 </ul>
-                <div className="mt-auto">
-                  <ContactModal defaultTopic="Anfrage KMU Essential">
-                    <Button className="w-full btn-outline">
-                      Essential anfragen
-                    </Button>
-                  </ContactModal>
-                </div>
+                <ContactModal defaultTopic="Anfrage: KMU Essential">
+                  <Button className="w-full btn-outline" variant="outline">
+                    Jetzt anfragen
+                  </Button>
+                </ContactModal>
               </div>
 
               {/* Standard */}
-              <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg shadow-primary/10 scale-105 z-10 bg-card">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-md">
-                  Empfohlen
+              <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg scale-105 z-10 msp-card-hover">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                  Beliebt
                 </div>
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-primary">KMU Standard</h3>
-                  <p className="text-muted-foreground text-sm h-12">Die „Sorglos-Basis“ für die meisten KMU – inkl. Antivirus, erweitertem Support und schnellerer Reaktion.</p>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">
+                    KMU Standard
+                  </h3>
+                  <p className="text-muted-foreground text-sm h-12">
+                    Rundum-Sorglos für den Arbeitsplatz: Inklusive Microsoft 365
+                    Support, Backup und schnellerer Hilfe.
+                  </p>
                 </div>
-                <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1 text-primary">ab 55 €</div>
-                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-foreground">
+                      55 €
+                    </span>
+                    <span className="text-muted-foreground">
+                      / Nutzer / Monat
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    zzgl. MwSt.
+                  </p>
                 </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {[
-                    "Alle Leistungen aus Essential",
-                    "Managed Antivirus / EDR-Schutz inklusive",
-                    "Erweitertes Monitoring (Performance, Speicherplatz, Dienste)",
-                    "Bevorzugte Reaktionszeit (SLA: Reaktion < 4h während Geschäftszeiten)",
-                    "Monatliches Reporting zum Sicherheitsstatus",
-                    "Inklusive 30 Min. Remote-Support pro User/Monat (gepoolt auf Unternehmensebene)"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-foreground">
-                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2 text-sm font-medium">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Alles aus Essential</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Managed Backup (Cloud, 1 TB/User)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Microsoft 365 Verwaltung & Support</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>E-Mail-Security (Spam/Phishing-Filter)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Reaktionszeit &lt; 4 Std. (Mo-Fr)</span>
+                  </li>
                 </ul>
-                <div className="mt-auto">
-                  <ContactModal defaultTopic="Anfrage KMU Standard">
-                    <Button size="lg" className="w-full btn-primary shadow-lg shadow-primary/20">
-                      Standard anfragen
-                    </Button>
-                  </ContactModal>
-                </div>
+                <ContactModal defaultTopic="Anfrage: KMU Standard">
+                  <Button className="w-full btn-primary">Jetzt anfragen</Button>
+                </ContactModal>
               </div>
 
               {/* Premium */}
               <div className="msp-card p-8 flex flex-col relative msp-card-hover">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-foreground">KMU Premium</h3>
-                  <p className="text-muted-foreground text-sm h-12">Für Unternehmen mit hohen Sicherheitsanforderungen oder Compliance-Pflichten (z. B. NIS2-Vorbereitung).</p>
+                  <h3 className="text-2xl font-bold mb-2 text-foreground">
+                    KMU Premium
+                  </h3>
+                  <p className="text-muted-foreground text-sm h-12">
+                    Maximale Sicherheit und Compliance-Unterstützung für höhere
+                    Ansprüche (z. B. NIS2-Vorbereitung).
+                  </p>
                 </div>
-                <div className="mb-8">
-                  <div className="text-3xl font-bold mb-1 text-foreground">ab 79 €</div>
-                  <div className="text-sm text-muted-foreground">pro Benutzer / Monat (netto)</div>
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-foreground">
+                      79 €
+                    </span>
+                    <span className="text-muted-foreground">
+                      / Nutzer / Monat
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    zzgl. MwSt.
+                  </p>
                 </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {[
-                    "Alle Leistungen aus Standard",
-                    "Erweiterter E-Mail-Schutz (Spam/Phishing-Filter)",
-                    "Microsoft 365 Backup (Exchange, OneDrive, SharePoint)",
-                    "Jährlicher Sicherheits-Check / Schwachstellen-Scan",
-                    "Unterstützung bei IT-Dokumentation & Notfallplänen",
-                    "Inklusive 60 Min. Remote-Support pro User/Monat (gepoolt)"
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-foreground">
-                      <Check className="h-5 w-5 text-emerald-600 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-3 mb-8 flex-grow">
+                  <li className="flex items-start gap-2 text-sm font-medium">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Alles aus Standard</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Erweiterte Security (EDR/XDR, 24/7 Monitoring)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Schwachstellen-Scan (monatlich)</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Security Awareness Training für Mitarbeiter</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>Priorisierter Support (Fast Lane)</span>
+                  </li>
                 </ul>
-                <div className="mt-auto">
-                  <ContactModal defaultTopic="Anfrage KMU Premium">
-                    <Button className="w-full btn-outline">
-                      Premium anfragen
-                    </Button>
-                  </ContactModal>
-                </div>
+                <ContactModal defaultTopic="Anfrage: KMU Premium">
+                  <Button className="w-full btn-outline" variant="outline">
+                    Jetzt anfragen
+                  </Button>
+                </ContactModal>
               </div>
             </div>
-            
-            <p className="text-center text-xs text-muted-foreground mt-12 max-w-3xl mx-auto">
-              *Preise zzgl. gesetzlicher MwSt. Mindestvertragslaufzeit 12 Monate. Onboarding-Pauschale je nach Unternehmensgröße einmalig.
-              <br />
-              Server-Wartung wird separat berechnet (pauschal pro Server).
-            </p>
+
+            <div className="mt-16 text-center">
+              <p className="text-muted-foreground mb-6">
+                Sie haben mehr als 20 Mitarbeiter oder spezielle Anforderungen?
+              </p>
+              <ContactModal defaultTopic="Individuelles Angebot">
+                <Button variant="outline" className="gap-2 btn-outline">
+                  <Phone className="h-4 w-4" />
+                  Individuelles Angebot anfordern
+                </Button>
+              </ContactModal>
+            </div>
           </div>
         </section>
       </main>

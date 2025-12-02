@@ -11,7 +11,6 @@ import Ressourcen from "./pages/Ressourcen";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 
-
 function Router() {
   return (
     <Switch>

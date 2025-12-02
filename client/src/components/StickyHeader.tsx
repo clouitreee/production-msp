@@ -31,7 +31,7 @@ export default function StickyHeader() {
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
@@ -39,7 +39,10 @@ export default function StickyHeader() {
       <div className="bg-white/80 backdrop-blur-md border-b shadow-sm">
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="font-bold text-lg cursor-pointer flex items-center gap-2">
+          <Link
+            href="/"
+            className="font-bold text-lg cursor-pointer flex items-center gap-2"
+          >
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-sm">
               TH
             </div>
@@ -48,16 +51,28 @@ export default function StickyHeader() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/privatkunden" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              href="/privatkunden"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
               Privatkunden
             </Link>
-            <Link href="/unternehmen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              href="/unternehmen"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
               Unternehmen
             </Link>
-            <Link href="/ressourcen" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              href="/ressourcen"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
               Ressourcen
             </Link>
-            <Link href="/privatkunden#faq" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link
+              href="/privatkunden#faq"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
               FAQ
             </Link>
             <ContactModal>
@@ -86,16 +101,32 @@ export default function StickyHeader() {
               </SheetTrigger>
               <SheetContent side="top" className="w-full">
                 <div className="flex flex-col gap-6 pt-10 pb-6 items-center">
-                  <Link href="/privatkunden" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  <Link
+                    href="/privatkunden"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="text-lg font-medium"
+                  >
                     Privatkunden
                   </Link>
-                  <Link href="/unternehmen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  <Link
+                    href="/unternehmen"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="text-lg font-medium"
+                  >
                     Unternehmen
                   </Link>
-                  <Link href="/ressourcen" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  <Link
+                    href="/ressourcen"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="text-lg font-medium"
+                  >
                     Ressourcen
                   </Link>
-                  <Link href="/privatkunden#faq" onClick={() => setIsMobileOpen(false)} className="text-lg font-medium">
+                  <Link
+                    href="/privatkunden#faq"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="text-lg font-medium"
+                  >
                     FAQ
                   </Link>
                   <ContactModal>
