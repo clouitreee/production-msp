@@ -1,49 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 import ContactModal from "./ContactModal";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "wouter";
 
 export default function StickyHeader() {
-  const [isVisible, setIsVisible] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show header after scrolling 500px (approx hero height)
-      const show = window.scrollY > 500;
-      if (show !== isVisible) {
-        setIsVisible(show);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isVisible]);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileOpen(false);
-    }
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      }`}
-    >
-      <div className="bg-background/80 backdrop-blur-md border-b shadow-sm">
+    <header className="sticky top-0 z-50 w-full">
+      <div className="bg-background/60 backdrop-blur-md border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             href="/"
             className="font-bold text-lg cursor-pointer flex items-center gap-2"
           >
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-sm shadow-sm">
               TH
             </div>
             <span className="hidden sm:inline">Tech Hilfe Pro</span>
@@ -99,8 +73,8 @@ export default function StickyHeader() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="top" className="w-full">
-                <div className="flex flex-col gap-6 pt-10 pb-6 items-center">
+              <SheetContent side="top" className="w-full pt-16 bg-background/95 backdrop-blur-xl">
+                <div className="flex flex-col gap-6 items-center">
                   <Link
                     href="/privatkunden"
                     onClick={() => setIsMobileOpen(false)}
