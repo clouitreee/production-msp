@@ -23,7 +23,7 @@ export default function ComparisonSection() {
                   <th className="p-4">Monatlich</th>
                   <th className="p-4">Jahresabo</th>
                   <th className="p-4">Effektiver Preis</th>
-                  <th className="p-4 text-emerald-600">Ersparnis</th>
+                  <th className="p-4 text-accent">Ersparnis</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -35,7 +35,7 @@ export default function ComparisonSection() {
                   <td className="p-4 text-muted-foreground">10,00 €</td>
                   <td className="p-4 text-muted-foreground">100 €</td>
                   <td className="p-4 text-muted-foreground">≈ 8,33 €</td>
-                  <td className="p-4 font-bold text-emerald-600">20 €</td>
+                  <td className="p-4 font-bold text-accent">20 €</td>
                 </tr>
                 <tr className="hover:bg-muted/20 transition-colors">
                   <td className="p-4 font-bold text-foreground">
@@ -45,7 +45,7 @@ export default function ComparisonSection() {
                   <td className="p-4 text-muted-foreground">19,00 €</td>
                   <td className="p-4 text-muted-foreground">190 €</td>
                   <td className="p-4 text-muted-foreground">≈ 15,83 €</td>
-                  <td className="p-4 font-bold text-emerald-600">38 €</td>
+                  <td className="p-4 font-bold text-accent">38 €</td>
                 </tr>
                 <tr className="hover:bg-muted/20 transition-colors bg-primary/5">
                   <td className="p-4 font-bold text-primary">
@@ -55,7 +55,7 @@ export default function ComparisonSection() {
                   <td className="p-4 text-muted-foreground">39,00 €</td>
                   <td className="p-4 text-muted-foreground">390 €</td>
                   <td className="p-4 text-muted-foreground">≈ 32,50 €</td>
-                  <td className="p-4 font-bold text-emerald-600">78 €</td>
+                  <td className="p-4 font-bold text-accent">78 €</td>
                 </tr>
               </tbody>
             </table>
@@ -154,7 +154,7 @@ export default function ComparisonSection() {
               <div className="h-12 flex items-center justify-center md:justify-start">
                 <Check className="h-5 w-5 text-emerald-600" />
               </div>
-              <div className="h-12 flex items-center justify-center md:justify-start font-bold text-emerald-600">
+              <div className="h-12 flex items-center justify-center md:justify-start font-bold text-accent">
                 5 %
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start text-sm text-muted-foreground">
@@ -177,7 +177,7 @@ export default function ComparisonSection() {
               <div className="h-12 flex items-center justify-center md:justify-start">
                 <Check className="h-5 w-5 text-emerald-600" />
               </div>
-              <div className="h-12 flex items-center justify-center md:justify-start font-bold text-emerald-600">
+              <div className="h-12 flex items-center justify-center md:justify-start font-bold text-accent">
                 10 %
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start text-sm font-medium text-foreground">
