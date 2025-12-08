@@ -33,9 +33,9 @@ export interface ServiceCategory {
   title: string;
   description: string;
   icon: LucideIcon;
-  color: string;      // Tailwind class for text/border (e.g., "text-teal-600")
-  colorBg: string;    // Tailwind class for background (e.g., "bg-teal-50")
-  colorBorder: string;// Tailwind class for border (e.g., "border-teal-200")
+  color: string;      // Tailwind class for text/border (e.g., "text-[#FB923C]")
+  colorBg: string;    // Tailwind class for background (e.g., "bg-[#F3F4F6]")
+  colorBorder: string;// Tailwind class for border (e.g., "border-[#E5E7EB]")
   services: ServiceItem[];
 }
 
@@ -55,9 +55,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     title: "Computer & Software",
     description: "Hilfe bei PC, Laptop, Mac und Software-Problemen.",
     icon: Monitor,
-    color: "text-teal-600",
-    colorBg: "bg-teal-50",
-    colorBorder: "border-teal-200",
+    color: "text-[#FB923C]",
+    colorBg: "bg-[#F3F4F6]",
+    colorBorder: "border-[#E5E7EB]",
     services: [
       {
         id: "pc-laptop",
@@ -96,9 +96,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     title: "Internet & WLAN",
     description: "Stabiles Internet und sicheres Heimnetzwerk.",
     icon: Wifi,
-    color: "text-sky-600",
-    colorBg: "bg-sky-50",
-    colorBorder: "border-sky-200",
+    color: "text-[#FB923C]",
+    colorBg: "bg-[#F3F4F6]",
+    colorBorder: "border-[#E5E7EB]",
     services: [
       {
         id: "wifi",
@@ -125,9 +125,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     title: "Smartphone & Tablet",
     description: "Einrichtung und Hilfe für Ihre mobilen Begleiter.",
     icon: Smartphone,
-    color: "text-violet-600",
-    colorBg: "bg-violet-50",
-    colorBorder: "border-violet-200",
+    color: "text-[#FB923C]",
+    colorBg: "bg-[#F3F4F6]",
+    colorBorder: "border-[#E5E7EB]",
     services: [
       {
         id: "smartphone",
@@ -154,9 +154,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     title: "Smart Home & IoT",
     description: "Das intelligente Zuhause einfach erklärt und eingerichtet.",
     icon: Home,
-    color: "text-orange-600",
-    colorBg: "bg-orange-50",
-    colorBorder: "border-orange-200",
+    color: "text-[#FB923C]",
+    colorBg: "bg-[#F3F4F6]",
+    colorBorder: "border-[#E5E7EB]",
     services: [
       {
         id: "smarthome-general",
@@ -177,9 +177,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     title: "TV & Entertainment",
     description: "Bestes Bild und bester Ton für Ihr Wohnzimmer.",
     icon: Tv,
-    color: "text-rose-600",
-    colorBg: "bg-rose-50",
-    colorBorder: "border-rose-200",
+    color: "text-[#FB923C]",
+    colorBg: "bg-[#F3F4F6]",
+    colorBorder: "border-[#E5E7EB]",
     services: [
       {
         id: "tv-setup",
@@ -222,7 +222,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Hilfe bei Windows, Mac, Updates und langsamen Geräten.",
     icon: Monitor,
     size: "large",
-    colorClass: "from-teal-500/20 to-emerald-500/20 text-teal-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "computer",
   },
   {
@@ -231,7 +231,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Endlich stabiles Internet in jedem Zimmer.",
     icon: Wifi,
     size: "large",
-    colorClass: "from-sky-500/20 to-blue-500/20 text-sky-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "network",
   },
   {
@@ -240,7 +240,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Licht, Heizung & Kameras steuern.",
     icon: Home,
     size: "medium",
-    colorClass: "from-orange-500/20 to-amber-500/20 text-orange-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "smarthome",
   },
   {
@@ -249,7 +249,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Einrichtung von Smart-TVs & Sound.",
     icon: Tv,
     size: "medium",
-    colorClass: "from-rose-500/20 to-pink-500/20 text-rose-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "entertainment",
   },
   {
@@ -258,7 +258,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Einrichtung, Datenumzug & Hilfe.",
     icon: Smartphone,
     size: "medium",
-    colorClass: "from-violet-500/20 to-purple-500/20 text-violet-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "mobile",
   },
   {
@@ -267,7 +267,7 @@ export const FEATURED_SERVICES: FeaturedService[] = [
     description: "Verbindungsprobleme lösen.",
     icon: Printer,
     size: "small",
-    colorClass: "from-slate-500/20 to-gray-500/20 text-slate-700",
+    colorClass: "bg-[#F3F4F6] text-[#0B0B0F] border border-[#E5E7EB]",
     categoryId: "computer",
   },
 ];

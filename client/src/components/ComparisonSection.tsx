@@ -149,10 +149,10 @@ export default function ComparisonSection() {
                 Min inkl.
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start">
-                <Check className="h-5 w-5 text-emerald-600" />
+                <Check className="h-5 w-5 text-[#FB923C]" />
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start">
-                <Check className="h-5 w-5 text-emerald-600" />
+                <Check className="h-5 w-5 text-[#FB923C]" />
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start font-bold text-[#FB923C]">
                 5 %
@@ -172,10 +172,10 @@ export default function ComparisonSection() {
                 Min inkl.
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start">
-                <Check className="h-5 w-5 text-emerald-600" />
+                <Check className="h-5 w-5 text-[#FB923C]" />
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start">
-                <Check className="h-5 w-5 text-emerald-600" />
+                <Check className="h-5 w-5 text-[#FB923C]" />
               </div>
               <div className="h-12 flex items-center justify-center md:justify-start font-bold text-[#FB923C]">
                 10 %

@@ -12,19 +12,19 @@ export default function ItHealthDashboard({ result }: Props) {
 
   // Gauge Color Logic
   const getScoreColor = (score: number) => {
-    if (score >= 90) return "text-green-500";
-    if (score >= 75) return "text-emerald-500";
-    if (score >= 60) return "text-yellow-500";
-    if (score >= 40) return "text-orange-500";
-    return "text-red-500";
+    if (score >= 90) return "text-[#FB923C]";
+    if (score >= 75) return "text-[#FB923C]";
+    if (score >= 60) return "text-[#4B5563]";
+    if (score >= 40) return "text-[#4B5563]";
+    return "text-[#0B0B0F]";
   };
 
   const getScoreBg = (score: number) => {
-    if (score >= 90) return "bg-green-500";
-    if (score >= 75) return "bg-emerald-500";
-    if (score >= 60) return "bg-yellow-500";
-    if (score >= 40) return "bg-orange-500";
-    return "bg-red-500";
+    if (score >= 90) return "bg-[#FB923C]";
+    if (score >= 75) return "bg-[#FB923C]";
+    if (score >= 60) return "bg-[#4B5563]";
+    if (score >= 40) return "bg-[#4B5563]";
+    return "bg-[#0B0B0F]";
   };
 
   return (
@@ -33,7 +33,7 @@ export default function ItHealthDashboard({ result }: Props) {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Global Score Gauge */}
         <div className="lg:col-span-1 bg-card rounded-3xl border border-border/50 shadow-xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 opacity-20" />
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#0B0B0F] via-[#4B5563] to-[#FB923C] opacity-20" />
           
           <h3 className="text-lg font-medium text-muted-foreground mb-4">IT Health Score</h3>
           
@@ -119,14 +119,14 @@ export default function ItHealthDashboard({ result }: Props) {
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-blue-500" />
+                <FileText className="w-5 h-5 text-[#4B5563]" />
                 <span className="font-medium">Compliance</span>
               </div>
               <span className="font-bold">{scores.compliance}/100</span>
             </div>
             <div className="h-3 w-full bg-muted rounded-full overflow-hidden">
               <div 
-                className="h-full bg-blue-500 transition-all duration-1000" 
+                className="h-full bg-[#4B5563] transition-all duration-1000" 
                 style={{ width: `${scores.compliance}%` }}
               />
             </div>
@@ -136,40 +136,40 @@ export default function ItHealthDashboard({ result }: Props) {
 
       {/* Financial Impact */}
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-2xl p-5">
-          <div className="flex items-center gap-2 mb-2 text-red-600 dark:text-red-400">
+        <div className="bg-[#F3F4F6] dark:bg-[#0B0B0F]/20 border border-[#E5E7EB] dark:border-[#0B0B0F]/20 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-2 text-[#0B0B0F] dark:text-[#FB923C]">
             <AlertTriangle className="w-5 h-5" />
             <span className="font-medium text-sm">Versteckte IT-Kosten (Jahr)</span>
           </div>
-          <div className="text-2xl font-bold text-red-700 dark:text-red-300">
+          <div className="text-2xl font-bold text-[#0B0B0F] dark:text-[#FB923C]">
             {financial.currentHiddenCosts.toLocaleString("de-DE")} €
           </div>
-          <p className="text-xs text-red-600/80 mt-1">Durch Ausfälle & Wartezeiten</p>
+          <p className="text-xs text-[#0B0B0F]/80 mt-1">Durch Ausfälle & Wartezeiten</p>
         </div>
 
-        <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/30 rounded-2xl p-5">
-          <div className="flex items-center gap-2 mb-2 text-blue-600 dark:text-blue-400">
+        <div className="bg-[#F3F4F6] dark:bg-[#4B5563]/10 border border-[#E5E7EB] dark:border-[#4B5563]/30 rounded-2xl p-5">
+          <div className="flex items-center gap-2 mb-2 text-[#4B5563] dark:text-[#F3F4F6]">
             <Shield className="w-5 h-5" />
             <span className="font-medium text-sm">Investition Managed IT</span>
           </div>
-          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+          <div className="text-2xl font-bold text-[#4B5563] dark:text-[#F3F4F6]">
             {financial.estimatedMspCost.toLocaleString("de-DE")} €
           </div>
-          <p className="text-xs text-blue-600/80 mt-1">Kalkuliert mit KMU Standard</p>
+          <p className="text-xs text-[#4B5563]/80 mt-1">Kalkuliert mit KMU Standard</p>
         </div>
 
-        <div className="bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/30 rounded-2xl p-5 relative overflow-hidden">
+        <div className="bg-[#F3F4F6] dark:bg-[#FB923C]/10 border border-[#E5E7EB] dark:border-[#FB923C]/30 rounded-2xl p-5 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-2 opacity-10">
-            <TrendingUp className="w-16 h-16 text-green-600" />
+            <TrendingUp className="w-16 h-16 text-[#FB923C]" />
           </div>
-          <div className="flex items-center gap-2 mb-2 text-green-600 dark:text-green-400">
+          <div className="flex items-center gap-2 mb-2 text-[#FB923C] dark:text-[#FB923C]">
             <TrendingUp className="w-5 h-5" />
             <span className="font-medium text-sm">Mögliche Einsparung</span>
           </div>
-          <div className="text-2xl font-bold text-green-700 dark:text-green-300">
+          <div className="text-2xl font-bold text-[#FB923C] dark:text-[#FB923C]">
             {financial.potentialSavings.toLocaleString("de-DE")} €
           </div>
-          <p className="text-xs text-green-600/80 mt-1">
+          <p className="text-xs text-[#FB923C]/80 mt-1">
             ROI: {financial.roiMultiplier}x
           </p>
         </div>
@@ -186,8 +186,8 @@ export default function ItHealthDashboard({ result }: Props) {
           {recommendations.map((rec) => (
             <div key={rec.id} className="bg-background p-4 rounded-xl border border-border shadow-sm flex gap-3">
               <div className={`mt-1 shrink-0 w-2 h-2 rounded-full ${
-                rec.impact === "Hoch" ? "bg-red-500" : 
-                rec.impact === "Mittel" ? "bg-yellow-500" : "bg-blue-500"
+                rec.impact === "Hoch" ? "bg-[#0B0B0F]" : 
+                rec.impact === "Mittel" ? "bg-[#4B5563]" : "bg-[#4B5563]"
               }`} />
               <div>
                 <h4 className="font-bold text-sm">{rec.title}</h4>

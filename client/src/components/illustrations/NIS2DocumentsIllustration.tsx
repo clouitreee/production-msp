@@ -7,7 +7,7 @@ export default function NIS2DocumentsIllustration({ className }: { className?: s
       className={className}
     >
       {/* Background Circle */}
-      <circle cx="150" cy="150" r="120" className="fill-secondary/20" />
+      <circle cx="150" cy="150" r="120" className="fill-[#F3F4F6]" />
       
       {/* Stack of Documents */}
       <g transform="translate(75, 75)">
@@ -26,13 +26,13 @@ export default function NIS2DocumentsIllustration({ className }: { className?: s
         <rect x="20" y="80" width="50" height="6" rx="3" className="fill-muted" />
         
         {/* EU Outline / Stars Hint */}
-        <circle cx="90" cy="140" r="15" className="fill-blue-50" />
-        <circle cx="90" cy="140" r="10" className="fill-transparent text-blue-500" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+        <circle cx="90" cy="140" r="15" className="fill-[#F3F4F6]" />
+        <circle cx="90" cy="140" r="10" className="fill-transparent text-[#4B5563]" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
       </g>
 
       {/* Big Checkmark */}
       <g transform="translate(180, 180)" className="animate-bounce" style={{ animationDuration: "3s" }}>
-        <circle cx="30" cy="30" r="30" className="fill-primary text-primary" />
+        <circle cx="30" cy="30" r="30" className="fill-[#FB923C] text-[#FB923C]" />
         <path
           d="M18 30 L26 38 L42 22"
           stroke="white"

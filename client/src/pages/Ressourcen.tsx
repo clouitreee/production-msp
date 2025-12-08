@@ -130,7 +130,7 @@ export default function Ressourcen() {
                         "Ideal als Vorbereitung für ein Gespräch mit Tech Hilfe Pro",
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0 mt-0.5" />
                           <span className="font-medium">{item}</span>
                         </li>
                       ))}
@@ -155,7 +155,7 @@ export default function Ressourcen() {
                 <div className="msp-card p-8 lg:p-10 relative overflow-hidden">
                   {isSuccess ? (
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm z-10 p-8 text-center animate-in fade-in duration-500">
-                      <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6 shadow-lg">
+                      <div className="h-20 w-20 bg-[#F3F4F6] rounded-full flex items-center justify-center text-[#FB923C] mb-6 shadow-lg">
                         <CheckCircle2 className="h-10 w-10" />
                       </div>
                       <h3 className="text-2xl font-bold mb-2">Vielen Dank!</h3>

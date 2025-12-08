@@ -69,14 +69,14 @@ export default function Unternehmen() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8 text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3F4F6] text-[#FB923C] text-sm font-medium">
                   <ShieldCheck className="h-4 w-4" />
                   Managed IT-Services für KMU
                 </div>
 
                 <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                   Für Unternehmen & KMU – <br />
-                  <span className="text-primary block mt-2 h-24 sm:h-auto">
+                  <span className="text-[#FB923C] block mt-2 h-24 sm:h-auto">
                     <TypewriterText
                       items={[
                         "Managed IT, die einfach funktioniert",
@@ -101,19 +101,19 @@ export default function Unternehmen() {
 
                 <div className="flex flex-col gap-3 text-sm text-muted-foreground">
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
                     <span>Managed IT-Services für PCs, Laptops, Server & Netzwerk</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
                     <span>Sichere Fernwartung mit selbst gehosteten Tools</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
                     <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
                     <span>Bis zu 50 % Förderung in NRW möglich</span>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function Unternehmen() {
           <div className="container">
             <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
               <div className="flex-1 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3F4F6] text-[#FB923C] text-xs font-bold">
                   <ShieldCheck className="h-3 w-3" />
                   NIS2 Compliance
                 </div>
@@ -187,8 +187,8 @@ export default function Unternehmen() {
                   Risiko und sind besser auf Prüfungen vorbereitet, ohne dass
                   der Büroalltag stillsteht.
                 </p>
-                <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 rounded-r-lg">
-                  <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
+                <div className="bg-[#F3F4F6] dark:bg-[#4B5563]/10 border-l-4 border-[#FB923C] p-4 rounded-r-lg">
+                  <p className="text-sm text-[#0B0B0F] dark:text-[#F3F4F6] font-medium">
                     Hinweis: Wir bieten keine Rechtsberatung und keine formelle
                     Zertifizierung an, sondern unterstützen Sie bei der
                     praktischen Umsetzung technischer Maßnahmen.
@@ -249,19 +249,19 @@ export default function Unternehmen() {
                 </div>
                 <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Monitoring & Patch-Management (Windows/Mac)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Managed Antivirus / EDR-Basis</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Fernwartungs-Zugriff (bei Bedarf)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Reaktionszeit &lt; 8 Std. (Mo-Fr)</span>
                   </li>
                 </ul>
@@ -273,8 +273,8 @@ export default function Unternehmen() {
               </div>
 
               {/* Standard */}
-              <div className="msp-card p-8 flex flex-col relative border-primary shadow-lg scale-105 z-10 msp-card-hover">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+              <div className="msp-card p-8 flex flex-col relative border-[#4B5563] shadow-lg scale-105 z-10 msp-card-hover">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FB923C] text-white px-3 py-1 rounded-full text-sm font-medium">
                   Beliebt
                 </div>
                 <div className="mb-6">
@@ -301,23 +301,23 @@ export default function Unternehmen() {
                 </div>
                 <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex items-start gap-2 text-sm font-medium">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Alles aus Essential</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Managed Backup (Cloud, 1 TB/User)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Microsoft 365 Verwaltung & Support</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>E-Mail-Security (Spam/Phishing-Filter)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Reaktionszeit &lt; 4 Std. (Mo-Fr)</span>
                   </li>
                 </ul>
@@ -352,23 +352,23 @@ export default function Unternehmen() {
                 </div>
                 <ul className="space-y-3 mb-8 flex-grow">
                   <li className="flex items-start gap-2 text-sm font-medium">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Alles aus Standard</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Erweiterte Security (EDR/XDR, 24/7 Monitoring)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Schwachstellen-Scan (monatlich)</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Security Awareness Training für Mitarbeiter</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-[#FB923C] shrink-0 mt-0.5" />
                     <span>Priorisierter Support (Fast Lane)</span>
                   </li>
                 </ul>

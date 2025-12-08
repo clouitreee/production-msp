@@ -97,7 +97,7 @@ export default function ContactModal({
       <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-10 text-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
-            <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-2">
+            <div className="h-16 w-16 bg-[#F3F4F6] rounded-full flex items-center justify-center text-[#FB923C] mb-2">
               <CheckCircle2 className="h-8 w-8" />
             </div>
             <DialogTitle className="text-2xl">Anfrage gesendet!</DialogTitle>
