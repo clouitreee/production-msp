@@ -206,7 +206,7 @@
 
   /* Button Standardization */
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_0_2px_rgba(251,146,60,0.3)] shadow-sm rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-[0_0_0_2px_rgba(251,146,60,0.3)] shadow-sm rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
   }
 
   .btn-secondary {

@@ -87,7 +87,7 @@ export default function Hero() {
                   </p>
                 </div>
                 <div className="mt-auto pt-4">
-                  <Button className="w-full btn-outline group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all" asChild>
+                  <Button className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
                     <Link href="/privatkunden">
                       Zu den Services <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -108,7 +108,7 @@ export default function Hero() {
                   </p>
                 </div>
                 <div className="mt-auto pt-4">
-                  <Button className="w-full btn-outline group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all" asChild>
+                  <Button className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
                     <Link href="/unternehmen">
                       Zum KMU-Bereich <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
