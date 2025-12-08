@@ -17,7 +17,7 @@ export default function B2CHero() {
     <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
       {/* Background decorative blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px]" />
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[#FB923C]/5 blur-[100px]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[100px]" />
       </div>
 
@@ -25,10 +25,10 @@ export default function B2CHero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3F4F6] text-[#FB923C] text-sm font-medium">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FB923C] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FB923C]"></span>
               </span>
               Jetzt verfügbar in Köln & Neuss
             </div>
@@ -36,7 +36,7 @@ export default function B2CHero() {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
                 Für Privatkunden & Haushalte – <br />
-                <span className="text-primary block mt-2 h-16 sm:h-auto">
+                <span className="text-[#FB923C] block mt-2 h-16 sm:h-auto">
                   <TypewriterText
                     items={TYPEWRITER_PHRASES}
                     speed={50}
@@ -79,15 +79,15 @@ export default function B2CHero() {
 
             <div className="pt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <CheckCircle2 className="h-4 w-4 text-[#FB923C]" />
                 <span>Fernwartung</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <CheckCircle2 className="h-4 w-4 text-[#FB923C]" />
                 <span>Vor-Ort-Service</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <CheckCircle2 className="h-4 w-4 text-[#FB923C]" />
                 <span>Keine versteckten Kosten</span>
               </div>
             </div>
