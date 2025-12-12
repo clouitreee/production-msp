@@ -3,11 +3,8 @@ import {
   ArrowRight,
   CheckCircle2,
   FileText,
-  Monitor,
-  ShieldCheck,
-  Euro,
-  Laptop,
   Building2,
+  Laptop,
 } from "lucide-react";
 import { Link } from "wouter";
 import TypewriterText from "./TypewriterText";
@@ -127,36 +124,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Illustration Placeholder */}
+          {/* Right Column: Hero Image */}
           <div className="flex items-center justify-center relative mt-12 lg:mt-0">
-            <div className="relative w-full max-w-md aspect-square">
-              {/* Abstract Tech Illustration Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl" />
-              <div className="relative z-10 w-full h-full bg-card/50 backdrop-blur-sm border border-white/20 rounded-3xl shadow-2xl p-8 flex items-center justify-center overflow-hidden">
-                <div className="grid grid-cols-2 gap-4 w-full h-full opacity-80">
-                  <div
-                    className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse"
-                    style={{ animationDelay: "0s" }}
-                  />
-                  <div
-                    className="bg-primary/10 rounded-2xl w-full h-full animate-pulse"
-                    style={{ animationDelay: "1s" }}
-                  />
-                  <div
-                    className="bg-primary/10 rounded-2xl w-full h-full animate-pulse"
-                    style={{ animationDelay: "2s" }}
-                  />
-                  <div
-                    className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse"
-                    style={{ animationDelay: "3s" }}
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-card shadow-xl rounded-2xl p-6 border border-border">
-                    <ShieldCheck className="h-16 w-16 text-primary" />
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-secondary/50 p-2 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
+              <img
+                src="/images/main-hero-3d.png"
+                alt="IT Partner for Home and Business"
+                className="w-full h-auto rounded-2xl overflow-hidden object-cover"
+              />
             </div>
           </div>
         </div>
