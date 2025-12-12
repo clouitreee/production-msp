@@ -1,4 +1,4 @@
-export type QuestionId = 
+export type QuestionId =
   | "employees"
   | "lostHours"
   | "incidents"

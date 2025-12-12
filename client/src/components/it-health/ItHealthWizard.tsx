@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 
 interface Props {
@@ -23,7 +29,7 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
     <div className="bg-card rounded-3xl border border-border/50 shadow-xl p-6 lg:p-8 h-full flex flex-col">
       {/* Progress Indicator */}
       <div className="flex items-center gap-2 mb-8">
-        {[1, 2, 3].map((s) => (
+        {[1, 2, 3].map(s => (
           <div
             key={s}
             className={`h-2 flex-1 rounded-full transition-all duration-500 ${
@@ -50,13 +56,17 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                   type="number"
                   min={1}
                   value={inputs.employees}
-                  onChange={(e) => update("employees", parseInt(e.target.value) || 0)}
+                  onChange={e =>
+                    update("employees", parseInt(e.target.value) || 0)
+                  }
                 />
               </div>
 
               <div className="space-y-2">
                 <Label>Verlorene Stunden pro Woche (pro MA)</Label>
-                <p className="text-xs text-muted-foreground">Durch langsame PCs, Abstürze oder Warten auf Support.</p>
+                <p className="text-xs text-muted-foreground">
+                  Durch langsame PCs, Abstürze oder Warten auf Support.
+                </p>
                 <div className="flex items-center gap-4">
                   <Input
                     type="range"
@@ -64,16 +74,25 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                     max={10}
                     step={0.5}
                     value={inputs.lostHoursPerEmployeePerWeek}
-                    onChange={(e) => update("lostHoursPerEmployeePerWeek", parseFloat(e.target.value))}
+                    onChange={e =>
+                      update(
+                        "lostHoursPerEmployeePerWeek",
+                        parseFloat(e.target.value)
+                      )
+                    }
                     className="flex-1"
                   />
-                  <span className="font-mono font-bold w-12 text-right">{inputs.lostHoursPerEmployeePerWeek} h</span>
+                  <span className="font-mono font-bold w-12 text-right">
+                    {inputs.lostHoursPerEmployeePerWeek} h
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-2">
                 <Label>Kritische IT-Ausfälle pro Jahr</Label>
-                <p className="text-xs text-muted-foreground">Server down, Internet weg, E-Mail Störung...</p>
+                <p className="text-xs text-muted-foreground">
+                  Server down, Internet weg, E-Mail Störung...
+                </p>
                 <div className="flex items-center gap-4">
                   <Input
                     type="range"
@@ -81,10 +100,14 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                     max={20}
                     step={1}
                     value={inputs.incidentsPerYear}
-                    onChange={(e) => update("incidentsPerYear", parseInt(e.target.value))}
+                    onChange={e =>
+                      update("incidentsPerYear", parseInt(e.target.value))
+                    }
                     className="flex-1"
                   />
-                  <span className="font-mono font-bold w-12 text-right">{inputs.incidentsPerYear}</span>
+                  <span className="font-mono font-bold w-12 text-right">
+                    {inputs.incidentsPerYear}
+                  </span>
                 </div>
               </div>
             </div>
@@ -103,16 +126,22 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Backup-Strategie</Label>
-                <Select 
-                  value={inputs.backupFrequency} 
+                <Select
+                  value={inputs.backupFrequency}
                   onValueChange={(v: any) => update("backupFrequency", v)}
                 >
-                  <SelectTrigger><SelectValue /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="daily">Täglich automatisiert</SelectItem>
                     <SelectItem value="weekly">Wöchentlich</SelectItem>
-                    <SelectItem value="monthly">Monatlich / Sporadisch</SelectItem>
-                    <SelectItem value="none">Kein regelmäßiges Backup</SelectItem>
+                    <SelectItem value="monthly">
+                      Monatlich / Sporadisch
+                    </SelectItem>
+                    <SelectItem value="none">
+                      Kein regelmäßiges Backup
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -122,7 +151,7 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                   type="checkbox"
                   id="backupTested"
                   checked={inputs.backupTested}
-                  onChange={(e) => update("backupTested", e.target.checked)}
+                  onChange={e => update("backupTested", e.target.checked)}
                   className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
                 />
                 <Label htmlFor="backupTested" className="cursor-pointer">
@@ -132,18 +161,22 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
 
               <div className="space-y-2">
                 <Label>Virenschutz / Antivirus</Label>
-                <RadioGroup 
-                  value={inputs.antivirusType} 
+                <RadioGroup
+                  value={inputs.antivirusType}
                   onValueChange={(v: any) => update("antivirusType", v)}
                   className="flex flex-col space-y-1"
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="managed" id="av-managed" />
-                    <Label htmlFor="av-managed">Managed (Zentral überwacht)</Label>
+                    <Label htmlFor="av-managed">
+                      Managed (Zentral überwacht)
+                    </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="free" id="av-free" />
-                    <Label htmlFor="av-free">Kostenlos / Standard (Windows Defender)</Label>
+                    <Label htmlFor="av-free">
+                      Kostenlos / Standard (Windows Defender)
+                    </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="none" id="av-none" />
@@ -154,14 +187,20 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
 
               <div className="space-y-2">
                 <Label>Multi-Faktor-Authentifizierung (MFA)</Label>
-                <Select 
-                  value={inputs.mfaUsage} 
+                <Select
+                  value={inputs.mfaUsage}
                   onValueChange={(v: any) => update("mfaUsage", v)}
                 >
-                  <SelectTrigger><SelectValue /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Für alle Accounts aktiviert</SelectItem>
-                    <SelectItem value="some">Teilweise (z.B. nur M365)</SelectItem>
+                    <SelectItem value="all">
+                      Für alle Accounts aktiviert
+                    </SelectItem>
+                    <SelectItem value="some">
+                      Teilweise (z.B. nur M365)
+                    </SelectItem>
                     <SelectItem value="none">Nicht genutzt</SelectItem>
                   </SelectContent>
                 </Select>
@@ -182,13 +221,17 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label>IT-Dokumentation</Label>
-                <Select 
-                  value={inputs.documentationStatus} 
+                <Select
+                  value={inputs.documentationStatus}
                   onValueChange={(v: any) => update("documentationStatus", v)}
                 >
-                  <SelectTrigger><SelectValue /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="complete">Vollständig & Aktuell</SelectItem>
+                    <SelectItem value="complete">
+                      Vollständig & Aktuell
+                    </SelectItem>
                     <SelectItem value="partial">Teilweise vorhanden</SelectItem>
                     <SelectItem value="none">Nicht vorhanden</SelectItem>
                   </SelectContent>
@@ -201,11 +244,14 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                     type="checkbox"
                     id="nis2"
                     checked={inputs.nis2Awareness}
-                    onChange={(e) => update("nis2Awareness", e.target.checked)}
+                    onChange={e => update("nis2Awareness", e.target.checked)}
                     className="h-4 w-4 mt-1 rounded border-gray-300 text-primary focus:ring-primary"
                   />
                   <div className="space-y-1">
-                    <Label htmlFor="nis2" className="cursor-pointer font-medium">
+                    <Label
+                      htmlFor="nis2"
+                      className="cursor-pointer font-medium"
+                    >
                       NIS2-Betroffenheit geprüft
                     </Label>
                     <p className="text-xs text-muted-foreground">
@@ -219,11 +265,14 @@ export default function ItHealthWizard({ inputs, setInputs }: Props) {
                     type="checkbox"
                     id="dsgvo"
                     checked={inputs.dsgvoAudited}
-                    onChange={(e) => update("dsgvoAudited", e.target.checked)}
+                    onChange={e => update("dsgvoAudited", e.target.checked)}
                     className="h-4 w-4 mt-1 rounded border-gray-300 text-primary focus:ring-primary"
                   />
                   <div className="space-y-1">
-                    <Label htmlFor="dsgvo" className="cursor-pointer font-medium">
+                    <Label
+                      htmlFor="dsgvo"
+                      className="cursor-pointer font-medium"
+                    >
                       DSGVO / AV-Verträge aktuell
                     </Label>
                     <p className="text-xs text-muted-foreground">

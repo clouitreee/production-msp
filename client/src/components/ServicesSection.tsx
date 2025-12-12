@@ -10,7 +10,10 @@ export default function ServicesSection() {
   );
 
   return (
-    <section id="services" className="py-20 lg:py-32 bg-background relative overflow-hidden">
+    <section
+      id="services"
+      className="py-20 lg:py-32 bg-background relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
 
@@ -21,14 +24,14 @@ export default function ServicesSection() {
             <Zap className="w-4 h-4" />
             Unsere Expertise
           </div>
-          
+
           <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-foreground">
             Von A wie Apple bis Z wie Zoom
           </h2>
-          
+
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Wir helfen bei fast allem, was einen Stecker oder Akku hat. 
-            Egal ob Einrichtung, Reparatur oder einfach nur eine Frage.
+            Wir helfen bei fast allem, was einen Stecker oder Akku hat. Egal ob
+            Einrichtung, Reparatur oder einfach nur eine Frage.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2">
@@ -48,7 +51,10 @@ export default function ServicesSection() {
 
         {/* Divider */}
         <div className="relative py-8">
-          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div
+            className="absolute inset-0 flex items-center"
+            aria-hidden="true"
+          >
             <div className="w-full border-t border-border" />
           </div>
           <div className="relative flex justify-center">

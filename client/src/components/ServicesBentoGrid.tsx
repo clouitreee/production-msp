@@ -17,15 +17,19 @@ export default function ServicesBentoGrid() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-      {FEATURED_SERVICES.map((service) => (
+      {FEATURED_SERVICES.map(service => (
         <div
           key={service.id}
           onClick={() => scrollToCategory(service.categoryId)}
           className={cn(
             "group relative overflow-hidden rounded-3xl p-6 lg:p-8 cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-border/50",
-            service.size === "large" ? "md:col-span-2 lg:col-span-2 aspect-[2/1] md:aspect-auto" : "col-span-1 aspect-square md:aspect-[4/3]",
+            service.size === "large"
+              ? "md:col-span-2 lg:col-span-2 aspect-[2/1] md:aspect-auto"
+              : "col-span-1 aspect-square md:aspect-[4/3]",
             "bg-gradient-to-br",
-            service.colorClass.includes("from-") ? service.colorClass : "bg-card"
+            service.colorClass.includes("from-")
+              ? service.colorClass
+              : "bg-card"
           )}
         >
           {/* Background decoration */}
@@ -33,24 +37,32 @@ export default function ServicesBentoGrid() {
 
           <div className="relative h-full flex flex-col justify-between z-10">
             <div className="space-y-4">
-              <div className={cn(
-                "inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm transition-transform group-hover:scale-110 group-hover:rotate-3",
-                service.colorClass.split(" ").pop() // Get the text color class for the icon
-              )}>
+              <div
+                className={cn(
+                  "inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm transition-transform group-hover:scale-110 group-hover:rotate-3",
+                  service.colorClass.split(" ").pop() // Get the text color class for the icon
+                )}
+              >
                 <service.icon className="w-6 h-6" />
               </div>
-              
+
               <div>
-                <h3 className={cn(
-                  "font-bold tracking-tight",
-                  service.size === "large" ? "text-2xl lg:text-3xl" : "text-xl"
-                )}>
+                <h3
+                  className={cn(
+                    "font-bold tracking-tight",
+                    service.size === "large"
+                      ? "text-2xl lg:text-3xl"
+                      : "text-xl"
+                  )}
+                >
                   {service.title}
                 </h3>
-                <p className={cn(
-                  "mt-2 text-muted-foreground/80 font-medium leading-relaxed",
-                  service.size === "large" ? "text-lg max-w-md" : "text-sm"
-                )}>
+                <p
+                  className={cn(
+                    "mt-2 text-muted-foreground/80 font-medium leading-relaxed",
+                    service.size === "large" ? "text-lg max-w-md" : "text-sm"
+                  )}
+                >
                   {service.description}
                 </p>
               </div>

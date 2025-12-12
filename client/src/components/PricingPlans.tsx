@@ -299,7 +299,8 @@ export default function PricingPlans() {
             Alle Abos (Basis & Komfort) enthalten:
           </p>
           <p className="text-muted-foreground mt-2">
-            Remote-Support, Telefonsupport, und nach 90 Tagen Laufzeit 1x Vor-Ort-Termin pro Jahr.
+            Remote-Support, Telefonsupport, und nach 90 Tagen Laufzeit 1x
+            Vor-Ort-Termin pro Jahr.
           </p>
         </div>
 

@@ -13,7 +13,7 @@ import ContactModal from "./ContactModal";
 export default function ServicesAccordion() {
   return (
     <Accordion type="single" collapsible className="space-y-4">
-      {SERVICE_CATEGORIES.map((category) => (
+      {SERVICE_CATEGORIES.map(category => (
         <AccordionItem
           key={category.id}
           value={category.id}
@@ -28,14 +28,16 @@ export default function ServicesAccordion() {
             )}
           >
             <div className="flex items-center gap-4 text-left w-full pr-4">
-              <div className={cn(
-                "flex items-center justify-center w-12 h-12 rounded-xl shrink-0 transition-colors",
-                category.colorBg,
-                category.color
-              )}>
+              <div
+                className={cn(
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0 transition-colors",
+                  category.colorBg,
+                  category.color
+                )}
+              >
                 <category.icon className="w-6 h-6" />
               </div>
-              
+
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap">
                   <h3 className="text-xl font-bold text-foreground">
@@ -52,12 +54,14 @@ export default function ServicesAccordion() {
             </div>
           </AccordionTrigger>
 
-          <AccordionContent className={cn(
-            "rounded-b-3xl border-x border-b border-border bg-card/50 px-6 pb-6 pt-2",
-            "data-[state=open]:border-primary"
-          )}>
+          <AccordionContent
+            className={cn(
+              "rounded-b-3xl border-x border-b border-border bg-card/50 px-6 pb-6 pt-2",
+              "data-[state=open]:border-primary"
+            )}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-              {category.services.map((service) => (
+              {category.services.map(service => (
                 <div
                   key={service.id}
                   className="flex items-start gap-3 p-3 rounded-xl hover:bg-secondary/20 transition-colors group/service"
@@ -79,7 +83,14 @@ export default function ServicesAccordion() {
 
             <div className="mt-8 flex justify-center">
               <ContactModal defaultTopic={category.title}>
-                <Button className={cn("btn-primary", category.colorBg.replace("bg-", "hover:bg-").replace("50", "100"))}>
+                <Button
+                  className={cn(
+                    "btn-primary",
+                    category.colorBg
+                      .replace("bg-", "hover:bg-")
+                      .replace("50", "100")
+                  )}
+                >
                   Alle {category.title}-Services anfragen
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>

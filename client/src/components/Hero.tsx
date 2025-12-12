@@ -42,7 +42,7 @@ export default function Hero() {
                 Ihr IT-Partner für <br />
                 <span className="text-primary">Zuhause & Unternehmen</span>
               </h1>
-              
+
               <div className="text-xl lg:text-2xl text-muted-foreground h-16 sm:h-auto">
                 <TypewriterText
                   items={[
@@ -65,7 +65,10 @@ export default function Hero() {
                 "Managed IT & NIS2-Compliance für KMU",
                 "Transparente Preise ohne versteckte Kosten",
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground/80">
+                <li
+                  key={i}
+                  className="flex items-center gap-3 text-foreground/80"
+                >
                   <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -87,7 +90,10 @@ export default function Hero() {
                   </p>
                 </div>
                 <div className="mt-auto pt-4">
-                  <Button className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
+                  <Button
+                    className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all"
+                    asChild
+                  >
                     <Link href="/privatkunden">
                       Zu den Services <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -108,7 +114,10 @@ export default function Hero() {
                   </p>
                 </div>
                 <div className="mt-auto pt-4">
-                  <Button className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all" asChild>
+                  <Button
+                    className="w-full btn-outline group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all"
+                    asChild
+                  >
                     <Link href="/unternehmen">
                       Zum KMU-Bereich <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -125,10 +134,22 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl" />
               <div className="relative z-10 w-full h-full bg-card/50 backdrop-blur-sm border border-white/20 rounded-3xl shadow-2xl p-8 flex items-center justify-center overflow-hidden">
                 <div className="grid grid-cols-2 gap-4 w-full h-full opacity-80">
-                  <div className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse" style={{ animationDelay: "0s" }} />
-                  <div className="bg-primary/10 rounded-2xl w-full h-full animate-pulse" style={{ animationDelay: "1s" }} />
-                  <div className="bg-primary/10 rounded-2xl w-full h-full animate-pulse" style={{ animationDelay: "2s" }} />
-                  <div className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse" style={{ animationDelay: "3s" }} />
+                  <div
+                    className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse"
+                    style={{ animationDelay: "0s" }}
+                  />
+                  <div
+                    className="bg-primary/10 rounded-2xl w-full h-full animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                  />
+                  <div
+                    className="bg-primary/10 rounded-2xl w-full h-full animate-pulse"
+                    style={{ animationDelay: "2s" }}
+                  />
+                  <div
+                    className="bg-secondary/50 rounded-2xl w-full h-full animate-pulse"
+                    style={{ animationDelay: "3s" }}
+                  />
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-card shadow-xl rounded-2xl p-6 border border-border">

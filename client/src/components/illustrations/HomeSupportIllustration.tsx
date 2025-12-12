@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
 
-export default function HomeSupportIllustration({ className }: { className?: string }) {
+export default function HomeSupportIllustration({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <svg
       viewBox="0 0 800 600"
@@ -36,9 +40,13 @@ export default function HomeSupportIllustration({ className }: { className?: str
 
       {/* Background Scene */}
       <rect width="800" height="600" fill="url(#bg-grad)" />
-      
+
       {/* Floor/Desk Surface */}
-      <path d="M100 450 L700 450 L750 550 L50 550 Z" fill="#E2E8F0" opacity="0.5" />
+      <path
+        d="M100 450 L700 450 L750 550 L50 550 Z"
+        fill="#E2E8F0"
+        opacity="0.5"
+      />
 
       {/* Laptop Base */}
       <g filter="url(#soft-shadow)">
@@ -49,26 +57,75 @@ export default function HomeSupportIllustration({ className }: { className?: str
       {/* Laptop Screen */}
       <g transform="translate(0, -10)">
         <path d="M250 400 L550 400 L550 200 L250 200 Z" fill="#1E293B" />
-        <rect x="260" y="210" width="280" height="180" fill="url(#screen-grad)" />
-        
+        <rect
+          x="260"
+          y="210"
+          width="280"
+          height="180"
+          fill="url(#screen-grad)"
+        />
+
         {/* Screen Content */}
         <circle cx="400" cy="300" r="40" fill="white" opacity="0.1" />
-        <path d="M380 300 L400 320 L420 280" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M380 300 L400 320 L420 280"
+          stroke="white"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </g>
 
       {/* Router */}
       <g transform="translate(600, 380)" filter="url(#soft-shadow)">
         <rect x="0" y="0" width="80" height="40" rx="4" fill="white" />
-        <circle cx="20" cy="20" r="4" fill="#10B981" className="animate-pulse" />
-        <circle cx="40" cy="20" r="4" fill="#10B981" className="animate-pulse delay-75" />
-        <circle cx="60" cy="20" r="4" fill="#10B981" className="animate-pulse delay-150" />
-        <path d="M10 -20 L10 0" stroke="#CBD5E1" strokeWidth="4" strokeLinecap="round" />
-        <path d="M70 -20 L70 0" stroke="#CBD5E1" strokeWidth="4" strokeLinecap="round" />
+        <circle
+          cx="20"
+          cy="20"
+          r="4"
+          fill="#10B981"
+          className="animate-pulse"
+        />
+        <circle
+          cx="40"
+          cy="20"
+          r="4"
+          fill="#10B981"
+          className="animate-pulse delay-75"
+        />
+        <circle
+          cx="60"
+          cy="20"
+          r="4"
+          fill="#10B981"
+          className="animate-pulse delay-150"
+        />
+        <path
+          d="M10 -20 L10 0"
+          stroke="#CBD5E1"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+        <path
+          d="M70 -20 L70 0"
+          stroke="#CBD5E1"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
       </g>
 
       {/* Floating Remote Help Bubble */}
-      <g className="animate-[float_6s_ease-in-out_infinite]" transform="translate(150, 250)">
-        <circle cx="50" cy="50" r="40" fill="white" filter="url(#soft-shadow)" />
+      <g
+        className="animate-[float_6s_ease-in-out_infinite]"
+        transform="translate(150, 250)"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          fill="white"
+          filter="url(#soft-shadow)"
+        />
         <circle cx="50" cy="50" r="36" fill="#FB923C" opacity="0.1" />
         {/* Avatar Head */}
         <circle cx="50" cy="40" r="12" fill="#FB923C" />
@@ -80,9 +137,22 @@ export default function HomeSupportIllustration({ className }: { className?: str
       </g>
 
       {/* Shield Icon */}
-      <g transform="translate(450, 150)" className="animate-[float_8s_ease-in-out_infinite_reverse]">
-        <path d="M25 0 L50 10 V25 C50 40 25 50 25 50 C25 50 0 40 0 25 V10 L25 0 Z" fill="#10B981" filter="url(#soft-shadow)" />
-        <path d="M15 25 L22 32 L35 18" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <g
+        transform="translate(450, 150)"
+        className="animate-[float_8s_ease-in-out_infinite_reverse]"
+      >
+        <path
+          d="M25 0 L50 10 V25 C50 40 25 50 25 50 C25 50 0 40 0 25 V10 L25 0 Z"
+          fill="#10B981"
+          filter="url(#soft-shadow)"
+        />
+        <path
+          d="M15 25 L22 32 L35 18"
+          stroke="white"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </g>
     </svg>
   );

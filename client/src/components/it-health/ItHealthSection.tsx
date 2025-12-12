@@ -25,7 +25,10 @@ export default function ItHealthSection() {
   const result = useMemo(() => calculateItHealth(inputs), [inputs]);
 
   return (
-    <section id="it-health-score" className="py-24 bg-background relative overflow-hidden">
+    <section
+      id="it-health-score"
+      className="py-24 bg-background relative overflow-hidden"
+    >
       {/* Background Decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
         <div className="absolute top-20 left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -42,7 +45,8 @@ export default function ItHealthSection() {
             Wie gesund ist Ihre IT wirklich?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Machen Sie den kostenlosen Selbsttest. Sehen Sie sofort, wo Risiken lauern und wie viel Geld Sie durch ineffiziente IT verlieren.
+            Machen Sie den kostenlosen Selbsttest. Sehen Sie sofort, wo Risiken
+            lauern und wie viel Geld Sie durch ineffiziente IT verlieren.
           </p>
         </div>
 

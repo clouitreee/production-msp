@@ -66,7 +66,8 @@ export default function FundingCalculator() {
           </h3>
         </div>
         <p className="text-sm text-muted-foreground ml-13">
-         Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte (Schwerpunkt MID-Gutscheine).
+          Berechnen Sie Ihren möglichen Zuschuss für IT-Sicherheitsprojekte
+          (Schwerpunkt MID-Gutscheine).
         </p>
       </div>
 

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ContactModal from "./ContactModal";
 import TypewriterText from "./TypewriterText";
-import HomeSupportIllustration from "./illustrations/HomeSupportIllustration";
+
 
 const TYPEWRITER_PHRASES = [
   "Schnelle PC-Hilfe",
@@ -96,13 +96,11 @@ export default function B2CHero() {
           {/* Hero Illustration */}
           <div className="relative flex items-center justify-center lg:justify-end">
             <div className="relative w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-secondary/50 p-2 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
-              <HomeSupportIllustration className="w-full h-auto rounded-2xl overflow-hidden" />
+              <img src="/images/b2c-hero-3d.png" alt="Smart Home Support" className="w-full h-auto rounded-2xl overflow-hidden object-cover" />
             </div>
           </div>
         </div>
       </div>
-
-
     </section>
   );
 }

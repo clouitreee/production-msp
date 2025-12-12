@@ -17,8 +17,8 @@ import {
 import ContactModal from "@/components/ContactModal";
 import FundingCalculator from "@/components/FundingCalculator";
 import TypewriterText from "@/components/TypewriterText";
-import KMUComplianceIllustration from "@/components/illustrations/KMUComplianceIllustration";
-import NIS2DocumentsIllustration from "@/components/illustrations/NIS2DocumentsIllustration";
+
+
 import ServiceGrid from "@/components/ServiceGrid";
 import QuoteSection from "@/components/QuoteSection";
 
@@ -92,17 +92,19 @@ export default function Unternehmen() {
                 </h1>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen in
-                  Köln, Neuss und ganz NRW die Rolle einer ausgelagerten
+                  Tech Hilfe Pro übernimmt für kleine und mittlere Unternehmen
+                  in Köln, Neuss und ganz NRW die Rolle einer ausgelagerten
                   IT-Abteilung. Wir kümmern uns um Updates, Backups,
-                  Zugriffsrechte und sichere Fernwartung – damit Sie sich auf Ihr
-                  Kerngeschäft konzentrieren können.
+                  Zugriffsrechte und sichere Fernwartung – damit Sie sich auf
+                  Ihr Kerngeschäft konzentrieren können.
                 </p>
 
                 <div className="flex flex-col gap-3 text-sm text-muted-foreground">
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
-                    <span>Managed IT-Services für PCs, Laptops, Server & Netzwerk</span>
+                    <span>
+                      Managed IT-Services für PCs, Laptops, Server & Netzwerk
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
@@ -110,7 +112,9 @@ export default function Unternehmen() {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
-                    <span>Unterstützung bei NIS2-Grundlagen und Dokumentation</span>
+                    <span>
+                      Unterstützung bei NIS2-Grundlagen und Dokumentation
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FB923C] shrink-0" />
@@ -145,7 +149,7 @@ export default function Unternehmen() {
 
               <div className="flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-secondary/50 p-2 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
-                  <KMUComplianceIllustration className="w-full h-auto rounded-2xl overflow-hidden" />
+                  <img src="/images/b2b-hero-3d.png" alt="Managed IT Services" className="w-full h-auto rounded-2xl overflow-hidden object-cover" />
                 </div>
               </div>
             </div>
@@ -161,8 +165,6 @@ export default function Unternehmen() {
           items={B2B_SERVICES}
           className="bg-background"
         />
-
-
 
         {/* B) NIS2 & IT-Sicherheit */}
         <section className="py-24 bg-slate-50 dark:bg-slate-950">
@@ -197,7 +199,7 @@ export default function Unternehmen() {
               <div className="flex-1 flex justify-center">
                 <div className="relative w-full max-w-md">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl -z-10" />
-                  <NIS2DocumentsIllustration className="w-full h-auto drop-shadow-xl" />
+                  <img src="/images/nis2-shield-3d.png" alt="NIS2 Compliance Shield" className="w-full h-auto drop-shadow-xl object-contain" />
                 </div>
               </div>
             </div>

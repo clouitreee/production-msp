@@ -49,91 +49,91 @@
   */
 
   /* Colors */
-  --background: #FFFFFF;       /* Page background */
-  --foreground: #0B0B0F;       /* Text Main (Deep Black) */
+  --background: #ffffff; /* Page background */
+  --foreground: #0b0b0f; /* Text Main (Deep Black) */
 
-  --card: #FFFFFF;             /* Surface */
-  --card-foreground: #0B0B0F;
+  --card: #ffffff; /* Surface */
+  --card-foreground: #0b0b0f;
 
-  --popover: #FFFFFF;
-  --popover-foreground: #0B0B0F;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0f;
 
-  --primary: #0B0B0F;          /* Main Brand: Deep Black */
-  --primary-foreground: #FFFFFF;
+  --primary: #0b0b0f; /* Main Brand: Deep Black */
+  --primary-foreground: #ffffff;
 
-  --secondary: #F3F4F6;        /* Light Gray */
-  --secondary-foreground: #0B0B0F;
+  --secondary: #f3f4f6; /* Light Gray */
+  --secondary-foreground: #0b0b0f;
 
-  --muted: #F3F4F6;
-  --muted-foreground: #4B5563; /* Metallic Gray */
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563; /* Metallic Gray */
 
-  --accent: #FB923C;           /* Highlights & Key Accents (Orange) */
-  --accent-foreground: #0B0B0F;
+  --accent: #fb923c; /* Highlights & Key Accents (Orange) */
+  --accent-foreground: #0b0b0f;
 
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
-  --border: #E5E7EB;           /* Border Soft */
-  --input: #E5E7EB;
-  --ring: #FB923C;
+  --border: #e5e7eb; /* Border Soft */
+  --input: #e5e7eb;
+  --ring: #fb923c;
 
   --radius: 1rem; /* Base radius, used for rounded-xl usually */
 
   /* Charts (kept from previous, adjusted to match palette) */
-  --chart-1: #0F766E;
-  --chart-2: #FB923C;
-  --chart-3: #0F172A;
-  --chart-4: #6B7280;
-  --chart-5: #E0F2F1;
+  --chart-1: #0f766e;
+  --chart-2: #fb923c;
+  --chart-3: #0f172a;
+  --chart-4: #6b7280;
+  --chart-5: #e0f2f1;
 
-  --sidebar: #F4F6F8;
-  --sidebar-foreground: #0F172A;
-  --sidebar-primary: #0F766E;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E0F2F1;
-  --sidebar-accent-foreground: #0F766E;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #0F766E;
+  --sidebar: #f4f6f8;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0f766e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0f2f1;
+  --sidebar-accent-foreground: #0f766e;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #0f766e;
 }
 
 .dark {
   /* Dark Mode Mapping (Optional, but good to have) */
-  --background: #0F172A;
-  --foreground: #F4F6F8;
+  --background: #0f172a;
+  --foreground: #f4f6f8;
 
-  --card: #1E293B;
-  --card-foreground: #F4F6F8;
+  --card: #1e293b;
+  --card-foreground: #f4f6f8;
 
-  --popover: #1E293B;
-  --popover-foreground: #F4F6F8;
+  --popover: #1e293b;
+  --popover-foreground: #f4f6f8;
 
-  --primary: #14B8A6; /* Lighter Teal for dark mode */
-  --primary-foreground: #0F172A;
+  --primary: #14b8a6; /* Lighter Teal for dark mode */
+  --primary-foreground: #0f172a;
 
-  --secondary: #134E4A;
-  --secondary-foreground: #CCFBF1;
+  --secondary: #134e4a;
+  --secondary-foreground: #ccfbf1;
 
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
 
-  --accent: #F97316;
-  --accent-foreground: #0F172A;
+  --accent: #f97316;
+  --accent-foreground: #0f172a;
 
-  --destructive: #7F1D1D;
-  --destructive-foreground: #FEE2E2;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fee2e2;
 
   --border: #334155;
   --input: #334155;
-  --ring: #14B8A6;
+  --ring: #14b8a6;
 
-  --sidebar: #0F172A;
-  --sidebar-foreground: #F4F6F8;
-  --sidebar-primary: #14B8A6;
-  --sidebar-primary-foreground: #0F172A;
-  --sidebar-accent: #1E293B;
-  --sidebar-accent-foreground: #F4F6F8;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f4f6f8;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f4f6f8;
   --sidebar-border: #334155;
-  --sidebar-ring: #14B8A6;
+  --sidebar-ring: #14b8a6;
 }
 
 @layer base {
@@ -143,24 +143,29 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  
+
   /* Typography Scale */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold tracking-tight text-foreground;
   }
-  
+
   h1 {
     @apply text-4xl lg:text-5xl leading-tight;
   }
-  
+
   h2 {
     @apply text-3xl leading-snug;
   }
-  
+
   h3 {
     @apply text-xl lg:text-2xl leading-snug;
   }
-  
+
   p {
     @apply text-base leading-relaxed text-muted-foreground;
   }
@@ -216,7 +221,7 @@
   .btn-outline {
     @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full px-6 py-2 font-medium transition-all duration-200 ease-out active:scale-[0.98];
   }
-  
+
   /* Pills */
   .pill {
     @apply rounded-2xl px-3 py-1 text-sm font-medium;

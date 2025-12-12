@@ -73,7 +73,10 @@ export default function StickyHeader() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="top" className="w-full pt-16 bg-background/95 backdrop-blur-xl">
+              <SheetContent
+                side="top"
+                className="w-full pt-16 bg-background/95 backdrop-blur-xl"
+              >
                 <div className="flex flex-col gap-6 items-center">
                   <Link
                     href="/privatkunden"

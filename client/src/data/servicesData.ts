@@ -33,9 +33,9 @@ export interface ServiceCategory {
   title: string;
   description: string;
   icon: LucideIcon;
-  color: string;      // Tailwind class for text/border (e.g., "text-[#FB923C]")
-  colorBg: string;    // Tailwind class for background (e.g., "bg-[#F3F4F6]")
-  colorBorder: string;// Tailwind class for border (e.g., "border-[#E5E7EB]")
+  color: string; // Tailwind class for text/border (e.g., "text-[#FB923C]")
+  colorBg: string; // Tailwind class for background (e.g., "bg-[#F3F4F6]")
+  colorBorder: string; // Tailwind class for border (e.g., "border-[#E5E7EB]")
   services: ServiceItem[];
 }
 
@@ -62,13 +62,15 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       {
         id: "pc-laptop",
         title: "Computer (PC, Laptop, Desktop)",
-        description: "Einrichtung, Beschleunigung, Fehlerdiagnose, Aufrüstung und Reparatur-Unterstützung.",
+        description:
+          "Einrichtung, Beschleunigung, Fehlerdiagnose, Aufrüstung und Reparatur-Unterstützung.",
         icon: Monitor,
       },
       {
         id: "software",
         title: "Computer-Software",
-        description: "Office, E-Mail, Browser, Virenscanner – Installation und Fehlerbehebung.",
+        description:
+          "Office, E-Mail, Browser, Virenscanner – Installation und Fehlerbehebung.",
         icon: AppWindow,
       },
       {

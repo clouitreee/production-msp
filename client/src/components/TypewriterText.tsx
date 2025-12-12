@@ -38,14 +38,12 @@ export default function TypewriterText({
 
       if (isDeleting && text === "") {
         setIsDeleting(false);
-        setPhraseIndex((prev) => (prev + 1) % items.length);
+        setPhraseIndex(prev => (prev + 1) % items.length);
         return;
       }
 
-      setText((prev) =>
-        isDeleting
-          ? prev.slice(0, -1)
-          : currentPhrase.slice(0, prev.length + 1)
+      setText(prev =>
+        isDeleting ? prev.slice(0, -1) : currentPhrase.slice(0, prev.length + 1)
       );
     }, typingSpeed);
 
