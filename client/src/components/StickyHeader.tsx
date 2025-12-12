@@ -75,34 +75,34 @@ export default function StickyHeader() {
               </SheetTrigger>
               <SheetContent
                 side="top"
-                className="w-full pt-16 bg-background/95 backdrop-blur-xl"
+                className="w-full h-[100dvh] pt-24 bg-background/98 backdrop-blur-2xl border-none flex flex-col items-center justify-center"
               >
-                <div className="flex flex-col gap-6 items-center">
+                <div className="flex flex-col gap-8 items-center w-full max-w-sm">
                   <Link
                     href="/privatkunden"
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-lg font-medium"
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                   >
                     Privatkunden
                   </Link>
                   <Link
                     href="/unternehmen"
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-lg font-medium"
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                   >
                     Unternehmen
                   </Link>
                   <Link
                     href="/ressourcen"
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-lg font-medium"
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                   >
                     Ressourcen
                   </Link>
                   <Link
                     href="/privatkunden#faq"
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-lg font-medium"
+                    className="text-2xl font-semibold text-foreground hover:text-primary transition-colors"
                   >
                     FAQ
                   </Link>
