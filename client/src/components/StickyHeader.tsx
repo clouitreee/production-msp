@@ -75,7 +75,7 @@ export default function StickyHeader() {
               </SheetTrigger>
               <SheetContent
                 side="top"
-                className="w-full h-[100dvh] pt-24 bg-background/98 backdrop-blur-2xl border-none flex flex-col items-center justify-center"
+                className="fixed inset-0 w-screen h-screen max-w-none max-h-none p-0 bg-background border-none flex flex-col items-center justify-center z-[9999]"
               >
                 <div className="flex flex-col gap-8 items-center w-full max-w-sm">
                   <Link
